@@ -1,0 +1,64 @@
+.colored-title {
+    font-family: "Cascadia Code", monospace;
+    white-space: pre;
+    text-align: left;
+    font-size: 12px;
+    background-image: repeating-linear-gradient(90deg, indigo, rebeccapurple, orchid, hotpink, orchid, rebeccapurple, indigo);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: colors 3s linear infinite;
+}
+
+@keyframes colors { 
+    0% {
+        background-position: 200% 0%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+topbar::before {
+    content: "███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████";
+    font-size: 16px;
+    font-family: monospace;
+    text-align: left;
+    white-space: pre;
+    font-size: 8px;
+    background-image: repeating-linear-gradient(90deg, indigo, rebeccapurple, orchid, hotpink, orchid, rebeccapurple, indigo);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: colors 3s linear infinite;
+}
+
+.baka {
+    font-family: monospace;
+    white-space: pre;
+    text-align: left;
+    font-size: 10px;
+}
+
+anim::before {
+    content: "";
+    font-size: 16px;
+    font-family: "Cascadia Code", monospace;
+    animation: animm infinite 1s;
+    color: white;
+}
+
+@keyframes animm {
+    0%{content:"c"}
+    25%{content:"cj"}
+    50%{content:"cju"}
+    75%{content:"cjuj"}
+    100%{content:""}
+}
+
+.plain {
+    font-family: "Cascadia Code", monospace;
+
+}
