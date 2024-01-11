@@ -1,11 +1,26 @@
+@font-face {
+    font-family: "vga";
+    src: url("fonts/Px437_ACM_VGA_8x16.ttf") format("woff");
+}
+
+:root {
+    --gradient-colors: repeating-linear-gradient(90deg, indigo, rebeccapurple, orchid, hotpink, orchid, rebeccapurple, indigo);
+}
+
 .colored-title {
-    font-family: "Cascadia Code", monospace;
-    white-space: pre;
+    font-family: "vga", monospace;
+    font-size: 16px;
     text-align: left;
-    font-size: 12px;
-    background-image: repeating-linear-gradient(90deg, indigo, rebeccapurple, orchid, hotpink, orchid, rebeccapurple, indigo);
-    background-size: 200%;
+    white-space: pre;
+    background-image: var(--gradient-colors);
+    background-size: 1000%;
     -webkit-background-clip: text;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    filter: contrast(100.00001%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: colors 3s linear infinite;
@@ -20,34 +35,51 @@
     }
 }
 
-topbar::before {
-    content: "███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████";
+.topbar {
     font-size: 16px;
-    font-family: monospace;
+    font-family: "vga", monospace;
     text-align: left;
     white-space: pre;
-    font-size: 8px;
-    background-image: repeating-linear-gradient(90deg, indigo, rebeccapurple, orchid, hotpink, orchid, rebeccapurple, indigo);
-    background-size: 200%;
+    background-image: var(--gradient-colors);
+    background-size: 1000%;
     -webkit-background-clip: text;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    filter: contrast(100.00001%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: colors 3s linear infinite;
+    animation: colors 10s linear infinite;
+    width: 100%;
 }
 
 .baka {
-    font-family: monospace;
+    font-family: "vga", monospace;
     white-space: pre;
     text-align: left;
-    font-size: 10px;
+    font-size: 16px;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 0.62;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    filter: contrast(100.00001%);
 }
 
 anim::before {
     content: "";
     font-size: 16px;
-    font-family: "Cascadia Code", monospace;
+    font-family: "vga", monospace;
     animation: animm infinite 1s;
     color: white;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    filter: contrast(100.00001%);
 }
 
 @keyframes animm {
@@ -58,7 +90,103 @@ anim::before {
     100%{content:""}
 }
 
+.pages {
+    font-family: "vga", monospace;
+    color: white;
+    font-size: 32px;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    filter: contrast(100.00001%);
+}
+
+.pages:hover {
+    font-family: "vga", monospace;
+    font-size: 32px;
+    text-align: left;
+    white-space: pre;
+    background-image: repeating-linear-gradient(90deg, orchid, hotpink, orchid);
+    background-size: 1000%;
+    -webkit-background-clip: text;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    filter: contrast(100.00001%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: colors 3s linear infinite;
+}
+
 .plain {
-    font-family: "Cascadia Code", monospace;
+    font-family: "vga", monospace;
+    font-size: 32px;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    filter: contrast(100.00001%);
 
 }
+
+.jitter {
+    font-family: "vga", monospace;
+    font-size: 32px;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    filter: contrast(100.00001%);
+}
+
+.jitter span {
+    display: inline-block;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: jittery;
+}
+
+@keyframes jittery {
+	10% {
+		transform: translate(0px, 0px);
+	}
+	20% {
+		transform: translate(1px, 1px);
+	}
+	30% {
+		transform: translate(1px, 0px);
+	}
+	40% {
+		transform: translate(0px, -1px);
+	}
+	50% {
+		transform: translate(-1px, 0px);
+	}
+	60% {
+		transform: translate(-1px, 1px);
+	}
+	70% {
+		transform: translate(0px, 0px);
+	}
+	80% {
+		transform: translate(1px, -1px);
+	}
+	90% {
+		transform: translate(0px, 1px);
+	}
+	100% {
+		transform: translate(-1px, 0px);
+	}			
+}
+
+.jitter span:nth-child(1) { --i: 1; animation-delay: calc(0s * var(--i)); }
+.jitter span:nth-child(2) { --i: 2; animation-delay: calc(0.03s * var(--i)); }
+.jitter span:nth-child(3) { --i: 3; animation-delay: calc(0.06s * var(--i)); }
+.jitter span:nth-child(4) { --i: 4; animation-delay: calc(0.09s * var(--i)); }
