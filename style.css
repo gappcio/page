@@ -146,11 +146,7 @@ anim::before {
 
 .jitter span {
     display: inline-block;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-    animation-name: jittery;
+    animation: jittery 0.5s linear infinite;
 }
 
 @keyframes jittery {
@@ -187,6 +183,13 @@ anim::before {
 }
 
 .jitter span:nth-child(1) { --i: 1; animation-delay: calc(0s * var(--i)); }
-.jitter span:nth-child(2) { --i: 2; animation-delay: calc(0.03s * var(--i)); }
-.jitter span:nth-child(3) { --i: 3; animation-delay: calc(0.06s * var(--i)); }
-.jitter span:nth-child(4) { --i: 4; animation-delay: calc(0.09s * var(--i)); }
+.jitter span:nth-child(2) { --i: 2; animation-delay: calc(0.02s * var(--i)); }
+.jitter span:nth-child(3) { --i: 3; animation-delay: calc(0.03s * var(--i)); }
+.jitter span:nth-child(4) { --i: 4; animation-delay: calc(0.04s * var(--i)); }
+.jitter span:nth-child(5) { --i: 5; animation-delay: calc(0.05s * var(--i)); }
+.jitter span:nth-child(6) { --i: 6; animation-delay: calc(0.06s * var(--i)); }
+.jitter span:nth-child(7) { --i: 7; animation-delay: calc(0.07s * var(--i)); }
+.jitter span:nth-child(8) { --i: 8; animation-delay: calc(0.07s * var(--i)); }
+.jitter span:nth-child(9) { --i: 9; animation-delay: calc(0.07s * var(--i)); }
+.jitter span:nth-child(10) { --i: 10; animation-delay: calc(0.07s * var(--i)); }
+.jitter span:nth-child(11) { --i: 11; animation-delay: calc(0.07s * var(--i)); }
