@@ -2,6 +2,11 @@
     font-family: "vga";
     src: url("fonts/Px437_ACM_VGA_8x16.ttf") format("woff");
 }
+@font-face {
+    font-family: "gay";
+    src: url("fonts/VCR_OSD_MONO_1.001.ttf") format("woff");
+}
+
 
 :root {
     --gradient-colors: repeating-linear-gradient(90deg, indigo, rebeccapurple, orchid, hotpink, orchid, rebeccapurple, indigo);
@@ -133,6 +138,17 @@ anim::before {
 
 }
 
+.kill {
+    font-family: "gay", monospace;
+    font-size: 36px;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    filter: contrast(100.00001%);
+}
+
 .jitter {
     font-family: "vga", monospace;
     font-size: 32px;
@@ -186,10 +202,10 @@ anim::before {
 .jitter span:nth-child(2) { --i: 2; animation-delay: calc(0.02s * var(--i)); }
 .jitter span:nth-child(3) { --i: 3; animation-delay: calc(0.03s * var(--i)); }
 .jitter span:nth-child(4) { --i: 4; animation-delay: calc(0.04s * var(--i)); }
-.jitter span:nth-child(5) { --i: 5; animation-delay: calc(0.05s * var(--i)); }
-.jitter span:nth-child(6) { --i: 6; animation-delay: calc(0.06s * var(--i)); }
-.jitter span:nth-child(7) { --i: 7; animation-delay: calc(0.07s * var(--i)); }
-.jitter span:nth-child(8) { --i: 8; animation-delay: calc(0.07s * var(--i)); }
-.jitter span:nth-child(9) { --i: 9; animation-delay: calc(0.07s * var(--i)); }
-.jitter span:nth-child(10) { --i: 10; animation-delay: calc(0.07s * var(--i)); }
-.jitter span:nth-child(11) { --i: 11; animation-delay: calc(0.07s * var(--i)); }
+.jitter span:nth-child(5) { --i: 5; animation-delay: calc(0.02s * var(--i)); }
+.jitter span:nth-child(6) { --i: 6; animation-delay: calc(0.05s * var(--i)); }
+.jitter span:nth-child(7) { --i: 7; animation-delay: calc(0.01s * var(--i)); }
+.jitter span:nth-child(8) { --i: 8; animation-delay: calc(0.02s * var(--i)); }
+.jitter span:nth-child(9) { --i: 9; animation-delay: calc(0.03s * var(--i)); }
+.jitter span:nth-child(10) { --i: 10; animation-delay: calc(0.02s * var(--i)); }
+.jitter span:nth-child(11) { --i: 11; animation-delay: calc(0.01s * var(--i)); }
