@@ -9,7 +9,6 @@
     src: url("fonts/VCR_OSD_MONO_1.001.ttf") format("woff");
 }
 
-
 :root {
     --gradient-colors: repeating-linear-gradient(90deg, indigo, rebeccapurple, orchid, hotpink, orchid, rebeccapurple, indigo);
 }
