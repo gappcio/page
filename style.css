@@ -375,6 +375,37 @@ anim::before {
 }
 
 
+#ultragay {
+    position: fixed;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation-play-state: paused;
+
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    top: 0;
+    left: 0%;
+    z-index: 9998;
+    object-fit: cover;
+}
+
+.moneh {
+    font-family: "vga", monospace;
+    font-size: 16px;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    filter: contrast(100.00001%);
+}
 
 /* -~=what even is this=~- */
 .jitter span:nth-child(1) { --i: 1; animation-delay: calc(0s * var(--i)); }
