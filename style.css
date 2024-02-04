@@ -406,7 +406,6 @@ anim::before {
     -webkit-text-size-adjust: none;
     filter: contrast(100.00001%);
 }
-
 /* -~=what even is this=~- */
 .jitter span:nth-child(1) { --i: 1; animation-delay: calc(0s * var(--i)); }
 .jitter span:nth-child(2) { --i: 2; animation-delay: calc(0.02s * var(--i)); }
