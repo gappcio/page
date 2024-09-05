@@ -1,8 +1,37 @@
 /* dont even fucking look at this fuck off */
 
+html, body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
 @font-face {
     font-family: "vga";
     src: url("fonts/Px437_ACM_VGA_8x16.ttf") format("woff");
+}
+@font-face {
+    font-family: "terminal";
+    src: url("fonts/FSEX300.ttf") format("woff");
 }
 @font-face {
     font-family: "gay";
@@ -211,6 +240,9 @@
     text-size-adjust: none;
     -webkit-text-size-adjust: none;
     filter: contrast(100.00001%);
+    position: relative;
+    left: -224px;
+    max-width: 50%;
 }
 
 anim::before {
@@ -400,11 +432,24 @@ anim::before {
     font-family: "vga", monospace;
     font-size: 16px;
     -webkit-font-smoothing: none;
-    -moz-osx-font-smoothing: grayscale;
+    -moz-osx-font-smoothing: none;
     line-height: 1;
     text-size-adjust: none;
     -webkit-text-size-adjust: none;
     filter: contrast(100.00001%);
+}
+
+.basictext {
+    font-family: "vga", monospace;
+    font-size: 16px;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: none;
+    line-height: 1;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    transform: scale(.3);
+    filter: contrast(100.00001%);
+
 }
 /* -~=what even is this=~- */
 .jitter span:nth-child(1) { --i: 1; animation-delay: calc(0s * var(--i)); }
