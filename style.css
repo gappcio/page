@@ -333,6 +333,146 @@ anim::before {
     filter: contrast(100.00001%);
 }
 
+.swear {
+    font-family: "vga", monospace;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    filter: contrast(100.00001%);
+}
+
+.swear span {
+    display: inline-block;
+    position: relative;
+}
+
+.swear span::before {
+    content: attr(data-letter);
+    display: inline-block;
+    animation: swear_anim 1s linear infinite;
+}
+
+
+@keyframes swear_anim {
+    0%, 5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {
+        content: attr(data-letter);
+    }
+    10%{
+        content: '!';
+    }
+    30% {
+        content: '@';
+    }
+    50% {
+        content: '#';
+    }
+    70% {
+        content: '$';
+    }
+}
+
+.swear span:nth-child(1)::before { --i: 1; animation-delay: calc(0.03s * var(--i)); }
+.swear span:nth-child(2)::before { --i: 2; animation-delay: calc(0.08s * var(--i)); }
+.swear span:nth-child(3)::before { --i: 3; animation-delay: calc(0.01s * var(--i)); }
+.swear span:nth-child(4)::before { --i: 4; animation-delay: calc(0.1s * var(--i)); }
+.swear span:nth-child(5)::before { --i: 5; animation-delay: calc(0.05s * var(--i)); }
+.swear span:nth-child(6)::before { --i: 6; animation-delay: calc(0.16s * var(--i)); }
+.swear span:nth-child(7)::before { --i: 7; animation-delay: calc(0.12s * var(--i)); }
+.swear span:nth-child(8)::before { --i: 8; animation-delay: calc(0.03s * var(--i)); }
+
+.big {
+    font-family: "vga", monospace;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    filter: contrast(100.00001%);
+    display: inline-block;
+    position: relative;
+    animation: big_anim 0.35s infinite ease-in-out;
+}
+
+@keyframes big_anim {
+    50%{
+        transform: scale(1, 1);
+    }
+    0%, 70%, 100%{
+        transform: translate(0px, 4px) scale(1.25, 1.1);
+    }
+}
+
+.drunk {
+    font-family: "vga", monospace;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    filter: contrast(100.00001%);
+}
+
+.drunk span {
+    display: inline-block;
+    animation: drunk_anim 1s infinite ease-in-out ;
+}
+
+@keyframes drunk_anim {
+	0%, 100% {
+		transform: translate(0px, 4px);
+	}	
+    50% {
+		transform: translate(0px, -4px);
+	}	
+}
+
+.drunk span:nth-child(1) { --i: 1; animation-delay: calc(0s * var(--i)); }
+.drunk span:nth-child(2) { --i: 2; animation-delay: calc(0.01s * var(--i)); }
+.drunk span:nth-child(3) { --i: 3; animation-delay: calc(0.02s * var(--i)); }
+.drunk span:nth-child(4) { --i: 4; animation-delay: calc(0.03s * var(--i)); }
+.drunk span:nth-child(5) { --i: 5; animation-delay: calc(0.04s * var(--i)); }
+.drunk span:nth-child(6) { --i: 6; animation-delay: calc(0.05s * var(--i)); }
+.drunk span:nth-child(7) { --i: 7; animation-delay: calc(0.06s * var(--i)); }
+
+.trip {
+    font-family: "vga", monospace;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    filter: contrast(100.00001%);
+    display: inline-block;
+    animation: trip_anim 1s infinite;
+}
+
+@keyframes trip_anim {
+	0%, 100% {
+		color: red
+	}	
+    14% {
+		color: orange
+	}	
+    28% {
+		color: yellow
+	}	
+    42% {
+		color: green
+	}		
+    56% {
+		color: rgb(0, 255, 247)
+	}	
+    70% {
+		color: blue
+	}	
+    84% {
+		color: purple
+	}	
+
+}
+
 .jitter {
     font-family: "vga", monospace;
     font-size: 32px;
