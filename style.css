@@ -37,6 +37,22 @@ body {
     font-family: "gay";
     src: url("fonts/VCR_OSD_MONO_1.001.ttf") format("woff");
 }
+@font-face {
+    font-family: "mc";
+    src: url("fonts/Minecraftia-Regular.ttf") format("woff");
+}
+@font-face {
+    font-family: "sv";
+    src: url("fonts/Stardew_Valley.ttf") format("woff");
+}
+@font-face {
+    font-family: "tf2";
+    src: url("fonts/tf2build.ttf") format("woff");
+}
+@font-face {
+    font-family: "commie";
+    src: url("fonts/Dobra-BlackItalic.ttf") format("woff");
+}
 
 :root {
     --gradient-colors: repeating-linear-gradient(90deg, indigo, rebeccapurple, orchid, hotpink, orchid, rebeccapurple, indigo);
