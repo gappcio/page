@@ -41,7 +41,7 @@
     <div style=
     "position: absolute;
     top: 280px;
-    left: 300px;
+    left: 200px;
     width: 420px;"
     >
         
@@ -84,7 +84,7 @@
     <div style=
     "position: absolute;
     top: 274px;
-    left: 745px;
+    left: 645px;
     width: 12px;
     height: 360px;">
         <a class="topbar">|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|</a> 
@@ -93,7 +93,7 @@
     <div style=
     "position: absolute;
     top: 630px;
-    left: 663px;
+    left: 563px;
     width: 12px;
     height: 360px;">
         <a class="topbar">|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|</a> 
@@ -102,7 +102,7 @@
     <div style=
     "position: absolute;
     top: 630px;
-    left: 985px;
+    left: 885px;
     width: 12px;
     height: 360px;">
         <a class="topbar">|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|</a> 
@@ -111,7 +111,7 @@
     <div style=
     "position: absolute;
     top: 608px;
-    left: 282px;">
+    left: 182px;">
         <a class="topbar">=========================================================</a> 
     </div>
 
@@ -119,7 +119,7 @@
     <div style=
     "position: absolute;
     top: 280px;
-    left: 780px;
+    left: 680px;
     width: 600px;
     height: 100px;"
     >
@@ -132,28 +132,28 @@
     <div style=
     "position: absolute;
     top: 550px;
-    left: 764px;">
+    left: 664px;">
         <a class="topbar">==============================================================================</a> 
     </div>
 
     <div style=
     "position: absolute;
     top: 577px;
-    left: 764px;">
+    left: 664px;">
         <a class="plain" style="display: inline-block; width: 626px; color: white; text-align: center; font-size: 32px;">about me</a>
     </div>
 
     <div style=
     "position: absolute;
     top: 608px;
-    left: 764px;">
+    left: 664px;">
         <a class="topbar">==============================================================================</a> 
     </div>
 
     <div style=
     "position: absolute;
     top: 640px;
-    left: 690px;
+    left: 590px;
     width: 280px;
     height: 100px;">
         <a class="plain" style="color: white; font-size: 32px;">
@@ -165,14 +165,35 @@
 
     <div style=
     "position: absolute;
+    top: 750px;
+    left: 600px;">
+        <a class="topbar">================================</a> 
+    </div>
+
+    <div style=
+    "position: absolute;
+    top: 820px;
+    left: 600px;">
+        <a class="topbar">================================</a> 
+    </div>
+
+    <div style=
+    "position: absolute;
+    top: 688px;
+    left: 924px;">
+        <a class="topbar">================================</a> 
+    </div>
+
+    <div style=
+    "position: absolute;
     top: 780px;
-    left: 690px;
+    left: 590px;
     width: 280px;
     height: 100px;">
     <a class="plain" style="color: white; font-size: 32px; ">
-        <div style="text-align: center;">♥ games ♥</div><br>
-        - <span class="kill" style="font-size: 32px;">ULTRAKILL</span><br>
-        - <span style="font-family: mc; font-size: 24px; position: absolute; top: 133px; left: 33px;">Minecraft</span><br>
+        <div style="text-align: center;">♥ games ♥</div><br><br>
+        - <span id="ultrakill_text" class="kill" style="font-size: 32px;">ULTRAKILL</span><br>
+        - <span style="font-family: mc; font-size: 24px; position: absolute; top: 166px; left: 33px;">Minecraft</span><br>
         - <span style="font-family: 'commie', monospace; font-size: 32px;">Disco Elysium</span><br>
         - <span style="font-family: 'tf2', monospace; font-size: 24px;">Team Fortress 2</span><br>
         - <span style="font-family: 'sv', monospace; font-size: 32px;">Stardew Valley</span><br>
@@ -181,8 +202,20 @@
 
     <div style=
     "position: absolute;
+    top: 643px;
+    left: 913px;
+    width: 280px;
+    height: 100px;">
+    <a class="plain" style="color: white; font-size: 32px; ">
+        <div style="text-align: center;">♥ music ♥</div><br><br>
+        - <span style="font-size: 32px;"></span><br>
+    </a>
+    </div>
+
+    <div style=
+    "position: absolute;
     top: 634px;
-    left: 181px;
+    left: 81px;
     width: 460px;
     height: 100px;"
     >
@@ -231,6 +264,94 @@
         <a class="moneh" style="color: #ff5f00; display: flex; align-items:center;"><img src="img/xmr.png">&nbsp;47dbpEKHDYogtvhcukFKGkMSAPSLVrRWXSKvSXay8VLQjD5F5eMrpigbzJFskvZVkDWouSY2yfCxuKVAt1peS6GHUmGW4CC</a>
     </div>
     </footer>
+
+    <script>
+
+
+        var fr = 0;
+        var imagesArray = [];
+
+        function imageShow(img, x, y){
+            
+            let image = document.createElement("img");
+
+            image.style.position = "absolute";
+            image.style.left = x + "px";
+            image.style.top = y + "px";
+            image.style.width = "20px";
+            image.style.height = "20px";
+            image.style.opacity = 1;
+            image.src = img;
+            image.style.pointerEvents = "none";
+
+            document.body.appendChild(image);
+
+            const randomFloat = (min, max) => Math.random() * (max - min) + min;
+
+            const image_obj = {
+                image: image,
+                x:image.style.left,
+                y:image.style.top,
+                hsp: randomFloat(-12, 8),
+                vsp: randomFloat(-4, 0.5),
+                scale: 1,
+                alpha:image.style.opacity
+            };
+
+            imagesArray.push(image_obj);
+
+        }
+
+        function animate(obj) {
+
+            if (obj == null) return;
+
+            obj.scale += 0.0025;
+            obj.x = parseFloat(obj.x) + obj.hsp + "px";
+            obj.y = parseFloat(obj.y) + obj.vsp + "px";
+            obj.image.style.width = (parseFloat(obj.image.style.width) * obj.scale) + "px";
+            obj.image.style.height = (parseFloat(obj.image.style.height) * obj.scale) + "px";
+
+            obj.image.style.transformOrigin = "center";
+            obj.image.style.left = obj.x;
+            obj.image.style.top = obj.y;
+            obj.image.style.opacity -= 0.0175;
+
+        }
+
+        var loop = function() {
+
+            if (imagesArray.length > 0) {
+
+                for (var i = 0; i < imagesArray.length; ++i) {
+
+                    animate(imagesArray[i], 0);
+
+                    if (imagesArray[i].image.style.opacity <= 0) {
+
+                        imagesArray[i].image.remove();
+                        delete imagesArray[i];
+                        imagesArray[i] = null;
+                        imagesArray.splice(i, 1); 
+
+                    }
+
+                }
+
+            }
+
+            window.requestAnimationFrame(loop);
+
+        }
+
+        setInterval(loop(), 16);
+
+        var ultrakillText = document.getElementById('ultrakill_text'); 
+        ultrakillText.addEventListener('click', () => {
+            imageShow("img/parry.png", 700, 890)
+        }, false);
+
+    </script>
 
 </body>
 </html>
