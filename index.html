@@ -194,8 +194,8 @@
         <div style="text-align: center;">♥ games ♥</div><br><br>
         - <span id="ultrakill_text" class="kill" style="font-size: 32px;">ULTRAKILL</span><br>
         - <span style="font-family: mc; font-size: 24px; position: absolute; top: 166px; left: 33px;">Minecraft</span><br>
-        - <span style="font-family: 'commie', monospace; font-size: 32px;">Disco Elysium</span><br>
-        - <span style="font-family: 'tf2', monospace; font-size: 24px;">Team Fortress 2</span><br>
+        - <span id="DE_text" style="font-family: 'commie', monospace; font-size: 32px;">Disco Elysium</span><br>
+        - <span id="tf2_text" style="font-family: 'tf2', monospace; font-size: 24px;">Team Fortress 2</span><br>
         - <span style="font-family: 'sv', monospace; font-size: 32px;">Stardew Valley</span><br>
     </a>
     </div>
@@ -267,7 +267,6 @@
 
     <script>
 
-
         var fr = 0;
         var imagesArray = [];
 
@@ -292,7 +291,7 @@
                 image: image,
                 x:image.style.left,
                 y:image.style.top,
-                hsp: randomFloat(-12, 8),
+                hsp: randomFloat(-3, 3),
                 vsp: randomFloat(-4, 0.5),
                 scale: 1,
                 alpha:image.style.opacity
@@ -306,7 +305,7 @@
 
             if (obj == null) return;
 
-            obj.scale += 0.0025;
+            obj.scale += 0.0005;
             obj.x = parseFloat(obj.x) + obj.hsp + "px";
             obj.y = parseFloat(obj.y) + obj.vsp + "px";
             obj.image.style.width = (parseFloat(obj.image.style.width) * obj.scale) + "px";
@@ -315,7 +314,14 @@
             obj.image.style.transformOrigin = "center";
             obj.image.style.left = obj.x;
             obj.image.style.top = obj.y;
-            obj.image.style.opacity -= 0.0175;
+
+            console.log(obj.scale)
+
+            if (obj.scale > 1.06) {
+                obj.image.style.opacity -= 0.1;
+            }
+
+            
 
         }
 
@@ -349,6 +355,16 @@
         var ultrakillText = document.getElementById('ultrakill_text'); 
         ultrakillText.addEventListener('click', () => {
             imageShow("img/parry.png", 700, 890)
+        }, false);
+
+        var tfText = document.getElementById('tf2_text'); 
+        tfText.addEventListener('click', () => {
+            imageShow("img/buff.png", 700, 990)
+        }, false);
+
+        var DEText = document.getElementById('DE_text'); 
+        DEText.addEventListener('click', () => {
+            imageShow("img/disco.png", 700, 950)
         }, false);
 
     </script>
