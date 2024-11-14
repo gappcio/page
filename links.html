@@ -26,14 +26,17 @@
     <div>
         <div>
             <a class="topbar">==============================================================================================================</a>
-            <pre class="colored-title">                                                 
-                &nbsp;&nbsp;&nbsp;&nbsp;     ,adPPYb,d8  ,adPPYYba,  8b,dPPYba,   8b,dPPYba,   8b       d8  
-                &nbsp;&nbsp;&nbsp;&nbsp;    a8"    `Y88  ""     `Y8  88P'    "8a  88P'    "8a  `8b     d8'  
-                &nbsp;&nbsp;&nbsp;&nbsp;    8b       88  ,adPPPPP88  88       d8  88       d8   `8b   d8'   
-                &nbsp;&nbsp;&nbsp;&nbsp;    "8a,   ,d88  88,    ,88  88b,   ,a8"  88b,   ,a8"    `8b,d8'    
-                &nbsp;&nbsp;&nbsp;&nbsp;     `"YbbdP"Y8  `"8bbdP"Y8  88`YbbdP"'   88`YbbdP"'       Y88'     
-                &nbsp;&nbsp;&nbsp;&nbsp;     aa,    ,88              88           88               d8'      
-                &nbsp;&nbsp;&nbsp;&nbsp;      "Y8bbdP"               88           88              d8'   
+            <pre class="colored-title">
+    &nbsp;&nbsp;88                                                                    88              88              
+    &nbsp;&nbsp;88                                                                    88              ""              
+    &nbsp;&nbsp;88                                                                    88                              
+    &nbsp;&nbsp;88  88       88  8b,dPPYba,   ,adPPYYba,   ,adPPYba,  8b       d8     88  ,adPPYYba,  88  8b,dPPYba,  
+    &nbsp;&nbsp;88  88       88  88P'   `"8a  ""     `Y8  a8"     ""  `8b     d8'     88  ""     `Y8  88  88P'   "Y8  
+    &nbsp;&nbsp;88  88       88  88       88  ,adPPPPP88  8b           `8b   d8'      88  ,adPPPPP88  88  88          
+    &nbsp;&nbsp;88  "8a,   ,a88  88       88  88,    ,88  "8a,   ,aa    `8b,d8'       88  88,    ,88  88  88          
+    &nbsp;&nbsp;88   `"YbbdP'Y8  88       88  `"8bbdP"Y8   `"Ybbd8"'      Y88'        88  `"8bbdP"Y8  88  88          
+    &nbsp;&nbsp;                                                          d8'                                         
+    &nbsp;&nbsp;                                                         d8'                                          
             </pre>
             <a class="topbar">==============================================================================================================</a>
         </div>
@@ -50,6 +53,13 @@
 
         <a class="topbar">==============================================================================================================</a>
 
+    </div>
+
+    <div>
+        <div class="plain" style="display: inline-block; width: 880px; color: white; text-align: center;">
+            <a id="hover_element">cock</a>
+        </div>
+        <a class="topbar">==============================================================================================================</a>
     </div>
 
     <div>
@@ -208,7 +218,98 @@
 
     </script>
 
+    <script>
 
+        const obj_textbox = {
+            element: null,
+            text: "",
+            x: 0,
+            y: 0,
+            width: 0,
+            height: 0
+        };
+
+        function textBox(text, x, y, width, height) {
+            
+            let box = document.createElement("div");
+
+            box.style.position = "absolute";
+            box.style.left = x + "px";
+            box.style.top = y + "px";
+            box.style.width = width + "px";
+            box.style.height = height + "px";
+            box.style.pointerEvents = "none";
+            box.className = "topbar";
+            box.textContent = text;
+
+            obj_textbox.element = box;
+            obj_textbox.text = text;
+            obj_textbox.x = x;
+            obj_textbox.y = y;
+            obj_textbox.width = width;
+            obj_textbox.height = height;
+
+            document.body.appendChild(box);
+
+        }
+
+        function textBoxDelete() {
+            obj_textbox.text = "";
+            if (obj_textbox.element) {
+
+                obj_textbox.element.remove();
+                obj_textbox.element = null;
+
+            }
+        }
+
+        function textBoxMove(event) {
+
+            var mouseX = event.pageX + 1;
+            var mouseY = event.pageY + 1;
+
+            if (obj_textbox.element) {
+                obj_textbox.element.style.left = mouseX + "px";
+                obj_textbox.element.style.top = mouseY + "px";
+            }
+
+        }
+
+        var loop = function() {
+
+            if (obj_textbox.text != "") {
+
+                textBoxMove(obj_textbox, obj_textbox.event);
+
+            }
+
+            window.requestAnimationFrame(loop);
+
+        }
+
+        
+
+        window.requestAnimationFrame(loop);
+
+        var textboxText = 
+        `
+        ====================
+        |balls idk lol.....|
+        ====================
+        `;
+
+        var hoverElement = document.getElementById('hover_element'); 
+
+        hoverElement.addEventListener('mouseover', event => {
+            textBox(textboxText, event.pageX - 16, event.pageY, 128, 128);
+            hoverElement.addEventListener('mousemove', textBoxMove);
+        });
+        hoverElement.addEventListener('mouseout', () => {
+            textBoxDelete();
+            hoverElement.removeEventListener('mousemove', textBoxMove);
+        });
+
+    </script>
 
     <script type="text/javascript">
         fix_odd_viewport = () => {
