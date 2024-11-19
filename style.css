@@ -25,6 +25,7 @@ body {
     clear: both;
   }
 
+
 @font-face {
     font-family: "vga";
     src: url("fonts/Px437_ACM_VGA_8x16.ttf") format("woff");
@@ -348,6 +349,19 @@ anim::before {
     -webkit-text-size-adjust: none;
     filter: contrast(100.00001%);
 }
+
+.kill:hover {
+    font-family: "gay", monospace;
+    font-size: 36px;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    color: #D70000;
+    line-height: 1;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    filter: contrast(100.00001%);
+}
+
 
 .swear {
     font-family: "vga", monospace;

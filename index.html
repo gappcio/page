@@ -44,7 +44,7 @@
     <div style=
     "position: absolute;
     top: 300px;
-    left: 200px;
+    left: 300px;
     width: 420px;"
     >
         
@@ -87,7 +87,16 @@
     <div style=
     "position: absolute;
     top: 294px;
-    left: 645px;
+    left: 745px;
+    width: 12px;
+    height: 360px;">
+        <a class="topbar">|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|</a> 
+    </div>
+
+    <div style=
+    "position: absolute;
+    top: 294px;
+    left: 1400px;
     width: 12px;
     height: 360px;">
         <a class="topbar">|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|</a> 
@@ -96,7 +105,7 @@
     <div style=
     "position: absolute;
     top: 650px;
-    left: 563px;
+    left: 663px;
     width: 12px;
     height: 360px;">
         <a class="topbar">|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|</a> 
@@ -105,7 +114,7 @@
     <div style=
     "position: absolute;
     top: 650px;
-    left: 885px;
+    left: 985px;
     width: 12px;
     height: 360px;">
         <a class="topbar">|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|</a> 
@@ -114,7 +123,7 @@
     <div style=
     "position: absolute;
     top: 628px;
-    left: 182px;">
+    left: 282px;">
         <a class="topbar">=========================================================</a> 
     </div>
 
@@ -122,7 +131,7 @@
     <div style=
     "position: absolute;
     top: 300px;
-    left: 680px;
+    left: 780px;
     width: 600px;
     height: 100px;"
     >
@@ -135,28 +144,28 @@
     <div style=
     "position: absolute;
     top: 570px;
-    left: 664px;">
+    left: 764px;">
         <a class="topbar">==============================================================================</a> 
     </div>
 
     <div style=
     "position: absolute;
     top: 597px;
-    left: 664px;">
+    left: 764px;">
         <a class="plain" style="display: inline-block; width: 626px; color: white; text-align: center; font-size: 32px;">about me</a>
     </div>
 
     <div style=
     "position: absolute;
     top: 628px;
-    left: 664px;">
+    left: 764px;">
         <a class="topbar">==============================================================================</a> 
     </div>
 
     <div style=
     "position: absolute;
     top: 660px;
-    left: 590px;
+    left: 690px;
     width: 280px;
     height: 100px;">
         <a class="plain" style="color: white; font-size: 32px;">
@@ -169,28 +178,28 @@
     <div style=
     "position: absolute;
     top: 770px;
-    left: 600px;">
+    left: 700px;">
         <a class="topbar">================================</a> 
     </div>
 
     <div style=
     "position: absolute;
     top: 840px;
-    left: 600px;">
+    left: 700px;">
         <a class="topbar">================================</a> 
     </div>
 
     <div style=
     "position: absolute;
     top: 708px;
-    left: 924px;">
+    left: 1024px;">
         <a class="topbar">================================</a> 
     </div>
 
     <div style=
     "position: absolute;
     top: 800px;
-    left: 590px;
+    left: 690px;
     width: 280px;
     height: 100px;">
     <a class="plain" style="color: white; font-size: 32px; ">
@@ -206,19 +215,21 @@
     <div style=
     "position: absolute;
     top: 663px;
-    left: 913px;
+    left: 1013px;
     width: 280px;
     height: 100px;">
     <a class="plain" style="color: white; font-size: 32px; ">
         <div style="text-align: center;">♥ music ♥</div><br><br>
-        - <span style="font-size: 32px;"></span><br>
+        <span id="hover_element_jimi" style="font-size: 32px;"><img src="img/jimi.png" style="width: 128px"></span>
+        <span id="hover_element_kg" style="font-size: 32px;"><img src="img/kgtlw.png" style="width: 128px"></span><br>
+        <script>//jimi hendrix, prince, green day, king gizzard, machine girl, femtanyl, pidzama porno</script>
     </a>
     </div>
 
     <div style=
     "position: absolute;
     top: 654px;
-    left: 81px;
+    left: 181px;
     width: 460px;
     height: 100px;"
     >
@@ -247,6 +258,18 @@
             - rewrite links<br>
             - blinkies<br>
         </a>
+    </div>
+
+    <div style=
+    "position: absolute;
+    top: 60px;
+    left: 30px;
+    width: 220px;
+    height: 170px;"
+    >
+
+        
+
     </div>
 
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -285,6 +308,7 @@
             image.style.opacity = 1;
             image.src = img;
             image.style.pointerEvents = "none";
+            image.style.zIndex = 1000;
 
             document.body.appendChild(image);
 
@@ -328,6 +352,83 @@
 
         }
 
+
+        const obj_textbox = {
+            element: null,
+            text: "",
+            x: 0,
+            y: 0,
+            width: 0,
+            height: 0,
+            bg: null
+        };
+
+        function textBox(text, x, y, width, height) {
+            
+            let box = document.createElement("div");
+
+            let bg = document.createElement("div");
+
+            bg.style.position = "absolute";
+            bg.style.left = x + "px";
+            bg.style.top = y + "px";
+            bg.style.width = width + "px";
+            bg.style.height = height + "px";
+            bg.style.pointerEvents = "none";
+            //bg.style.backgroundColor = "#080808";
+            bg.style.backgroundColor = "#000000";
+
+            box.style.position = "absolute";
+            box.style.left = x + "px";
+            box.style.top = y + "px";
+            box.style.width = width + "px";
+            box.style.height = height + "px";
+            box.style.pointerEvents = "none";
+            box.className = "topbar";
+            box.textContent = text;
+
+            obj_textbox.element = box;
+            obj_textbox.text = text;
+            obj_textbox.x = x;
+            obj_textbox.y = y;
+            obj_textbox.width = width;
+            obj_textbox.height = height;
+            obj_textbox.bg = bg;
+
+            document.body.appendChild(bg);
+            document.body.appendChild(box);
+            
+
+        }
+
+        function textBoxDelete() {
+            obj_textbox.text = "";
+            if (obj_textbox.element) {
+
+                obj_textbox.element.remove();
+                obj_textbox.element = null;
+                obj_textbox.bg.remove();
+                obj_textbox.bg = null;
+
+            }
+        }
+
+        function textBoxMove(event) {
+
+            var mouseX = event.pageX + 1;
+            var mouseY = event.pageY + 1;
+
+            if (obj_textbox.element) {
+                obj_textbox.element.style.left = mouseX + "px";
+                obj_textbox.element.style.top = mouseY + "px";
+            }
+            if (obj_textbox.bg) {
+                obj_textbox.bg.style.left = mouseX + 64 + "px";
+                obj_textbox.bg.style.top = mouseY + 16 + "px";
+            }
+
+        }
+
         var loop = function() {
 
             if (imagesArray.length > 0) {
@@ -349,6 +450,12 @@
 
             }
 
+            if (obj_textbox.text != "") {
+
+                textBoxMove(obj_textbox, obj_textbox.event);
+
+            }
+
             window.requestAnimationFrame(loop);
 
         }
@@ -357,18 +464,63 @@
 
         var ultrakillText = document.getElementById('ultrakill_text'); 
         ultrakillText.addEventListener('click', () => {
-            imageShow("img/parry.png", 700, 910)
+            imageShow("img/parry.png", 800, 910)
         }, false);
 
         var tfText = document.getElementById('tf2_text'); 
         tfText.addEventListener('click', () => {
-            imageShow("img/buff.png", 700, 1010)
+            imageShow("img/buff.png", 800, 1010)
         }, false);
 
         var DEText = document.getElementById('DE_text'); 
         DEText.addEventListener('click', () => {
-            imageShow("img/disco.png", 700, 970)
+            imageShow("img/disco.png", 800, 970)
         }, false);
+
+
+        var textboxText = [];
+        textboxText[0] = 
+        `
+        ====================
+        |   JIMI HENDRIX   |
+        ====================
+        `;
+        textboxText[1] = 
+        `
+        ====================================
+        | KING GIZZARD & THE LIZARD WIZARD |
+        ====================================
+        `;
+
+        var hoverElement = [];
+        hoverElement[0] = document.getElementById('hover_element_jimi'); 
+
+        hoverElement[0].addEventListener('mouseover', event => {
+            textBox(textboxText[0], event.pageX - 16, event.pageY, 164, 48);
+            hoverElement[0].addEventListener('mousemove', textBoxMove);
+        });
+        hoverElement[0].addEventListener('mouseout', () => {
+            textBoxDelete();
+            hoverElement[0].removeEventListener('mousemove', textBoxMove);
+        });
+
+        hoverElement[1] = document.getElementById('hover_element_kg'); 
+
+        hoverElement[1].addEventListener('mouseover', event => {
+            textBox(textboxText[1], event.pageX - 16, event.pageY, 128, 128);
+            hoverElement[1].addEventListener('mousemove', textBoxMove);
+        });
+        hoverElement[1].addEventListener('mouseout', () => {
+            textBoxDelete();
+            hoverElement[1].removeEventListener('mousemove', textBoxMove);
+        });
+
+    </script>
+
+
+    <script>
+
+        //document.body.style.cursor = 'url("img/cursor_default.png") 0 0, auto';
 
     </script>
 
