@@ -222,6 +222,12 @@
         <div style="text-align: center;">♥ music ♥</div><br><br>
         <span id="hover_element_jimi" style="font-size: 32px;"><img src="img/jimi.png" style="width: 128px"></span>
         <span id="hover_element_kg" style="font-size: 32px;"><img src="img/kgtlw.png" style="width: 128px"></span><br>
+        <span id="hover_element_gd" style="font-size: 32px;"><img src="img/greenday.png" style="width: 128px"></span>
+        <span id="hover_element_pr" style="font-size: 32px;"><img src="img/prince.png" style="width: 128px"></span><br>
+        <span id="hover_element_fem" style="font-size: 32px;"><img src="img/FEMTANYL.png" style="width: 128px"></span>
+        <span id="hover_element_mg" style="font-size: 32px;"><img src="img/machineGIRL.png" style="width: 128px"></span><br>
+        <span id="hover_element_pp" style="font-size: 32px;"><img src="img/grabaz.png" style="width: 128px"></span>
+        <span id="hover_element_dm" style="font-size: 32px;"><img src="img/defektmuzgo.png" style="width: 128px"></span><br>
         <script>//jimi hendrix, prince, green day, king gizzard, machine girl, femtanyl, pidzama porno</script>
     </a>
     </div>
@@ -239,7 +245,7 @@
             <span class="swear"  style="font-size: 16px;"><span data-letter="s"> </span><span data-letter="w"> </span><span data-letter="e"> </span><span data-letter="a"> </span><span data-letter="r"> </span><span data-letter="i"> </span><span data-letter="n"> </span><span data-letter="g"> </span></span>
             and talking about everything including <span class="big">sex</span>, <span class="drunk"><span>a</span><span>l</span><span>c</span><span>o</span><span>h</span><span>o</span><span>l</span></span>, <span class="trip">drugs</span> and other shit some may find sensitive, if this offends you go somewhere else idk<br><br>
 
-            <span style="font-size: 12px;">by the way, this site was only tested on <span style="color:#ff6600">Firefox</span> on 1920x1080 resolution and won't work on mobile</span>
+            <span style="font-size: 12px;">by the way, this site was only tested on <span style="color:#ff6600">Firefox</span> on 1920x1080 resolution and won't look good on mobile</span>
         </a>
     </div>
 
@@ -273,7 +279,7 @@
     </div>
 
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     </main>
 
@@ -347,8 +353,6 @@
             if (obj.scale > 1.06) {
                 obj.image.style.opacity -= 0.1;
             }
-
-            
 
         }
 
@@ -491,12 +495,52 @@
         | KING GIZZARD & THE LIZARD WIZARD |
         ====================================
         `;
+        textboxText[2] = 
+        `
+        =============
+        | GREEN DAY |
+        =============
+        `;
+        textboxText[3] = 
+        `
+        ==========
+        | PRINCE |
+        ==========
+        `;
+        textboxText[4] = 
+        `
+        ============
+        | FEMTANYL |
+        ============
+        `;
+        textboxText[5] = 
+        `
+        ================
+        | MACHINE GIRL |
+        ================
+        `;
+        textboxText[6] = 
+        `
+        =================
+        | PIDŻAMA PORNO |
+        =================
+        `;
+        textboxText[7] = 
+        `
+        ================
+        | DEFEKT MUZGÓ |
+        ================
+        `;
 
         var hoverElement = [];
+
+        //idk why loop here doesnt work
+
+        //jimi
         hoverElement[0] = document.getElementById('hover_element_jimi'); 
 
         hoverElement[0].addEventListener('mouseover', event => {
-            textBox(textboxText[0], event.pageX - 16, event.pageY, 164, 48);
+            textBox(textboxText[0], event.pageX - 16, event.pageY, 160, 48);
             hoverElement[0].addEventListener('mousemove', textBoxMove);
         });
         hoverElement[0].addEventListener('mouseout', () => {
@@ -504,15 +548,88 @@
             hoverElement[0].removeEventListener('mousemove', textBoxMove);
         });
 
+        //king gizzard
         hoverElement[1] = document.getElementById('hover_element_kg'); 
 
         hoverElement[1].addEventListener('mouseover', event => {
-            textBox(textboxText[1], event.pageX - 16, event.pageY, 128, 128);
+            textBox(textboxText[1], event.pageX - 16, event.pageY, 288, 48);
             hoverElement[1].addEventListener('mousemove', textBoxMove);
         });
         hoverElement[1].addEventListener('mouseout', () => {
             textBoxDelete();
             hoverElement[1].removeEventListener('mousemove', textBoxMove);
+        });
+
+        //greenday
+        hoverElement[2] = document.getElementById('hover_element_gd'); 
+
+        hoverElement[2].addEventListener('mouseover', event => {
+            textBox(textboxText[2], event.pageX - 16, event.pageY, 104, 48);
+            hoverElement[2].addEventListener('mousemove', textBoxMove);
+        });
+        hoverElement[2].addEventListener('mouseout', () => {
+            textBoxDelete();
+            hoverElement[2].removeEventListener('mousemove', textBoxMove);
+        });
+
+        //prince
+        hoverElement[3] = document.getElementById('hover_element_pr'); 
+
+        hoverElement[3].addEventListener('mouseover', event => {
+            textBox(textboxText[3], event.pageX - 16, event.pageY, 80, 48);
+            hoverElement[3].addEventListener('mousemove', textBoxMove);
+        });
+        hoverElement[3].addEventListener('mouseout', () => {
+            textBoxDelete();
+            hoverElement[3].removeEventListener('mousemove', textBoxMove);
+        });
+
+        //femtanyl
+        hoverElement[4] = document.getElementById('hover_element_fem'); 
+
+        hoverElement[4].addEventListener('mouseover', event => {
+            textBox(textboxText[4], event.pageX - 16, event.pageY, 96, 48);
+            hoverElement[4].addEventListener('mousemove', textBoxMove);
+        });
+        hoverElement[4].addEventListener('mouseout', () => {
+            textBoxDelete();
+            hoverElement[4].removeEventListener('mousemove', textBoxMove);
+        });
+
+        //machine girl
+        hoverElement[5] = document.getElementById('hover_element_mg'); 
+
+        hoverElement[5].addEventListener('mouseover', event => {
+            textBox(textboxText[5], event.pageX - 16, event.pageY, 128, 48);
+            hoverElement[5].addEventListener('mousemove', textBoxMove);
+        });
+        hoverElement[5].addEventListener('mouseout', () => {
+            textBoxDelete();
+            hoverElement[5].removeEventListener('mousemove', textBoxMove);
+        });
+
+        //pidzama
+        hoverElement[6] = document.getElementById('hover_element_pp'); 
+
+        hoverElement[6].addEventListener('mouseover', event => {
+            textBox(textboxText[6], event.pageX - 16, event.pageY, 136, 48);
+            hoverElement[6].addEventListener('mousemove', textBoxMove);
+        });
+        hoverElement[6].addEventListener('mouseout', () => {
+            textBoxDelete();
+            hoverElement[6].removeEventListener('mousemove', textBoxMove);
+        });
+
+        //defektmuzgo
+        hoverElement[7] = document.getElementById('hover_element_dm'); 
+
+        hoverElement[7].addEventListener('mouseover', event => {
+            textBox(textboxText[7], event.pageX - 16, event.pageY, 128, 48);
+            hoverElement[7].addEventListener('mousemove', textBoxMove);
+        });
+        hoverElement[7].addEventListener('mouseout', () => {
+            textBoxDelete();
+            hoverElement[7].removeEventListener('mousemove', textBoxMove);
         });
 
     </script>

@@ -28,7 +28,7 @@ body {
 
 @font-face {
     font-family: "vga";
-    src: url("fonts/Px437_ACM_VGA_8x16.ttf") format("woff");
+    src: url("fonts/PxPlus_IBM_VGA_8x16.ttf") format("woff");
 }
 @font-face {
     font-family: "terminal";
