@@ -274,7 +274,9 @@
     height: 170px;"
     >
 
-        
+    <div>
+        <img id="cirno_gif" src="img/fumoanim.gif" style="pointer-events:none; width: 128px; z-index: 1000;" >
+    </div>
 
     </div>
 
@@ -298,6 +300,9 @@
     </footer>
 
     <script>
+
+        var cirno_anim = document.getElementById('cirno_gif'); 
+        var cirno_size = cirno_anim.style.width;
 
         var fr = 0;
         var imagesArray = [];
@@ -380,7 +385,7 @@
             bg.style.height = height + "px";
             bg.style.pointerEvents = "none";
             //bg.style.backgroundColor = "#080808";
-            bg.style.backgroundColor = "#000000";
+            bg.style.backgroundColor = "#080808";
 
             box.style.position = "absolute";
             box.style.left = x + "px";
@@ -423,13 +428,42 @@
             var mouseY = event.pageY + 1;
 
             if (obj_textbox.element) {
-                obj_textbox.element.style.left = mouseX + "px";
-                obj_textbox.element.style.top = mouseY + "px";
+                obj_textbox.element.style.left = mouseX - 32 + "px";
+                obj_textbox.element.style.top = mouseY - 8 + "px";
             }
             if (obj_textbox.bg) {
-                obj_textbox.bg.style.left = mouseX + 64 + "px";
-                obj_textbox.bg.style.top = mouseY + 16 + "px";
+                obj_textbox.bg.style.left = mouseX + 64 - 32 + "px";
+                obj_textbox.bg.style.top = mouseY + 16 - 8 + "px";
             }
+
+        }
+
+        const cirno = {
+            x: 0,
+            y: 0,
+            hsp: 10,
+            vsp: 10
+        }
+
+        function cirnoAnimate(size) {
+
+            var windowWidth = window.screen.width;
+            var windowHeight = document.documentElement.scrollHeight;
+
+            cirno_anim.style.position = "absolute";
+            cirno_anim.style.left = cirno.x + "px";
+            cirno_anim.style.top = cirno.y + "px";
+
+
+            if ((cirno.x < 0) || (cirno.x > windowWidth - parseInt(size) - 64)) {
+                cirno.hsp = -cirno.hsp;
+            }
+            if ((cirno.y < 0) || (cirno.y > windowHeight - parseInt(size) - 128)) {
+                cirno.vsp = -cirno.vsp;
+            }
+
+            cirno.x += cirno.hsp;
+            cirno.y += cirno.vsp;
 
         }
 
@@ -460,6 +494,9 @@
 
             }
 
+            //cirno anim
+            cirnoAnimate(cirno_size);
+
             window.requestAnimationFrame(loop);
 
         }
@@ -485,9 +522,9 @@
         var textboxText = [];
         textboxText[0] = 
         `
-        ====================
-        |   JIMI HENDRIX   |
-        ====================
+        ================
+        | JIMI HENDRIX |
+        ================
         `;
         textboxText[1] = 
         `
@@ -540,7 +577,7 @@
         hoverElement[0] = document.getElementById('hover_element_jimi'); 
 
         hoverElement[0].addEventListener('mouseover', event => {
-            textBox(textboxText[0], event.pageX - 16, event.pageY, 160, 48);
+            textBox(textboxText[0], event.pageX - 16, event.pageY, 128, 48);
             hoverElement[0].addEventListener('mousemove', textBoxMove);
         });
         hoverElement[0].addEventListener('mouseout', () => {
@@ -631,6 +668,8 @@
             textBoxDelete();
             hoverElement[7].removeEventListener('mousemove', textBoxMove);
         });
+
+        
 
     </script>
 
