@@ -55,6 +55,26 @@ body {
     src: url("fonts/Dobra-BlackItalic.ttf") format("woff");
 }
 
+
+#window {
+    position: absolute;
+    z-index: 9;
+    text-align: center;
+}
+
+
+#window_title {
+    padding: 10px;
+    cursor: move;
+    z-index: 10;
+}
+
+#window_container {
+    position: absolute;
+    z-index: 9;
+    text-align: center;
+}
+
 :root {
     --gradient-colors: repeating-linear-gradient(90deg, indigo, rebeccapurple, orchid, hotpink, orchid, rebeccapurple, indigo);
 }
