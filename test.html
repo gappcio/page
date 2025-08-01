@@ -4,468 +4,92 @@
         <meta charset="utf-8"/>
         <title>stupid</title>
         <link rel="stylesheet" href="style.css">
+        <script src="windows.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="https://unpkg.com/xp.css" />
     </head>
-<body style="background-color:#080808;">
+<body style="background-image: url('new/window/bliss.png'); background-size: 100% 100%; background-attachment: fixed; background-repeat: no-repeat;" onload="startTime()">
     <header>
 
     </header>
 
     <main>
   
-        <div id="window" style=  "
-        top: 254px;
-        left: 181px;
-        width: 460px;
-        height: 100px;">
-            <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
-            <div id="window_title"><img src="new/window/titlebar.png" style="width:80px; height: 20px;"></div>
-            <p>Move</p>
-            <p>this</p>
-            <p>DIV</p>
-          </div>
+    <div class="window" id="window_welcome" style="user-select: none; position: absolute; top: 100px; width: 300px">
+      <div class="title-bar" id="window_welcome_header">
+        <div class="title-bar-text" style="cursor:default;">
+          Welcome!
+        </div>
+
+        <div class="title-bar-controls" id="window_welcome_header_controls" onmousedown="event.stopPropagation()">
+          <button aria-label="Close" id="close_button" onclick="windowClose('window_welcome')"></button>
+        </div>
+
+      </div>
+      <div class="window-body">
+        <p>Hello, world!</p>
+        <section class="field-row" style="justify-content: flex-end">
+          <button>OK</button>
+          <button>Cancel</button>
+        </section>
+      </div>
+    </div>
+    <script>dragElement(document.getElementById("window_welcome"));</script>
+
+    <!--TASKBAR-->
+    <div>
+        <img id="taskbar" src="new/window/taskbar.png" style="user-select: none; position:fixed; width: 100%; height: 28px; left: 0px; bottom: 0;">
+        <script>document.getElementById("taskbar").ondragstart = function(){return false;}</script>
+        <!--CLOCK-->
+        <p style="user-select: none; font-family: Tahoma; color: white; position:fixed; width: 100%; height: 28px; right: 20px; bottom: -19px; text-align: right; text-shadow: 1px 1px 2px #0a0a0a;" id="clock"></p>
+        <!--START BUTTON-->
+        <img src="new/window/startbutton_default.png" id="startbutton" style="user-select: none; position:fixed; height: 28px; left: 0px; bottom: 0;">
+    </div>
+
+    
+    
 
     </main>
 
     <footer>
-    <a class="topbar">==============================================================================================================</a>
 
-    <div>
-        <a class="moneh" href="https://ko-fi.com/gappcio" style="color: #00afff; display: flex; align-items:center; text-decoration:none"><img src="img/kofi.png">&nbsp;Support Me on Ko-fi!</a>
-    </div>
-
-    <br>
-
-    <div>
-        <a class="moneh" style="color: #ff5f00; display: flex; align-items:center;"><img src="img/xmr.png">&nbsp;47dbpEKHDYogtvhcukFKGkMSAPSLVrRWXSKvSXay8VLQjD5F5eMrpigbzJFskvZVkDWouSY2yfCxuKVAt1peS6GHUmGW4CC</a>
-    </div>
     </footer>
 
     <script>
-        // WINDOWS
-        dragElement(document.getElementById("window"));
-
-        function dragElement(elmnt) {
-            var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-            if (document.getElementById(elmnt.id + "_title")) {
-                // if present, the header is where you move the DIV from:
-                document.getElementById(elmnt.id + "_title").onmousedown = dragMouseDown;
-            } else {
-                // otherwise, move the DIV from anywhere inside the DIV:
-                elmnt.onmousedown = dragMouseDown;
-            }
-
-            function dragMouseDown(e) {
-                e = e || window.event;
-                e.preventDefault();
-                // get the mouse cursor position at startup:
-                pos3 = e.clientX;
-                pos4 = e.clientY;
-                document.onmouseup = closeDragElement;
-                // call a function whenever the cursor moves:
-                document.onmousemove = elementDrag;
-            }
-
-            function elementDrag(e) {
-                e = e || window.event;
-                e.preventDefault();
-                // calculate the new cursor position:
-                pos1 = pos3 - e.clientX;
-                pos2 = pos4 - e.clientY;
-                pos3 = e.clientX;
-                pos4 = e.clientY;
-                // set the element's new position:
-                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-            }
-
-            function closeDragElement() {
-                // stop moving when mouse button is released:
-                document.onmouseup = null;
-                document.onmousemove = null;
-            }
+        // Start button
+        var start_button = document.getElementById("startbutton");
+        
+        if (start_button) {
+            start_button.ondragstart = function(){return false;}
+            start_button.onmouseenter = function(){start_button.src = "new/window/startbutton_hover.png";}
+            start_button.onmouseleave = function(){start_button.src = "new/window/startbutton_default.png";}
+            start_button.onmouseup = function(){start_button.src = "new/window/startbutton_default.png";}
+            start_button.onmousedown = function(){start_button.src = "new/window/startbutton_click.png";}
         }
-    </script>
-
-    <script>
-
-        var cirno_anim = document.getElementById('cirno_gif'); 
-        var cirno_size = cirno_anim.style.width;
-
-        var fr = 0;
-        var imagesArray = [];
-
-        function imageShow(img, x, y) {
-            
-            let image = document.createElement("img");
-
-            image.style.position = "absolute";
-            image.style.left = x + "px";
-            image.style.top = y + "px";
-            image.style.width = "20px";
-            image.style.height = "20px";
-            image.style.opacity = 1;
-            image.src = img;
-            image.style.pointerEvents = "none";
-            image.style.zIndex = 1000;
-
-            document.body.appendChild(image);
-
-            const randomFloat = (min, max) => Math.random() * (max - min) + min;
-
-            const image_obj = {
-                image: image,
-                x:image.style.left,
-                y:image.style.top,
-                hsp: randomFloat(-3, 3),
-                vsp: randomFloat(-4, 0.5),
-                scale: 1,
-                alpha:image.style.opacity
-            };
-
-            imagesArray.push(image_obj);
-
-        }
-
-        function animate(obj) {
-
-            if (obj == null) return;
-
-            obj.scale += 0.0005;
-            obj.x = parseFloat(obj.x) + obj.hsp + "px";
-            obj.y = parseFloat(obj.y) + obj.vsp + "px";
-            obj.image.style.width = (parseFloat(obj.image.style.width) * obj.scale) + "px";
-            obj.image.style.height = (parseFloat(obj.image.style.height) * obj.scale) + "px";
-
-            obj.image.style.transformOrigin = "center";
-            obj.image.style.left = obj.x;
-            obj.image.style.top = obj.y;
-
-            console.log(obj.scale)
-
-            if (obj.scale > 1.06) {
-                obj.image.style.opacity -= 0.1;
-            }
-
-        }
-
-
-        const obj_textbox = {
-            element: null,
-            text: "",
-            x: 0,
-            y: 0,
-            width: 0,
-            height: 0,
-            bg: null
-        };
-
-        function textBox(text, x, y, width, height) {
-            
-            let box = document.createElement("div");
-
-            let bg = document.createElement("div");
-
-            bg.style.position = "absolute";
-            bg.style.left = x + "px";
-            bg.style.top = y + "px";
-            bg.style.width = width + "px";
-            bg.style.height = height + "px";
-            bg.style.pointerEvents = "none";
-            //bg.style.backgroundColor = "#080808";
-            bg.style.backgroundColor = "#080808";
-
-            box.style.position = "absolute";
-            box.style.left = x + "px";
-            box.style.top = y + "px";
-            box.style.width = width + "px";
-            box.style.height = height + "px";
-            box.style.pointerEvents = "none";
-            box.className = "topbar";
-            box.textContent = text;
-
-            obj_textbox.element = box;
-            obj_textbox.text = text;
-            obj_textbox.x = x;
-            obj_textbox.y = y;
-            obj_textbox.width = width;
-            obj_textbox.height = height;
-            obj_textbox.bg = bg;
-
-            document.body.appendChild(bg);
-            document.body.appendChild(box);
-            
-
-        }
-
-        function textBoxDelete() {
-            obj_textbox.text = "";
-            if (obj_textbox.element) {
-
-                obj_textbox.element.remove();
-                obj_textbox.element = null;
-                obj_textbox.bg.remove();
-                obj_textbox.bg = null;
-
-            }
-        }
-
-        function textBoxMove(event) {
-
-            var mouseX = event.pageX + 1;
-            var mouseY = event.pageY + 1;
-
-            if (obj_textbox.element) {
-                obj_textbox.element.style.left = mouseX - 32 + "px";
-                obj_textbox.element.style.top = mouseY - 8 + "px";
-            }
-            if (obj_textbox.bg) {
-                obj_textbox.bg.style.left = mouseX + 64 - 32 + "px";
-                obj_textbox.bg.style.top = mouseY + 16 - 8 + "px";
-            }
-
-        }
-
-        const cirno = {
-            x: 0,
-            y: 0,
-            hsp: 10,
-            vsp: 10
-        }
-
-        function cirnoAnimate(size) {
-
-            var windowWidth = window.screen.width;
-            var windowHeight = document.documentElement.scrollHeight;
-
-            cirno_anim.style.position = "absolute";
-            cirno_anim.style.left = cirno.x + "px";
-            cirno_anim.style.top = cirno.y + "px";
-
-
-            if ((cirno.x < 0) || (cirno.x > windowWidth - parseInt(size) - 64)) {
-                cirno.hsp = -cirno.hsp;
-            }
-            if ((cirno.y < 0) || (cirno.y > windowHeight - parseInt(size) - 128)) {
-                cirno.vsp = -cirno.vsp;
-            }
-
-            cirno.x += cirno.hsp;
-            cirno.y += cirno.vsp;
-
-        }
-
-        var loop = function() {
-
-            if (imagesArray.length > 0) {
-
-                for (var i = 0; i < imagesArray.length; ++i) {
-
-                    animate(imagesArray[i], 0);
-
-                    if (imagesArray[i].image.style.opacity <= 0) {
-
-                        imagesArray[i].image.remove();
-                        delete imagesArray[i];
-                        imagesArray[i] = null;
-                        imagesArray.splice(i, 1); 
-
-                    }
-
-                }
-
-            }
-
-            if (obj_textbox.text != "") {
-
-                textBoxMove(obj_textbox, obj_textbox.event);
-
-            }
-
-            //cirno anim
-            cirnoAnimate(cirno_size);
-
-            window.requestAnimationFrame(loop);
-
-        }
-
-        setInterval(loop(), 16);
-
-        var ultrakillText = document.getElementById('ultrakill_text'); 
-        ultrakillText.addEventListener('click', () => {
-            imageShow("img/parry.png", 800, 910)
-        }, false);
-
-        var tfText = document.getElementById('tf2_text'); 
-        tfText.addEventListener('click', () => {
-            imageShow("img/buff.png", 800, 1010)
-        }, false);
-
-        var DEText = document.getElementById('DE_text'); 
-        DEText.addEventListener('click', () => {
-            imageShow("img/disco.png", 800, 970)
-        }, false);
-
-
-        var textboxText = [];
-        textboxText[0] = 
-        `
-        ================
-        | JIMI HENDRIX |
-        ================
-        `;
-        textboxText[1] = 
-        `
-        ====================================
-        | KING GIZZARD & THE LIZARD WIZARD |
-        ====================================
-        `;
-        textboxText[2] = 
-        `
-        =============
-        | GREEN DAY |
-        =============
-        `;
-        textboxText[3] = 
-        `
-        ==========
-        | PRINCE |
-        ==========
-        `;
-        textboxText[4] = 
-        `
-        ============
-        | FEMTANYL |
-        ============
-        `;
-        textboxText[5] = 
-        `
-        ================
-        | MACHINE GIRL |
-        ================
-        `;
-        textboxText[6] = 
-        `
-        =================
-        | PIDŻAMA PORNO |
-        =================
-        `;
-        textboxText[7] = 
-        `
-        ================
-        | DEFEKT MUZGÓ |
-        ================
-        `;
-
-        var hoverElement = [];
-
-        //idk why loop here doesnt work
-
-        //jimi
-        hoverElement[0] = document.getElementById('hover_element_jimi'); 
-
-        hoverElement[0].addEventListener('mouseover', event => {
-            textBox(textboxText[0], event.pageX - 16, event.pageY, 128, 48);
-            hoverElement[0].addEventListener('mousemove', textBoxMove);
-        });
-        hoverElement[0].addEventListener('mouseout', () => {
-            textBoxDelete();
-            hoverElement[0].removeEventListener('mousemove', textBoxMove);
-        });
-
-        //king gizzard
-        hoverElement[1] = document.getElementById('hover_element_kg'); 
-
-        hoverElement[1].addEventListener('mouseover', event => {
-            textBox(textboxText[1], event.pageX - 16, event.pageY, 288, 48);
-            hoverElement[1].addEventListener('mousemove', textBoxMove);
-        });
-        hoverElement[1].addEventListener('mouseout', () => {
-            textBoxDelete();
-            hoverElement[1].removeEventListener('mousemove', textBoxMove);
-        });
-
-        //greenday
-        hoverElement[2] = document.getElementById('hover_element_gd'); 
-
-        hoverElement[2].addEventListener('mouseover', event => {
-            textBox(textboxText[2], event.pageX - 16, event.pageY, 104, 48);
-            hoverElement[2].addEventListener('mousemove', textBoxMove);
-        });
-        hoverElement[2].addEventListener('mouseout', () => {
-            textBoxDelete();
-            hoverElement[2].removeEventListener('mousemove', textBoxMove);
-        });
-
-        //prince
-        hoverElement[3] = document.getElementById('hover_element_pr'); 
-
-        hoverElement[3].addEventListener('mouseover', event => {
-            textBox(textboxText[3], event.pageX - 16, event.pageY, 80, 48);
-            hoverElement[3].addEventListener('mousemove', textBoxMove);
-        });
-        hoverElement[3].addEventListener('mouseout', () => {
-            textBoxDelete();
-            hoverElement[3].removeEventListener('mousemove', textBoxMove);
-        });
-
-        //femtanyl
-        hoverElement[4] = document.getElementById('hover_element_fem'); 
-
-        hoverElement[4].addEventListener('mouseover', event => {
-            textBox(textboxText[4], event.pageX - 16, event.pageY, 96, 48);
-            hoverElement[4].addEventListener('mousemove', textBoxMove);
-        });
-        hoverElement[4].addEventListener('mouseout', () => {
-            textBoxDelete();
-            hoverElement[4].removeEventListener('mousemove', textBoxMove);
-        });
-
-        //machine girl
-        hoverElement[5] = document.getElementById('hover_element_mg'); 
-
-        hoverElement[5].addEventListener('mouseover', event => {
-            textBox(textboxText[5], event.pageX - 16, event.pageY, 128, 48);
-            hoverElement[5].addEventListener('mousemove', textBoxMove);
-        });
-        hoverElement[5].addEventListener('mouseout', () => {
-            textBoxDelete();
-            hoverElement[5].removeEventListener('mousemove', textBoxMove);
-        });
-
-        //pidzama
-        hoverElement[6] = document.getElementById('hover_element_pp'); 
-
-        hoverElement[6].addEventListener('mouseover', event => {
-            textBox(textboxText[6], event.pageX - 16, event.pageY, 136, 48);
-            hoverElement[6].addEventListener('mousemove', textBoxMove);
-        });
-        hoverElement[6].addEventListener('mouseout', () => {
-            textBoxDelete();
-            hoverElement[6].removeEventListener('mousemove', textBoxMove);
-        });
-
-        //defektmuzgo
-        hoverElement[7] = document.getElementById('hover_element_dm'); 
-
-        hoverElement[7].addEventListener('mouseover', event => {
-            textBox(textboxText[7], event.pageX - 16, event.pageY, 128, 48);
-            hoverElement[7].addEventListener('mousemove', textBoxMove);
-        });
-        hoverElement[7].addEventListener('mouseout', () => {
-            textBoxDelete();
-            hoverElement[7].removeEventListener('mousemove', textBoxMove);
-        });
 
         
+        // Close window
+        function windowClose(window_id) {
+            var window = document.getElementById(window_id);
+            window.remove();
+        }
 
     </script>
-
-
     <script>
+        function startTime() {
+                const today = new Date();
+                let h = today.getHours();
+                let m = today.getMinutes();
+                let s = today.getSeconds();
+                m = checkTime(m);
+                s = checkTime(s);
+                document.getElementById('clock').innerHTML =  h + ":" + m + ":" + s;
+                setTimeout(startTime, 1000);
+            }
 
-        //document.body.style.cursor = 'url("img/cursor_default.png") 0 0, auto';
-
+            function checkTime(i) {
+                if (i < 10) {i = "0" + i};
+                    return i;
+            }
     </script>
-
 </body>
 </html>
