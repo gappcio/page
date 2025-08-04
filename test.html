@@ -14,8 +14,37 @@
 
     <main>
 
-    <script>var windows_array = [];</script>
+    <script>
+      var windows_array = [];
+      var file_array = [];
+      var tabs_array = [];
+    </script>
   
+
+    <!--DESKTOP FILES-->
+
+    <!--HOME-->
+    <div id="file_home" style="position: absolute; top: 32px; left: 32px;">
+      <img id="file_home_img" src="new/files/pc.png" class="file" style="display: block; margin: auto;">
+      <div id="file_home_name" class="file-name" style="top: -4px;">
+        <p style="font-family: Tahoma; font-size: 12px; color: white; text-shadow: 1px 1px 2px #0a0a0a; text-align: center;">
+          Welcome
+        </p>
+      </div>
+    </div>
+    <script>file_array.push([document.getElementById("file_home"), document.getElementById("file_home_name"), document.getElementById("file_home_img"), 0]);</script>
+
+    <!--INFO-->
+    <div id="file_info" style="position: absolute; top: 112px; left: 40px;">
+      <img id="file_info_img" src="new/files/info2.png" class="file" style="display: block; margin: auto;">
+      <div id="file_info_name" class="file-name" style="top: -4px;">
+        <p style="font-family: Tahoma; font-size: 12px; color: white; text-shadow: 1px 1px 2px #0a0a0a; text-align: center;">
+          Info
+        </p>
+      </div>
+    </div>
+    <script>file_array.push([document.getElementById("file_info"), document.getElementById("file_info_name"), document.getElementById("file_info_img"), 0]);</script>
+
     <!--WELCOME WINDOW-->
     <div class="window" id="window_welcome" style="user-select: none; position: absolute; top: 100px; width: 300px">
       <div class="title-bar" id="window_welcome_header">
@@ -78,6 +107,20 @@
     </div>
     <script>dragElement(document.getElementById("window_console"));windows_array.push(document.getElementById("window_console"))</script>
 
+    <!--PAINT WINDOW-->
+    <div class="window" id="window_paint" style="user-select: none; position: absolute;">
+        <div class="title-bar" id="window_paint_header">
+            <div class="title-bar-text">untitled - Paint</div>
+            <div class="title-bar-controls" id="window_paint_header_controls" onmousedown="event.stopPropagation()">
+            <button aria-label="Close" id="close_button" onclick="windowClose('window_paint')"></button>
+            </div>
+        </div>
+        <div class="window-body">
+          <img src="img/additivecolor.png">
+        </div>
+    </div>
+    <script>dragElement(document.getElementById("window_paint"));windows_array.push(document.getElementById("window_paint"))</script>
+
     <!--TASKBAR-->
     <div>
         <img id="taskbar" src="new/window/taskbar.png" style="user-select: none; position:fixed; width: 100%; height: 28px; left: 0px; bottom: 0;">
@@ -88,8 +131,10 @@
         <img src="new/window/startbutton_default.png" id="startbutton" style="user-select: none; position:fixed; height: 28px; left: 0px; bottom: 0;">
     </div>
 
-    
-    
+    <!--TASKBAR TABS-->
+    <div>
+      
+    </div>
 
     </main>
 
@@ -98,6 +143,7 @@
     </footer>
 
     <script>
+        
 
         // Z index ordering _ready
         for(var i = 0; i <= windows_array.length - 1; i++) {
@@ -111,7 +157,7 @@
             start_button.ondragstart = function(){return false;}
             start_button.onmouseenter = function(){start_button.src = "new/window/startbutton_hover.png";}
             start_button.onmouseleave = function(){start_button.src = "new/window/startbutton_default.png";}
-            start_button.onmouseup = function(){start_button.src = "new/window/startbutton_default.png";}
+            start_button.onmouseup = function(){start_button.src = "new/window/startbutton_hover.png";}
             start_button.onmousedown = function(){start_button.src = "new/window/startbutton_click.png";}
         }
 
@@ -126,12 +172,54 @@
             item.style.zIndex = index;
         }
 
+        // Window focus
         function windowFocus(window) {
 
             for(var i = 0; i <= windows_array.length - 1; i++) {
                 windows_array[i].style.zIndex = 0;
             }
-            if (window) window.style.zIndex = 1;
+            if (window) window.style.zIndex += 1;
+
+        }
+
+        // Select file
+        function fileFocus(file, img) {
+
+            for(var i = 0; i <= file_array.length - 1; i++) {
+                file_array[i][1].style.backgroundColor = "#00000000";
+                file_array[i][2].style.opacity = "100%";
+                file_array[i][3] = 0;
+
+            }
+            if (file){
+                file.style.backgroundColor = "#0004ff";
+                img.style.opacity = "70%";
+            }
+        }
+
+        // Click file
+        function fileClick(file) {
+
+            switch(file.id) {
+                case "file_home":
+                    console.log("a");
+                break;
+            }
+        }
+          
+        // Unclick
+        window.onclick = function(){fileFocus(null);}
+        
+        // Tabs controller
+        const obj_taskbar = {
+            element: null,
+            x: 0,
+            y: 0
+        };
+
+        function create_tab(type) {
+
+            //let box = document.createElement("div");
 
         }
 
@@ -145,27 +233,54 @@
                     windows_array[i].onmousedown = function() {
                         windowFocus(windows_array[i]);
                     }
-
                 }
             }
 
+            // File select behavior
+            for (let i = 0; i <= file_array.length - 1; i++) {
+                if (file_array[i]) {
+                    file_array[i][0].onclick = function() {
+                        event.stopPropagation();
+
+                        if (file_array[i][3] == 0) {
+                          fileFocus(file_array[i][1], file_array[i][2]);
+                          file_array[i][3] = 1;
+                        } else {
+                          // File click behavior
+                          fileClick(file_array[i][0]);
+                        }
+
+                    }
+                }
+            }
+
+          // Taskbar tabs
+          for(var i = 0; i <= windows_array.length - 1; i++) {
+
+              if (windows_array[i]) {
+
+
+
+              }
+
+          }
 
             window.requestAnimationFrame(loop);
 
         }
 
-        loop()
+        loop();
 
     </script>
+
     <script>
         function startTime() {
                 const today = new Date();
                 let h = today.getHours();
                 let m = today.getMinutes();
-                let s = today.getSeconds();
+                h = checkTime(h);
                 m = checkTime(m);
-                s = checkTime(s);
-                document.getElementById('clock').innerHTML =  h + ":" + m + ":" + s;
+                document.getElementById('clock').innerHTML =  h + ":" + m;
                 setTimeout(startTime, 1000);
             }
 

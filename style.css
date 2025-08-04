@@ -56,6 +56,30 @@ body {
 }
 
 
+.file {
+    width: 32px;
+    height: 32px;
+    user-select: none;
+}
+
+.file-name {
+    position: relative;
+    user-select: none;
+}
+
+.file-h {
+    width: 32px;
+    height: 32px;
+    opacity: 0%;
+}
+
+.file-h:hover {
+    width: 32px;
+    height: 32px;
+    background-color: #ffffff;
+    opacity: 50%;
+}
+
 :root {
     --gradient-colors: repeating-linear-gradient(90deg, indigo, rebeccapurple, orchid, hotpink, orchid, rebeccapurple, indigo);
 }
