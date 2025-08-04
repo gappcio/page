@@ -8,12 +8,16 @@
         <link rel="stylesheet" href="https://unpkg.com/xp.css"/>
     </head>
 <body style="background-image: url('new/window/bliss.png'); background-size: 100% 100%; background-attachment: fixed; background-repeat: no-repeat;" onload="startTime()">
+
     <header>
 
     </header>
 
+
+
     <main>
 
+    <!--CREATE ARRAYS-->
     <script>
       var windows_array = [];
       var file_array = [];
@@ -132,16 +136,20 @@
     </div>
 
     <!--TASKBAR TABS-->
-    <div>
-      
+    <div id="tab_welcome">
+      <img src="new/window/tab_default.png" style="user-select: none; position: fixed; height: 25px; left: 96px; bottom: 1px;">
     </div>
 
     </main>
+
+
 
     <footer>
 
     </footer>
 
+
+    <!--MAIN SCRIPTS-->
     <script>
         
 
@@ -168,6 +176,7 @@
             window.remove();
         }
 
+        // Set window z index
         function setIndex(item, index) {
             item.style.zIndex = index;
         }
@@ -273,6 +282,7 @@
 
     </script>
 
+    <!--CLOCK BEHAVIOR-->
     <script>
         function startTime() {
                 const today = new Date();
