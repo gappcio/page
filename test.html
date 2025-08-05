@@ -49,8 +49,12 @@
     </div>
     <script>file_array.push([document.getElementById("file_info"), document.getElementById("file_info_name"), document.getElementById("file_info_img"), 0]);</script>
 
+    
+
+
+
     <!--WELCOME WINDOW-->
-    <div class="window" id="window_welcome" style="user-select: none; position: absolute; top: 100px; width: 300px">
+    <div class="window" id="window_welcome" style="user-select: none; position: absolute; top: 100px; width: 300px; height: 90px; display: none;">
       <div class="title-bar" id="window_welcome_header">
         <div class="title-bar-text" style="cursor:default;">
           Welcome!
@@ -63,16 +67,15 @@
       </div>
       <div class="window-body">
         <p>Hello, world!</p>
-        <section class="field-row" style="justify-content: flex-end">
-          <button>OK</button>
-          <button>Cancel</button>
+        <section class="field-row" style="justify-content: center">
+          <button onclick="windowClose('window_welcome')">OK</button>
         </section>
       </div>
     </div>
     <script>dragElement(document.getElementById("window_welcome"));windows_array.push(document.getElementById("window_welcome"))</script>
 
     <!--TEST WINDOW-->
-    <div class="window" id="window_test" style="user-select: none; position: absolute; top: 200px; width: 300px">
+    <div class="window" id="window_test" style="user-select: none; position: absolute; top: 200px; width: 300px; height: 100px; display: none;">
       <div class="title-bar" id="window_test_header">
         <div class="title-bar-text" style="cursor:default;">
           Idk
@@ -94,7 +97,7 @@
     <script>dragElement(document.getElementById("window_test"));windows_array.push(document.getElementById("window_test"))</script>
 
     <!--CONSOLE WINDOW-->
-    <div class="window" id="window_console" style="user-select: none; position: absolute;">
+    <div class="window" id="window_console" style="user-select: none; position: absolute; display: none;">
         <div class="title-bar" id="window_console_header">
             <div class="title-bar-text">Command Prompt</div>
             <div class="title-bar-controls" id="window_console_header_controls" onmousedown="event.stopPropagation()">
@@ -112,7 +115,7 @@
     <script>dragElement(document.getElementById("window_console"));windows_array.push(document.getElementById("window_console"))</script>
 
     <!--PAINT WINDOW-->
-    <div class="window" id="window_paint" style="user-select: none; position: absolute;">
+    <div class="window" id="window_paint" style="user-select: none; position: absolute; display: none;">
         <div class="title-bar" id="window_paint_header">
             <div class="title-bar-text">untitled - Paint</div>
             <div class="title-bar-controls" id="window_paint_header_controls" onmousedown="event.stopPropagation()">
@@ -133,11 +136,6 @@
         <p style="user-select: none; font-family: Tahoma; color: white; position:fixed; width: 100%; height: 28px; right: 20px; bottom: -19px; text-align: right; text-shadow: 1px 1px 2px #0a0a0a;" id="clock"></p>
         <!--START BUTTON-->
         <img src="new/window/startbutton_default.png" id="startbutton" style="user-select: none; position:fixed; height: 28px; left: 0px; bottom: 0;">
-    </div>
-
-    <!--TASKBAR TABS-->
-    <div id="tab_welcome">
-      <img src="new/window/tab_default.png" style="user-select: none; position: fixed; height: 25px; left: 96px; bottom: 1px;">
     </div>
 
     </main>
@@ -170,10 +168,36 @@
         }
 
         
+        // Open window
+        function windowOpen(window_id) {
+            var _window = document.getElementById(window_id);
+
+            if (_window.style.display == "")
+                return;
+
+            _window.style.display = "";
+
+            var pageWidth = window.screen.width;
+            var pageHeight = document.documentElement.scrollHeight;
+
+            var windowWidth = parseFloat(_window.style.width);
+            var windowHeight = parseFloat(_window.style.height);
+
+            var nextpos = 0;
+
+            for (var i = 0; i < obj_taskbar.arr.length; i++) {
+                //nextpos = i;
+            }
+
+            _window.style.left = (pageWidth / 2) - (windowWidth / 2) + (nextpos * 64) + "px";
+            _window.style.top = (pageHeight / 2) - (windowHeight / 2) + (nextpos * 64) + "px";
+        }
+
         // Close window
         function windowClose(window_id) {
-            var window = document.getElementById(window_id);
-            window.remove();
+            var _window = document.getElementById(window_id);
+            _window.style.display = "none";
+            tabClose(window_id);
         }
 
         // Set window z index
@@ -211,7 +235,12 @@
 
             switch(file.id) {
                 case "file_home":
-                    console.log("a");
+                    tabOpen("tab_welcome", "Welcome", "new/files/pc.png", "window_welcome");
+                    windowOpen("window_welcome");
+                break;
+                case "file_info":
+                    tabOpen("tab_test", "Test", "new/files/info2.png", "window_test");
+                    windowOpen("window_test");
                 break;
             }
         }
@@ -221,16 +250,109 @@
         
         // Tabs controller
         const obj_taskbar = {
-            element: null,
-            x: 0,
-            y: 0
+            arr: []
         };
+        /*
+        create_tab("tab_welcome")
+    <div id="tab_welcome">
+      <img id="tab_welcome_tab" src="new/window/tab_default.png" style="user-select: none; position: fixed; left: 96px; bottom: 1px;">
 
-        function create_tab(type) {
-
-            //let box = document.createElement("div");
-
+      <img src="new/files/pc.png" class="file" style="user-select: none; position: fixed; left: 104px; bottom: 6px; width: 16px; height: 16px;">
+      <p style="user-select: none; font-family: Tahoma; color: white; position:fixed; width: 100%; height: 28px; left: 128px; bottom: -19px; text-shadow: 1px 1px 1px #0a0a0aaa;">Welcome</p>
+    </div>
+        function Tab(x, y, name, sprite, action){
+            this.x = x;
+            this.y = y;
+            this.name = name;
+            this.sprite = sprite;
+            this.action = action;
         }
+      */
+        function tabOpen(id, name, sprite, window_id) {
+
+
+            var _window = document.getElementById(window_id);
+            if (_window.style.display == "")
+                return;
+
+            let tab = document.createElement("div");
+            let tab_sprite = document.createElement("img");
+            let tab_icon = document.createElement("img");
+            let tab_text = document.createElement("p");
+
+            //let obj_tab = new Tab(0, 0, name, sprite, 0);
+
+            tab.id = id;
+            tab.style.userSelect = "none";
+            tab.style.position = "fixed";
+            tab.style.left = "96px";
+            tab.style.bottom = "1px";
+
+            tab_sprite.id = id + "_sprite";
+            tab_sprite.src = "new/window/tab_default.png";
+            tab_sprite.style.userSelect = "none";
+            tab_sprite.style.position = "absolute";
+            tab_sprite.style.left = "0px";
+            tab_sprite.style.bottom = "0px";
+
+            tab_icon.id = id + "_icon";
+            tab_icon.src = sprite;
+            tab_icon.style.userSelect = "none";
+            tab_icon.style.position = "absolute";
+            tab_icon.style.left = "8px";
+            tab_icon.style.bottom = "4px";
+            tab_icon.style.width = "16px";
+            tab_icon.style.height = "16px";
+
+            tab_text.id = id + "_text";
+            tab_text.style.userSelect = "none";
+            tab_text.style.fontFamily = "Tahoma";
+            tab_text.style.color = "white";
+            tab_text.style.textShadow = "1px 1px 1px #0a0a0aaa";
+            tab_text.style.position = "absolute";
+            tab_text.style.left = "32px";
+            tab_text.style.bottom = "-6px";
+            tab_text.textContent = name;
+
+
+            obj_taskbar.arr.push([tab, window_id, tab_sprite]);
+            document.body.appendChild(tab).appendChild(tab_sprite);
+            tab.appendChild(tab_icon);
+            tab.appendChild(tab_text);
+        }
+
+        function tabClose(window_id) {
+
+            for (let i = 0; i < obj_taskbar.arr.length; i++) {
+
+                if (obj_taskbar.arr[i][1] == window_id) {
+
+                    let tab = obj_taskbar.arr[i][0];
+                    if (tab) {
+                        document.body.removeChild(tab);
+                    }
+                    obj_taskbar.arr.splice(i, 1);
+                    break;
+
+                }
+
+            }
+            
+        }
+
+        // Create start windows and tabs
+
+        tabOpen("tab_welcome", "Welcome", "new/files/pc.png", "window_welcome");
+        windowOpen("window_welcome");
+
+        tabOpen("tab_info", "Info", "new/files/info2.png", "window_test");
+        windowOpen("window_test");
+
+        tabOpen("tab_welcome", "Terminal", "new/files/terminal.png", "window_console");
+        windowOpen("window_console");
+
+        tabOpen("tab_paint", "Paint", "new/files/paint.png", "window_paint");
+        windowOpen("window_paint");
 
         // Main loop
         var loop = function() {
@@ -264,12 +386,21 @@
             }
 
           // Taskbar tabs
-          for(var i = 0; i <= windows_array.length - 1; i++) {
+          for(var i = 0; i <= obj_taskbar.arr.length - 1; i++) {
 
-              if (windows_array[i]) {
+              if (obj_taskbar.arr[i][0]) {
+                  obj_taskbar.arr[i][0].style.left = 96 + (150 * i) + "px";
+              }
+          }
 
+          for(let i = 0; i <= obj_taskbar.arr.length - 1; i++) {
 
-
+              if (obj_taskbar.arr[i][0]) {
+                  obj_taskbar.arr[i][0].ondragstart = function(){return false;}
+                  obj_taskbar.arr[i][0].onmouseenter = function(){obj_taskbar.arr[i][2].src = "new/window/tab_hover.png"; console.log("a")}
+                  obj_taskbar.arr[i][0].onmouseleave = function(){obj_taskbar.arr[i][2].src = "new/window/tab_default.png";}
+                  obj_taskbar.arr[i][0].onmouseup = function(){obj_taskbar.arr[i][2].src = "new/window/tab_hover.png";}
+                  obj_taskbar.arr[i][0].onmousedown = function(){obj_taskbar.arr[i][2].src = "new/window/tab_click.png";windowFocus(document.getElementById(obj_taskbar.arr[i][1]));}
               }
 
           }
