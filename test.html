@@ -150,6 +150,10 @@
     <!--MAIN SCRIPTS-->
     <script>
         
+        // Tabs controller
+        const obj_taskbar = {
+            arr: []
+        };
 
         // Z index ordering _ready
         for(var i = 0; i <= windows_array.length - 1; i++) {
@@ -213,6 +217,22 @@
             }
             if (window) window.style.zIndex += 1;
 
+            for(let i = 0; i <= obj_taskbar.arr.length - 1; i++) {
+
+                if (obj_taskbar.arr[i][1] == window.id) {
+
+                    for (let j = 0; j <= obj_taskbar.arr.length - 1; j++) {
+
+                        obj_taskbar.arr[j][3] = 0;
+
+                    }
+
+                    obj_taskbar.arr[i][3] = 2;
+
+                }
+
+            }
+
         }
 
         // Select file
@@ -248,10 +268,7 @@
         // Unclick
         window.onclick = function(){fileFocus(null);}
         
-        // Tabs controller
-        const obj_taskbar = {
-            arr: []
-        };
+
         /*
         create_tab("tab_welcome")
     <div id="tab_welcome">
@@ -315,7 +332,7 @@
             tab_text.textContent = name;
 
 
-            obj_taskbar.arr.push([tab, window_id, tab_sprite]);
+            obj_taskbar.arr.push([tab, window_id, tab_sprite, 0]);
             document.body.appendChild(tab).appendChild(tab_sprite);
             tab.appendChild(tab_icon);
             tab.appendChild(tab_text);
@@ -391,17 +408,69 @@
               if (obj_taskbar.arr[i][0]) {
                   obj_taskbar.arr[i][0].style.left = 96 + (150 * i) + "px";
               }
+
           }
 
           for(let i = 0; i <= obj_taskbar.arr.length - 1; i++) {
 
+            /*
               if (obj_taskbar.arr[i][0]) {
                   obj_taskbar.arr[i][0].ondragstart = function(){return false;}
                   obj_taskbar.arr[i][0].onmouseenter = function(){obj_taskbar.arr[i][2].src = "new/window/tab_hover.png"; console.log("a")}
                   obj_taskbar.arr[i][0].onmouseleave = function(){obj_taskbar.arr[i][2].src = "new/window/tab_default.png";}
                   obj_taskbar.arr[i][0].onmouseup = function(){obj_taskbar.arr[i][2].src = "new/window/tab_hover.png";}
-                  obj_taskbar.arr[i][0].onmousedown = function(){obj_taskbar.arr[i][2].src = "new/window/tab_click.png";windowFocus(document.getElementById(obj_taskbar.arr[i][1]));}
+                  obj_taskbar.arr[i][0].onmousedown = function(){obj_taskbar.arr[i][2].src = "new/window/tab_click.png";}
+                  obj_taskbar.arr[i][0].onclick = function(){obj_taskbar.arr[i][2].src = "new/window/tab_click.png";windowFocus(document.getElementById(obj_taskbar.arr[i][1]));}
               }
+            */
+
+            if (obj_taskbar.arr[i]) {
+                
+                obj_taskbar.arr[i][0].onclick = function() {
+
+                    windowFocus(document.getElementById(obj_taskbar.arr[i][1]));
+                    for(let j = 0; j <= obj_taskbar.arr.length - 1; j++) {
+
+                        obj_taskbar.arr[j][3] = 0;
+
+                    }
+                    obj_taskbar.arr[i][3] = 3;
+                }
+
+                
+
+                obj_taskbar.arr[i][0].onmouseenter = function() {
+
+                    if (obj_taskbar.arr[i][3] == 0) obj_taskbar.arr[i][3] = 1;
+                    if (obj_taskbar.arr[i][3] == 2) obj_taskbar.arr[i][3] = 3;
+
+                }
+
+                obj_taskbar.arr[i][0].onmouseleave = function() {
+
+                    if (obj_taskbar.arr[i][3] == 1) obj_taskbar.arr[i][3] = 0;
+                    if (obj_taskbar.arr[i][3] == 3) obj_taskbar.arr[i][3] = 2;
+
+                }
+                
+                switch(obj_taskbar.arr[i][3]) {
+
+                    case 0:
+                        obj_taskbar.arr[i][2].src = "new/window/tab_default.png";
+                    break;
+                    case 1:
+                        obj_taskbar.arr[i][2].src = "new/window/tab_hover.png";
+                    break;
+                    case 2:
+                        obj_taskbar.arr[i][2].src = "new/window/tab_click.png";
+                    break;
+                    case 3:
+                        obj_taskbar.arr[i][2].src = "new/window/tab_click_hover.png";
+                    break;
+
+                }
+
+            }
 
           }
 
