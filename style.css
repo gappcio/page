@@ -685,6 +685,8 @@ anim::before {
 .jitter span:nth-child(10) { --i: 10; animation-delay: calc(0.02s * var(--i)); }
 .jitter span:nth-child(11) { --i: 11; animation-delay: calc(0.01s * var(--i)); }
 
+
+
 /*
         ...............................''''''''''',,,,,,,,,,;;;;;;;;;;:::::::::::::::::cccccllllllccllllllllloooooooooodddddddddddddxxxxxxxxxxkkxxxkkkkkkkkkkkOOOOOOOOOO0000000000KKKKKKKKKXXXXXXXXXXXXXKKKKKKKKKKKKKKKKKKK0KKKKK0Okoc;;;,,,,,,,,,,;;;::cx0KXNXNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNXXXKKK000000OOO
            ............................''''''''''',,,,,,,,,,;;;;;;;;;;;::::::::::::::::ccccccllllllclllllllllooooooooooddddddddddddxxxxxxxxxxxkkxxkkkkkkkkkkkOOOOOOOOO0000OOO0000KKKKKKKKKKKXXXXXXXXXKKKKKKKKKKKKKKKKKK0K0000OO0Oxo:;,,,,'''''''',,,,,;;::oOXNNNNNNNNNNNNNNNNNNNWWWWNNNNNNNNXXKKKK000000OOOO

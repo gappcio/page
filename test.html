@@ -27,74 +27,97 @@
 
     <!--DESKTOP FILES-->
 
-    <!--HOME-->
-    <div id="file_home" style="position: absolute; top: 32px; left: 32px;">
-      <img id="file_home_img" src="new/files/pc.png" class="file" style="display: block; margin: auto;">
-      <div id="file_home_name" class="file-name" style="top: -4px;">
+    <!--HI-->
+    <div id="file_hi" style="position: absolute; top: 32px; left: 32px;">
+      <img id="file_hi_img" src="new/files/script.png" class="file" style="display: block; margin: auto;">
+      <div id="file_hi_name" class="file-name" style="top: -4px;">
         <p style="font-family: Tahoma; font-size: 12px; color: white; text-shadow: 1px 1px 2px #0a0a0a; text-align: center;">
-          Welcome
+          hi
         </p>
       </div>
     </div>
-    <script>file_array.push([document.getElementById("file_home"), document.getElementById("file_home_name"), document.getElementById("file_home_img"), 0]);</script>
+    <script>file_array.push([document.getElementById("file_hi"), document.getElementById("file_hi_name"), document.getElementById("file_hi_img"), 0]);</script>
 
     <!--INFO-->
-    <div id="file_info" style="position: absolute; top: 112px; left: 40px;">
-      <img id="file_info_img" src="new/files/info2.png" class="file" style="display: block; margin: auto;">
-      <div id="file_info_name" class="file-name" style="top: -4px;">
+    <div id="file_pageinfo" style="position: absolute; top: 112px; left: 32px;">
+      <img id="file_pageinfo_img" src="new/files/notepad.png" class="file" style="display: block; margin: auto;">
+      <div id="file_pageinfo_name" class="file-name" style="top: -4px;">
         <p style="font-family: Tahoma; font-size: 12px; color: white; text-shadow: 1px 1px 2px #0a0a0a; text-align: center;">
           Info
         </p>
       </div>
     </div>
-    <script>file_array.push([document.getElementById("file_info"), document.getElementById("file_info_name"), document.getElementById("file_info_img"), 0]);</script>
+    <script>file_array.push([document.getElementById("file_pageinfo"), document.getElementById("file_pageinfo_name"), document.getElementById("file_pageinfo_img"), 0]);</script>
 
-    
+    <!--MAINSCR-->
+    <div id="file_mainscr" style="position: absolute; top: 192px; left: 28px;">
+      <img id="file_mainscr_img" src="new/files/pic.png" class="file" style="display: block; margin: auto;">
+      <div id="file_mainscr_name" class="file-name" style="top: -4px;">
+        <p style="font-family: Tahoma; font-size: 12px; color: white; text-shadow: 1px 1px 2px #0a0a0a; text-align: center;">
+          welcome
+        </p>
+      </div>
+    </div>
+    <script>file_array.push([document.getElementById("file_mainscr"), document.getElementById("file_mainscr_name"), document.getElementById("file_mainscr_img"), 0]);</script>
 
 
-
-    <!--WELCOME WINDOW-->
-    <div class="window" id="window_welcome" style="user-select: none; position: absolute; top: 100px; width: 300px; height: 90px; display: none;">
-      <div class="title-bar" id="window_welcome_header">
+    <!--WINDOWS-->
+    <!--HEY WINDOW-->
+    <div class="window" id="window_hi" style="user-select: none; position: absolute; top: 100px; width: 140px; height: 90px; display: none;">
+      <div class="title-bar" id="window_hi_header">
         <div class="title-bar-text" style="cursor:default;">
-          Welcome!
+          hiiii
         </div>
 
-        <div class="title-bar-controls" id="window_welcome_header_controls" onmousedown="event.stopPropagation()">
-          <button aria-label="Close" id="close_button" onclick="windowClose('window_welcome')"></button>
+        <div class="title-bar-controls" id="window_hi_header_controls" onmousedown="event.stopPropagation()">
+          <button aria-label="Close" id="close_button" onclick="windowClose('window_hi')"></button>
         </div>
 
       </div>
       <div class="window-body">
-        <p>Hello, world!</p>
+        <p>hey hey hey hiiiii hi :33</p>
         <section class="field-row" style="justify-content: center">
-          <button onclick="windowClose('window_welcome')">OK</button>
+          <button onclick="windowClose('window_hi')">OK</button>
         </section>
       </div>
     </div>
-    <script>dragElement(document.getElementById("window_welcome"));windows_array.push(document.getElementById("window_welcome"))</script>
+    <script>dragElement(document.getElementById("window_hi"));windows_array.push(document.getElementById("window_hi"))</script>
 
-    <!--TEST WINDOW-->
-    <div class="window" id="window_test" style="user-select: none; position: absolute; top: 200px; width: 300px; height: 100px; display: none;">
-      <div class="title-bar" id="window_test_header">
+
+    <!--INFO WINDOW-->
+    <div class="window" id="window_pageinfo" style="user-select: none; position: absolute; top: 200px; width: 535px; height: 200px; display: none; background-color: white;">
+      <div class="title-bar" id="window_pageinfo_header">
         <div class="title-bar-text" style="cursor:default;">
-          Idk
+          Page info
         </div>
 
-        <div class="title-bar-controls" id="window_test_header_controls" onmousedown="event.stopPropagation()">
-          <button aria-label="Close" id="close_button" onclick="windowClose('window_test')"></button>
+        <div class="title-bar-controls" id="window_pageinfo_header_controls" onmousedown="event.stopPropagation()">
+          <button aria-label="Close" id="close_button" onclick="windowClose('window_pageinfo')"></button>
         </div>
 
       </div>
-      <div class="window-body">
-        <p>Lorem ipsum sraken pierdaken</p>
-        <section class="field-row" style="justify-content: flex-end">
-          <button>OK</button>
-          <button>Cancel</button>
-        </section>
+      <div class="window-body" style="background-color: white; margin-right: 30px;">
+        <a class="plain" style="color: #000000; font-size: 12px; font-family: Lucida Console;">
+            <div><span class="jitter" style="font-family: Lucida Console; color:#000000; font-size: 12px;"><span>w</span><span>a</span><span>r</span><span>n</span><span>i</span><span>n</span><span>g</span><span>:</span></span></div>
+            this website contains
+            <span class="swear" style="font-size: 12px; font-family: Lucida Console; color:#000000"><span data-letter="s"> </span><span data-letter="w"> </span><span data-letter="e"> </span><span data-letter="a"> </span><span data-letter="r"> </span><span data-letter="i"> </span><span data-letter="n"> </span><span data-letter="g"> </span></span>
+            and talking about everything including <span class="big" style="font-family: Lucida Console; color:#000000">sex</span>, <span class="drunk" style="font-family: Lucida Console;"><span>a</span><span>l</span><span>c</span><span>o</span><span>h</span><span>o</span><span>l</span></span>, <span class="trip" style="font-family: Lucida Console;">drugs</span> and other stuff, just so u know<br><br>
+
+            <span style="font-size: 12px;">also, this site was only tested on <span style="color:#ff6600">Firefox</span> on 1920x1080 resolution and won't look good on mobile</span>
+            <br><br><br><br><br><br><br>
+        </a>
       </div>
+      <img src="new/window/scroll_bg_hor.png" style="user-select: false; position: absolute; top: 183px; left: 3px; width: 517px; height: 17px;">
+      <img src="new/window/scroll_bg_ver.png" style="user-select: false; position: absolute; top: 28px; left: 515px; width: 17px; height: 170px;">
+
+      <img src="new/window/scroll_left_disabled.png" style="user-select: false; position: absolute; top: 183px; left: 3px;">
+      <img src="new/window/scroll_right_disabled.png" style="user-select: false; position: absolute; top: 183px; left: 498px;">
+
+      <img src="new/window/scroll_up_disabled.png" style="user-select: false; position: absolute; top: 28px; left: 516px;">
+      <img src="new/window/scroll_down_disabled.png" style="user-select: false; position: absolute; top: 167px; left: 516px;">
     </div>
-    <script>dragElement(document.getElementById("window_test"));windows_array.push(document.getElementById("window_test"))</script>
+    <script>dragElement(document.getElementById("window_pageinfo"));windows_array.push(document.getElementById("window_pageinfo"))</script>
+
 
     <!--CONSOLE WINDOW-->
     <div class="window" id="window_console" style="user-select: none; position: absolute; display: none;">
@@ -114,19 +137,20 @@
     </div>
     <script>dragElement(document.getElementById("window_console"));windows_array.push(document.getElementById("window_console"))</script>
 
-    <!--PAINT WINDOW-->
-    <div class="window" id="window_paint" style="user-select: none; position: absolute; display: none;">
-        <div class="title-bar" id="window_paint_header">
+    
+    <!--MAINSCR WINDOW-->
+    <div class="window" id="window_mainscr" style="user-select: none; position: absolute; display: none;">
+        <div class="title-bar" id="window_mainscr_header">
             <div class="title-bar-text">untitled - Paint</div>
-            <div class="title-bar-controls" id="window_paint_header_controls" onmousedown="event.stopPropagation()">
-            <button aria-label="Close" id="close_button" onclick="windowClose('window_paint')"></button>
+            <div class="title-bar-controls" id="window_mainscr_header_controls" onmousedown="event.stopPropagation()">
+            <button aria-label="Close" id="close_button" onclick="windowClose('window_mainscr')"></button>
             </div>
         </div>
         <div class="window-body">
           <img src="img/additivecolor.png">
         </div>
     </div>
-    <script>dragElement(document.getElementById("window_paint"));windows_array.push(document.getElementById("window_paint"))</script>
+    <script>dragElement(document.getElementById("window_mainscr"));windows_array.push(document.getElementById("window_mainscr"))</script>
 
     <!--TASKBAR-->
     <div>
@@ -173,7 +197,7 @@
 
         
         // Open window
-        function windowOpen(window_id) {
+        function windowOpen(window_id, position) {
             var _window = document.getElementById(window_id);
 
             if (_window.style.display == "")
@@ -193,8 +217,17 @@
                 //nextpos = i;
             }
 
-            _window.style.left = (pageWidth / 2) - (windowWidth / 2) + (nextpos * 64) + "px";
-            _window.style.top = (pageHeight / 2) - (windowHeight / 2) + (nextpos * 64) + "px";
+            if (!position) {
+
+                _window.style.left = (pageWidth / 2) - (windowWidth / 2) + (nextpos * 64) + "px";
+                _window.style.top = (pageHeight / 2) - (windowHeight / 2) + (nextpos * 64) + "px";
+
+            } else {
+
+                _window.style.left = position[0] + "px";
+                _window.style.top = position[1] + "px";
+
+            }
         }
 
         // Close window
@@ -254,13 +287,20 @@
         function fileClick(file) {
 
             switch(file.id) {
-                case "file_home":
-                    tabOpen("tab_welcome", "Welcome", "new/files/pc.png", "window_welcome");
-                    windowOpen("window_welcome");
+                case "file_hi":
+                    tabOpen("tab_hi", "hi", "new/files/pc.png", "window_hi");
+                    windowOpen("window_hi", null);
+                    windowFocus(document.getElementById("window_hi"));
                 break;
-                case "file_info":
-                    tabOpen("tab_test", "Test", "new/files/info2.png", "window_test");
-                    windowOpen("window_test");
+                case "file_pageinfo":
+                    tabOpen("tab_pageinfo", "Info", "new/files/notepad.png", "window_pageinfo");
+                    windowOpen("window_pageinfo", null);
+                    windowFocus(document.getElementById("window_pageinfo"));
+                break;
+                case "file_mainscr":
+                    tabOpen("tab_mainscr", "Welcome", "new/files/paint.png", "window_mainscr");
+                    windowOpen("window_mainscr", null);
+                    windowFocus(document.getElementById("window_mainscr"));
                 break;
             }
         }
@@ -269,24 +309,8 @@
         window.onclick = function(){fileFocus(null);}
         
 
-        /*
-        create_tab("tab_welcome")
-    <div id="tab_welcome">
-      <img id="tab_welcome_tab" src="new/window/tab_default.png" style="user-select: none; position: fixed; left: 96px; bottom: 1px;">
-
-      <img src="new/files/pc.png" class="file" style="user-select: none; position: fixed; left: 104px; bottom: 6px; width: 16px; height: 16px;">
-      <p style="user-select: none; font-family: Tahoma; color: white; position:fixed; width: 100%; height: 28px; left: 128px; bottom: -19px; text-shadow: 1px 1px 1px #0a0a0aaa;">Welcome</p>
-    </div>
-        function Tab(x, y, name, sprite, action){
-            this.x = x;
-            this.y = y;
-            this.name = name;
-            this.sprite = sprite;
-            this.action = action;
-        }
-      */
+        // Open tab
         function tabOpen(id, name, sprite, window_id) {
-
 
             var _window = document.getElementById(window_id);
             if (_window.style.display == "")
@@ -336,8 +360,10 @@
             document.body.appendChild(tab).appendChild(tab_sprite);
             tab.appendChild(tab_icon);
             tab.appendChild(tab_text);
+
         }
 
+        // Close tab
         function tabClose(window_id) {
 
             for (let i = 0; i < obj_taskbar.arr.length; i++) {
@@ -359,17 +385,17 @@
 
         // Create start windows and tabs
 
-        tabOpen("tab_welcome", "Welcome", "new/files/pc.png", "window_welcome");
-        windowOpen("window_welcome");
+        tabOpen("tab_hi", "hi", "new/files/script.png", "window_hi");
+        windowOpen("window_hi", [200, 80]);
 
-        tabOpen("tab_info", "Info", "new/files/info2.png", "window_test");
-        windowOpen("window_test");
+        tabOpen("tab_pageinfo", "Info", "new/files/notepad.png", "window_pageinfo");
+        windowOpen("window_pageinfo", [1000, 100]);
 
-        tabOpen("tab_welcome", "Terminal", "new/files/terminal.png", "window_console");
-        windowOpen("window_console");
+        //tabOpen("tab_welcome", "Terminal", "new/files/terminal.png", "window_console");
+        //windowOpen("window_console", null);
 
-        tabOpen("tab_paint", "Paint", "new/files/paint.png", "window_paint");
-        windowOpen("window_paint");
+        tabOpen("tab_mainscr", "Paint", "new/files/paint.png", "window_mainscr");
+        windowOpen("window_mainscr", [300, 200]);
 
         // Main loop
         var loop = function() {
@@ -381,6 +407,7 @@
                     windows_array[i].onmousedown = function() {
                         windowFocus(windows_array[i]);
                     }
+
                 }
             }
 
