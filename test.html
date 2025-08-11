@@ -18,12 +18,31 @@
     <main>
 
     <!--CREATE ARRAYS-->
+
     <script>
       var windows_array = [];
       var file_array = [];
       var tabs_array = [];
     </script>
-  
+
+
+    <!--CIRNO-->
+    <div id="window_cirno" style=
+    "user-select: none;
+    position: absolute;
+    top: 60px;
+    left: 30px;
+    width: 220px;
+    height: 170px;
+    display: none;"
+    >
+
+        <div>
+            <img id="cirno_gif" src="img/fumoanim.gif" style="pointer-events:none; width: 128px;" >
+        </div>
+
+    </div>
+    <script>windows_array.push(document.getElementById("window_cirno"))</script>
 
     <!--DESKTOP FILES-->
 
@@ -60,6 +79,16 @@
     </div>
     <script>file_array.push([document.getElementById("file_mainscr"), document.getElementById("file_mainscr_name"), document.getElementById("file_mainscr_img"), 0]);</script>
 
+    <!--CIRNO-->
+    <div id="file_cirno" style="position: absolute; top: 275px; left: 32px;">
+      <img id="file_cirno_img" src="new/files/cirno.png" class="file" style="display: block; margin: auto;">
+      <div id="file_cirno_name" class="file-name" style="top: -12px;">
+        <p style="font-family: Tahoma; font-size: 12px; color: white; text-shadow: 1px 1px 2px #0a0a0a; text-align: center;">
+          cirno
+        </p>
+      </div>
+    </div>
+    <script>file_array.push([document.getElementById("file_cirno"), document.getElementById("file_cirno_name"), document.getElementById("file_cirno_img"), 0]);</script>
 
     <!--WINDOWS-->
     <!--HEY WINDOW-->
@@ -118,6 +147,11 @@
     </div>
     <script>dragElement(document.getElementById("window_pageinfo"));windows_array.push(document.getElementById("window_pageinfo"))</script>
 
+    <!--ROVER SPEECH-->
+    <div id="rover_header" style="user-select: none; position: absolute; bottom: 100px; right: 100px; z-index: 1000000;">
+            <img src="new/img/speech_info.png">
+    </div>
+    <script>dragElement(document.getElementById("rover_header"));</script>
 
     <!--CONSOLE WINDOW-->
     <div class="window" id="window_console" style="user-select: none; position: absolute; display: none;">
@@ -146,8 +180,8 @@
             <button aria-label="Close" id="close_button" onclick="windowClose('window_mainscr')"></button>
             </div>
         </div>
-        <div class="window-body">
-          <img src="img/additivecolor.png">
+        <div class="window-body" style="background-color: white;">
+          <img src="new/window/paint_window.png">
         </div>
     </div>
     <script>dragElement(document.getElementById("window_mainscr"));windows_array.push(document.getElementById("window_mainscr"))</script>
@@ -160,6 +194,17 @@
         <p style="user-select: none; font-family: Tahoma; color: white; position:fixed; width: 100%; height: 28px; right: 20px; bottom: -19px; text-align: right; text-shadow: 1px 1px 2px #0a0a0a;" id="clock"></p>
         <!--START BUTTON-->
         <img src="new/window/startbutton_default.png" id="startbutton" style="user-select: none; position:fixed; height: 28px; left: 0px; bottom: 0;">
+    </div>
+
+    <!--CONTEXT MENU-->
+    <div class="context-menu-xp" id="context_menu" style="display: none; position: absolute; bottom: 20px; left: 64px; height: 28px; z-index: 10000; box-shadow: 3px 3px 2px #000000aa;">
+        <ol style="height: 3px;">
+            <dt>
+                <div class="context-menu-xp-item" style="position: inherit; margin-bottom: -8px; margin-left: -39px; z-index: 10001;">
+                    <p style="user-select: none; font-family: Tahoma; font-size: 12; margin-left: 4px;">Close</p>
+                </div>
+            </dt>
+        </ol>
     </div>
 
     </main>
@@ -178,6 +223,16 @@
         const obj_taskbar = {
             arr: []
         };
+
+        var cirno_anim = document.getElementById('cirno_gif'); 
+        var cirno_size = cirno_anim.style.width;
+
+        const cirno = {
+            x: 0,
+            y: 0,
+            hsp: 10,
+            vsp: 10
+        }
 
         // Z index ordering _ready
         for(var i = 0; i <= windows_array.length - 1; i++) {
@@ -302,6 +357,11 @@
                     windowOpen("window_mainscr", null);
                     windowFocus(document.getElementById("window_mainscr"));
                 break;
+                case "file_cirno":
+                    tabOpen("tab_cirno", "cirno", "new/files/cirno.png", "window_cirno");
+                    windowOpen("window_cirno", [32, 64]);
+                    windowFocus(document.getElementById("window_cirno"));
+                break;
             }
         }
           
@@ -312,16 +372,20 @@
         // Open tab
         function tabOpen(id, name, sprite, window_id) {
 
-            var _window = document.getElementById(window_id);
-            if (_window.style.display == "")
-                return;
+            var _window;
+
+            if (window_id) {
+                _window = document.getElementById(window_id);
+
+                if (_window.style.display == "")
+                    return;
+            }
 
             let tab = document.createElement("div");
             let tab_sprite = document.createElement("img");
             let tab_icon = document.createElement("img");
             let tab_text = document.createElement("p");
 
-            //let obj_tab = new Tab(0, 0, name, sprite, 0);
 
             tab.id = id;
             tab.style.userSelect = "none";
@@ -383,6 +447,31 @@
             
         }
 
+
+        // Cirno
+
+        function cirnoAnimate(size) {
+
+            var windowWidth = window.screen.width;
+            var windowHeight = document.documentElement.scrollHeight;
+
+            cirno_anim.style.position = "absolute";
+            cirno_anim.style.left = cirno.x + "px";
+            cirno_anim.style.top = cirno.y + "px";
+
+
+            if ((cirno.x < 0) || (cirno.x > windowWidth - parseInt(size) - 128)) {
+                cirno.hsp = -cirno.hsp;
+            }
+            if ((cirno.y < 0) || (cirno.y > windowHeight - parseInt(size) - 128)) {
+                cirno.vsp = -cirno.vsp;
+            }
+
+            cirno.x += cirno.hsp;
+            cirno.y += cirno.vsp;
+
+        }
+
         // Create start windows and tabs
 
         tabOpen("tab_hi", "hi", "new/files/script.png", "window_hi");
@@ -399,6 +488,9 @@
 
         // Main loop
         var loop = function() {
+
+            if (document.getElementById("window_cirno").style.display == "")
+                cirnoAnimate(cirno_size);
 
             // Z index ordering _loop
             for(let i = 0; i <= windows_array.length - 1; i++) {
@@ -456,6 +548,7 @@
                 obj_taskbar.arr[i][0].onclick = function() {
 
                     windowFocus(document.getElementById(obj_taskbar.arr[i][1]));
+
                     for(let j = 0; j <= obj_taskbar.arr.length - 1; j++) {
 
                         obj_taskbar.arr[j][3] = 0;

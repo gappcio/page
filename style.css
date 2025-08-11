@@ -80,6 +80,29 @@ body {
     opacity: 50%;
 }
 
+.context-menu-xp {
+    width: 64px;
+    background-color: white;
+    outline-style: solid;
+    outline-color: #aaaaaa;
+    outline-width: 1px;
+}
+
+.context-menu-xp-item {
+    font-family: Tahoma;
+    font-size: 12;
+    margin-left: -24px;
+    background-color:white;
+}
+
+.context-menu-xp-item:hover {
+    font-family: Tahoma;
+    font-size: 12;
+    margin-left: -24px;
+    color: white;
+    background-color:#2759e2;
+}
+
 :root {
     --gradient-colors: repeating-linear-gradient(90deg, indigo, rebeccapurple, orchid, hotpink, orchid, rebeccapurple, indigo);
 }
