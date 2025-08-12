@@ -103,6 +103,7 @@ body {
     background-color:#2759e2;
 }
 
+
 :root {
     --gradient-colors: repeating-linear-gradient(90deg, indigo, rebeccapurple, orchid, hotpink, orchid, rebeccapurple, indigo);
 }

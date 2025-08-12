@@ -147,9 +147,15 @@
     </div>
     <script>dragElement(document.getElementById("window_pageinfo"));windows_array.push(document.getElementById("window_pageinfo"))</script>
 
-    <!--ROVER SPEECH-->
-    <div id="rover_header" style="user-select: none; position: absolute; bottom: 100px; right: 100px; z-index: 1000000;">
+    <!--EINSTEIN SPEECH-->
+    <div id="einstein_header" style="user-select: none; position: absolute; bottom: 200px; right: 100px; z-index: 1000000;">
             <img src="new/img/speech_info.png">
+    </div>
+    <script>dragElement(document.getElementById("einstein_header"));</script>
+
+    <!--ROVER SPEECH-->
+    <div id="rover_header" style="user-select: none; position: absolute; bottom: 32px; right: 347px; z-index: 1000000;">
+            <img src="new/img/speech_menu.png">
     </div>
     <script>dragElement(document.getElementById("rover_header"));</script>
 
@@ -173,15 +179,28 @@
 
     
     <!--MAINSCR WINDOW-->
-    <div class="window" id="window_mainscr" style="user-select: none; position: absolute; display: none;">
+    <div class="window" id="window_mainscr" style="user-select: none; position: absolute; display: none; width: 800px; height: 640px;">
         <div class="title-bar" id="window_mainscr_header">
             <div class="title-bar-text">untitled - Paint</div>
             <div class="title-bar-controls" id="window_mainscr_header_controls" onmousedown="event.stopPropagation()">
-            <button aria-label="Close" id="close_button" onclick="windowClose('window_mainscr')"></button>
+                <button aria-label="Close" id="close_button" onclick="windowClose('window_mainscr')"></button>
             </div>
         </div>
-        <div class="window-body" style="background-color: white;">
-          <img src="new/window/paint_window.png">
+        <div class="window-body" style="background-color: white; height: 600px; position: relative; overflow: hidden;">
+            <img src="new/window/paint_window.png" style="display: block; position: relative; z-index: 1;">
+            <div style="
+                position: absolute;
+                top: 28px;
+                left: 64px;
+                width: 800px;
+                height: 520px;
+                overflow: auto;
+                scrollbar-width: none;
+                z-index: 2;
+            ">
+                <img src="new/window/paint_canvas.png" style="display: block;">
+                <img src="new/files/cirno.png" style="position: absolute; top: 100px">
+            </div>
         </div>
     </div>
     <script>dragElement(document.getElementById("window_mainscr"));windows_array.push(document.getElementById("window_mainscr"))</script>
@@ -419,11 +438,17 @@
             tab_text.style.bottom = "-6px";
             tab_text.textContent = name;
 
-
             obj_taskbar.arr.push([tab, window_id, tab_sprite, 0]);
             document.body.appendChild(tab).appendChild(tab_sprite);
             tab.appendChild(tab_icon);
             tab.appendChild(tab_text);
+
+            tab.addEventListener("contextmenu", function(event) {
+
+                event.preventDefault();
+                windowClose(window_id);
+
+            });
 
         }
 
@@ -478,13 +503,13 @@
         windowOpen("window_hi", [200, 80]);
 
         tabOpen("tab_pageinfo", "Info", "new/files/notepad.png", "window_pageinfo");
-        windowOpen("window_pageinfo", [1000, 100]);
+        windowOpen("window_pageinfo", [1100, 100]);
 
         //tabOpen("tab_welcome", "Terminal", "new/files/terminal.png", "window_console");
         //windowOpen("window_console", null);
 
         tabOpen("tab_mainscr", "Paint", "new/files/paint.png", "window_mainscr");
-        windowOpen("window_mainscr", [300, 200]);
+        windowOpen("window_mainscr", [240, 200]);
 
         // Main loop
         var loop = function() {
@@ -544,6 +569,8 @@
             */
 
             if (obj_taskbar.arr[i]) {
+
+            
                 
                 obj_taskbar.arr[i][0].onclick = function() {
 
