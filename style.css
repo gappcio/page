@@ -126,9 +126,6 @@ body {
     -webkit-text-fill-color: transparent;
     animation: colors 1s linear infinite;
 }
-
-/* -~=what the fuck is that=~- */
-
 @keyframes colors { 
     0% {
         background-position: -22px 0%;

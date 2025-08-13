@@ -90,6 +90,28 @@
     </div>
     <script>file_array.push([document.getElementById("file_cirno"), document.getElementById("file_cirno_name"), document.getElementById("file_cirno_img"), 0]);</script>
 
+    <!--MONERO-->
+    <div id="file_monero" style="position: absolute; top: 730px; left: 26px;">
+      <img id="file_monero_img" src="new/files/monero.png" class="file" style="display: block; margin: auto;">
+      <div id="file_monero_name" class="file-name" style="top: -12px;">
+        <p style="font-family: Tahoma; font-size: 12px; color: white; text-shadow: 1px 1px 2px #0a0a0a; text-align: center;">
+          monero
+        </p>
+      </div>
+    </div>
+    <script>file_array.push([document.getElementById("file_monero"), document.getElementById("file_monero_name"), document.getElementById("file_monero_img"), 0]);</script>
+
+    <!--KOFI-->
+    <div id="file_kofi" style="position: absolute; top: 800px; left: 30px;">
+      <img id="file_kofi_img" src="new/files/kofi.png" class="file" style="display: block; margin: auto;">
+      <div id="file_kofi_name" class="file-name" style="top: -12px;">
+        <p style="font-family: Tahoma; font-size: 12px; color: white; text-shadow: 1px 1px 2px #0a0a0a; text-align: center;">
+          ko-fi
+        </p>
+      </div>
+    </div>
+    <script>file_array.push([document.getElementById("file_kofi"), document.getElementById("file_kofi_name"), document.getElementById("file_kofi_img"), 0]);</script>
+
     <!--WINDOWS-->
     <!--HEY WINDOW-->
     <div class="window" id="window_hi" style="user-select: none; position: absolute; top: 100px; width: 140px; height: 90px; display: none;">
@@ -117,7 +139,7 @@
     <div class="window" id="window_pageinfo" style="user-select: none; position: absolute; top: 200px; width: 535px; height: 200px; display: none; background-color: white;">
       <div class="title-bar" id="window_pageinfo_header">
         <div class="title-bar-text" style="cursor:default;">
-          Page info
+          Info
         </div>
 
         <div class="title-bar-controls" id="window_pageinfo_header_controls" onmousedown="event.stopPropagation()">
@@ -148,16 +170,22 @@
     <script>dragElement(document.getElementById("window_pageinfo"));windows_array.push(document.getElementById("window_pageinfo"))</script>
 
     <!--EINSTEIN SPEECH-->
-    <div id="einstein_header" style="user-select: none; position: absolute; bottom: 200px; right: 100px; z-index: 1000000;">
+    <div id="einstein_header" style="user-select: none; position: absolute; bottom: 200px; right: 100px; z-index: 1;">
             <img src="new/img/speech_info.png">
     </div>
     <script>dragElement(document.getElementById("einstein_header"));</script>
 
     <!--ROVER SPEECH-->
-    <div id="rover_header" style="user-select: none; position: absolute; bottom: 32px; right: 347px; z-index: 1000000;">
+    <div id="rover_header" style="user-select: none; position: absolute; bottom: 32px; right: 347px; z-index: 1;">
             <img src="new/img/speech_menu.png">
     </div>
     <script>dragElement(document.getElementById("rover_header"));</script>
+
+    <!--CHOR JANUSZY-->
+    <div id="chor_header" style="user-select: none; position: absolute; top: 300px; right: 357px; z-index: 1;">
+            <img src="new/img/speech_chor_januszy.png">
+    </div>
+    <script>dragElement(document.getElementById("chor_header"));</script>
 
     <!--CONSOLE WINDOW-->
     <div class="window" id="window_console" style="user-select: none; position: absolute; display: none;">
@@ -181,7 +209,7 @@
     <!--MAINSCR WINDOW-->
     <div class="window" id="window_mainscr" style="user-select: none; position: absolute; display: none; width: 800px; height: 640px;">
         <div class="title-bar" id="window_mainscr_header">
-            <div class="title-bar-text">untitled - Paint</div>
+            <div class="title-bar-text">welcome - Paint</div>
             <div class="title-bar-controls" id="window_mainscr_header_controls" onmousedown="event.stopPropagation()">
                 <button aria-label="Close" id="close_button" onclick="windowClose('window_mainscr')"></button>
             </div>
@@ -205,6 +233,26 @@
     </div>
     <script>dragElement(document.getElementById("window_mainscr"));windows_array.push(document.getElementById("window_mainscr"))</script>
 
+    <!--MONERO WINDOW-->
+    <div class="window" id="window_monero" style="user-select: none; position: absolute; top: 100px; width: 710px; height: 80px; display: none; background-color: black;">
+      <div class="title-bar" id="window_monero_header">
+        <div class="title-bar-text" style="cursor:default;">
+          Wallet
+        </div>
+
+        <div class="title-bar-controls" id="window_monero_header_controls" onmousedown="event.stopPropagation()">
+          <button aria-label="Close" id="close_button" onclick="windowClose('window_monero')"></button>
+        </div>
+
+      </div>
+      <div class="window-body" style="background-color: black; margin-right: 30px;">
+        <a class="plain" style="user-select: text; color: #ffffff; font-size: 12px; font-family: Lucida Console;">
+            47dbpEKHDYogtvhcukFKGkMSAPSLVrRWXSKvSXay8VLQjD5F5eMrpigbzJFskvZVkDWouSY2yfCxuKVAt1peS6GHUmGW4CC
+        </a>
+      </div>
+    </div>
+    <script>dragElement(document.getElementById("window_monero"));windows_array.push(document.getElementById("window_monero"))</script>
+
     <!--TASKBAR-->
     <div>
         <img id="taskbar" src="new/window/taskbar.png" style="user-select: none; position:fixed; width: 100%; height: 28px; left: 0px; bottom: 0;">
@@ -227,12 +275,6 @@
     </div>
 
     </main>
-
-
-
-    <footer>
-
-    </footer>
 
 
     <!--MAIN SCRIPTS-->
@@ -381,6 +423,14 @@
                     windowOpen("window_cirno", [32, 64]);
                     windowFocus(document.getElementById("window_cirno"));
                 break;
+                case "file_monero":
+                    tabOpen("tab_monero", "monero", "new/files/monero.png", "window_monero");
+                    windowOpen("window_monero", null);
+                    windowFocus(document.getElementById("window_monero"));
+                break;
+                case "file_kofi":
+                    window.open("https://ko-fi.com/gappcio").focus();
+                break;
             }
         }
           
@@ -503,7 +553,7 @@
         windowOpen("window_hi", [200, 80]);
 
         tabOpen("tab_pageinfo", "Info", "new/files/notepad.png", "window_pageinfo");
-        windowOpen("window_pageinfo", [1100, 100]);
+        windowOpen("window_pageinfo", [1100, 60]);
 
         //tabOpen("tab_welcome", "Terminal", "new/files/terminal.png", "window_console");
         //windowOpen("window_console", null);
@@ -646,5 +696,6 @@
                     return i;
             }
     </script>
+
 </body>
 </html>
