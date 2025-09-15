@@ -108,6 +108,13 @@ body {
     --gradient-colors: repeating-linear-gradient(90deg, indigo, rebeccapurple, orchid, hotpink, orchid, rebeccapurple, indigo);
 }
 
+disappear{
+    opacity:100%;
+}
+.disappear:hover{
+    opacity: 0%;
+}
+
 .colored-title {
     font-family: "vga", monospace;
     font-size: 16px;
