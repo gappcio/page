@@ -92,6 +92,39 @@
     </div>
     <script>file_array.push([document.getElementById("file_cirno"), document.getElementById("file_cirno_name"), document.getElementById("file_cirno_img"), 0]);</script>
 
+    <!--PICS-->
+    <div id="file_pics" style="position: absolute; top: 350px; left: 30px;">
+      <img id="file_pics_img" src="new/files/pic2.png" class="file" style="display: block; margin: auto;">
+      <div id="file_pics_name" class="file-name" style="top: -12px;">
+        <p style="font-family: Tahoma; font-size: 12px; color: white; text-shadow: 1px 1px 2px #0a0a0a; text-align: center;">
+          Pics
+        </p>
+      </div>
+    </div>
+    <script>file_array.push([document.getElementById("file_pics"), document.getElementById("file_pics_name"), document.getElementById("file_pics_img"), 0]);</script>
+
+    <!--MAIL-->
+    <div id="file_mail" style="position: absolute; top: 426px; left: 30px;">
+      <img id="file_mail_img" src="new/files/mail.png" class="file" style="display: block; margin: auto;">
+      <div id="file_mail_name" class="file-name" style="top: -12px;">
+        <p style="font-family: Tahoma; font-size: 12px; color: white; text-shadow: 1px 1px 2px #0a0a0a; text-align: center;">
+          Mail
+        </p>
+      </div>
+    </div>
+    <script>file_array.push([document.getElementById("file_mail"), document.getElementById("file_mail_name"), document.getElementById("file_mail_img"), 0]);</script>
+
+    <!--DISCORD-->
+    <div id="file_discord" style="position: absolute; top: 502px; left: 28px;">
+      <img id="file_discord_img" src="new/files/discord.png" class="file" style="display: block; margin: auto;">
+      <div id="file_discord_name" class="file-name" style="top: -12px;">
+        <p style="font-family: Tahoma; font-size: 12px; color: white; text-shadow: 1px 1px 2px #0a0a0a; text-align: center;">
+          Discord
+        </p>
+      </div>
+    </div>
+    <script>file_array.push([document.getElementById("file_discord"), document.getElementById("file_discord_name"), document.getElementById("file_discord_img"), 0]);</script>
+
     <!--MONERO-->
     <div id="file_monero" style="position: absolute; top: 730px; left: 26px;">
       <img id="file_monero_img" src="new/files/monero.png" class="file" style="display: block; margin: auto;">
@@ -312,8 +345,11 @@
 
                     <script>
                         function doNotClick() {
-                            alert("yuor conputer will expolde in 10 seconds...")
+                            alert("yuor conputer will expolde in 5 seconds...");
+                            setTimeout(function expolde(){alert("boom");}, 5000);
                         }
+                        
+                        
                     </script>
 
                     <!--ABOUT ME-->
@@ -727,6 +763,12 @@
                 case "file_kofi":
                     window.open("https://ko-fi.com/gappcio").focus();
                 break;
+                case "file_discord":
+                    window.open("https://discordapp.com/users/459393671767392256").focus();
+                break;
+                case "file_mail":
+                    window.location.href = "mailto:kittycritt3r@proton.me";
+                break;
             }
         }
           
@@ -849,7 +891,7 @@
         windowOpen("window_hi", [200, 80]);
 
         tabOpen("tab_pageinfo", "Info", "new/files/notepad.png", "window_pageinfo");
-        windowOpen("window_pageinfo", [1100, 60]);
+        windowOpen("window_pageinfo", [1164, 60]);
 
         //tabOpen("tab_welcome", "Terminal", "new/files/terminal.png", "window_console");
         //windowOpen("window_console", null);
