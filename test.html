@@ -189,8 +189,10 @@
             <span class="swear" style="font-size: 12px; font-family: Lucida Console; color:#000000"><span data-letter="s"> </span><span data-letter="w"> </span><span data-letter="e"> </span><span data-letter="a"> </span><span data-letter="r"> </span><span data-letter="i"> </span><span data-letter="n"> </span><span data-letter="g"> </span></span>
             and talking about everything including <span class="big" style="font-family: Lucida Console; color:#000000">sex</span>, <span class="drunk" style="font-family: Lucida Console;"><span>a</span><span>l</span><span>c</span><span>o</span><span>h</span><span>o</span><span>l</span></span>, <span class="trip" style="font-family: Lucida Console;">drugs</span> and other stuff, just so u know<br><br>
 
-            <span style="font-size: 12px;">also, this site was only tested on <span style="color:#ff6600">Firefox</span> on 1920x1080 resolution and won't look good on mobile</span>
-            <br><br><br><br><br><br><br>
+            <span style="font-size: 12px;">also, this site was only tested on <span style="color:#ff6600">Firefox</span> on 1920x1080 resolution and won't look good on mobile</span><br><br>
+
+            <span style="font-size: 12px;">you should also enable autoplay for this site :3</span>
+            <br><br><br><br><br>
         </div>
       </div>
       <img src="new/window/scroll_bg_hor.png" style="user-select: false; position: absolute; top: 183px; left: 3px; width: 517px; height: 17px;">
@@ -203,6 +205,27 @@
       <img src="new/window/scroll_down_disabled.png" style="user-select: false; position: absolute; top: 167px; left: 516px;">
     </div>
     <script>dragElement(document.getElementById("window_pageinfo"));windows_array.push(document.getElementById("window_pageinfo"))</script>
+
+    <!--PICS WINDOW-->
+    <div class="window" id="window_pics" style="user-select: none; position: absolute; top: 200px; width: 535px; height: 200px; display: none; background-color: white;">
+      <div class="title-bar" id="window_pics_header">
+        <div class="title-bar-text" style="cursor:default;">
+          Info
+        </div>
+
+        <div class="title-bar-controls" id="window_pics_header_controls" onmousedown="event.stopPropagation()">
+          <button aria-label="Close" id="close_button" onclick="windowClose('window_pics')"></button>
+        </div>
+
+      </div>
+      <div class="window-body" style="background-color: white; margin-right: 30px;">
+        <div class="plain" style="color: #000000; font-size: 12px; font-family: Lucida Console;">
+
+        </div>
+      </div>
+
+    </div>
+    <script>dragElement(document.getElementById("window_pics"));windows_array.push(document.getElementById("window_pics"))</script>
 
     <!--EINSTEIN SPEECH-->
     <div id="einstein_header" style="user-select: none; position: absolute; bottom: 200px; right: 100px; z-index: 1;">
@@ -351,6 +374,13 @@
                         
                         
                     </script>
+
+                    <!--PJOTER-->
+                    <div style="position: absolute; top: 668px; left: 318px; width: 223px; height: 214px;">
+                        <div id="pjoter" class="pjoter"></div>
+                        <div class="plain" style="color: white; font-size: 16px; position: absolute; top: 210px; left: 64px;">help him spin</div>
+                        <div class="plain" style="color: #222222; font-size: 12px; position: absolute; top: 230px; left: 44px; transform:rotate(3deg)">watch out for volume</div>
+                    </div>
 
                     <!--ABOUT ME-->
                     <div style=
@@ -627,6 +657,18 @@
             vsp: 10
         }
 
+        // Pjoter
+        var pjoter = document.getElementById("pjoter");
+        var audio = new Audio("audio/hazel.mp3");
+        audio.volume = 0.1;
+        audio.loop = true;
+        pjoter.classList.add("pause");
+        pjoter.onmouseenter = function(){pjoter.classList.remove("pause");audio.play();}
+        pjoter.onmouseleave = function(){pjoter.classList.add("pause");audio.pause();}
+
+
+
+
         // Z index ordering _ready
         for(var i = 0; i <= windows_array.length - 1; i++) {
             setIndex(windows_array[i], 0);
@@ -768,6 +810,11 @@
                 break;
                 case "file_mail":
                     window.location.href = "mailto:kittycritt3r@proton.me";
+                break;
+                case "file_pics":
+                    tabOpen("tab_pics", "Pictures", "new/files/pic2.png", "window_pics");
+                    windowOpen("window_pics", null);
+                    windowFocus(document.getElementById("window_pics"));
                 break;
             }
         }
@@ -1008,6 +1055,8 @@
             }
 
           }
+
+ 
 
             window.requestAnimationFrame(loop);
 

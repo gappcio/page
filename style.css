@@ -701,6 +701,26 @@ anim::before {
     overflow-y: auto;
 }
 
+
+.pjoter {
+    width: 223px; 
+    height: 214px;
+    background: url("new/img/pjoter_anim.png") 0 0 no-repeat;
+    background-size: 1784px;
+    animation: pjoter-spin steps(7) 0.5s infinite both;
+}
+@keyframes pjoter-spin {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+.pause {
+    animation-play-state: paused;
+}
+
 /* -~=what even is this=~- */
 .jitter span:nth-child(1) { --i: 1; animation-delay: calc(0s * var(--i)); }
 .jitter span:nth-child(2) { --i: 2; animation-delay: calc(0.02s * var(--i)); }
