@@ -307,30 +307,37 @@
                 var current_image = 0;
 
                 var image_list = [
-                    "miku.png",
-                    "drumnbass.jpg",
-                    "schody.jpg",
-                    "krzeslo.jpg",
-                    "ferdekdebois.jpg",
-                    "horse.jpg",
-                    "seler.jpg",
-                    "ket.jpg",
-                    "prawda.jpg",
-                    "siryessir.jpg",
-                    "study.jpg",
                     "badapple.jpg",
-                    "man.jpg",
-                    "frank.jpg",
-                    "retard.jpg",
-                    "harry.png",
-                    "pickle.jpg",
-                    "love.jpg",
-                    "opos.jpg",
-                    "wtc.jpg",
-                    "theballs.gif",
-                    "rumia.jpg",
+                    "breakingbabka.jpg",
+                    "cock.jpg",
                     "czilera.jpg",
-                    "breakingbabka.jpg"
+                    "drumnbass.jpg",
+                    "ferdekdebois.jpg",
+                    "frank.jpg",
+                    "gun.png",
+                    "harry.png",
+                    "horse.jpg",
+                    "jajabolo.jpg",
+                    "ket.jpg",
+                    "krzeslo.jpg",
+                    "love.jpg",
+                    "man.jpg",
+                    "me.jpg",
+                    "miku.png",
+                    "opos.jpg",
+                    "pickle.jpg",
+                    "prawda.jpg",
+                    "retard.jpg",
+                    "rumia.jpg",
+                    "rurki.gif",
+                    "schody.jpg",
+                    "seler.jpg",
+                    "silly.png",
+                    "siryessir.jpg",
+                    "slay.jpg",
+                    "study.jpg",
+                    "theballs.gif",
+                    "wtc.jpg"
                 ];
 
                 for (let i = 0; i <= image_list.length - 1; i++) {
@@ -370,8 +377,6 @@
                     var _tab = document.getElementById("tab_pics_text");
                     if (_tab)
                         _tab.textContent = image_list[current_image].substring(0, image_list[current_image].length - 4) + " - Picture Viewer";
-
-                    console.log(_tab)
 
                 }
 
@@ -956,14 +961,16 @@
                     window.location.href = "mailto:kittycritt3r@proton.me";
                 break;
                 case "file_pics":
-                    tabOpen("tab_pics", "miku - Picture Viewer", "new/files/picview.png", "window_pics");
+                    tabOpen("tab_pics", "Picture Viewer", "new/files/picview.png", "window_pics");
                     windowOpen("window_pics", null);
                     windowFocus(document.getElementById("window_pics"));
+                    cycle_images(0);
                 break;
                 case "file_fish":
                     tabOpen("tab_fish", "fish", "new/files/script.png", "window_fish");
                     windowOpen("window_fish", null);
                     windowFocus(document.getElementById("window_fish"));
+                    
                 break;
             }
         }
