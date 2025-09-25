@@ -59,6 +59,17 @@
     </div>
     <script>file_array.push([document.getElementById("file_hi"), document.getElementById("file_hi_name"), document.getElementById("file_hi_img"), 0]);</script>
 
+    <!--FISH-->
+    <div id="file_fish" style="position: absolute; top: 32px; left: 96px;">
+      <img id="file_fish_img" src="new/files/script.png" class="file" style="display: block; margin: auto;">
+      <div id="file_fish_name" class="file-name" style="top: -4px;">
+        <p style="font-family: Tahoma; font-size: 12px; color: white; text-shadow: 1px 1px 2px #0a0a0a; text-align: center;">
+          fish
+        </p>
+      </div>
+    </div>
+    <script>file_array.push([document.getElementById("file_fish"), document.getElementById("file_fish_name"), document.getElementById("file_fish_img"), 0]);</script>
+
     <!--INFO-->
     <div id="file_pageinfo" style="position: absolute; top: 112px; left: 32px;">
       <img id="file_pageinfo_img" src="new/files/notepad.png" class="file" style="display: block; margin: auto;">
@@ -148,10 +159,30 @@
     <script>file_array.push([document.getElementById("file_kofi"), document.getElementById("file_kofi_name"), document.getElementById("file_kofi_img"), 0]);</script>
 
     <!--WINDOWS-->
+
+    <!--EINSTEIN SPEECH-->
+    <div id="einstein_header" style="user-select: none; position: absolute; bottom: 200px; right: 100px; z-index: 1;">
+            <img src="new/img/speech_info.png">
+    </div>
+    <script>dragElement(document.getElementById("einstein_header"));</script>
+
+    <!--ROVER SPEECH-->
+    <div id="rover_header" style="user-select: none; position: absolute; bottom: 32px; right: 347px; z-index: 1;">
+            <img src="new/img/speech_menu.png">
+    </div>
+    <script>dragElement(document.getElementById("rover_header"));</script>
+
+    <!--CHOR JANUSZY-->
+    <div id="chor_header" style="user-select: none; position: absolute; top: 300px; right: 357px; z-index: 1;">
+            <img src="new/img/speech_chor_januszy.png">
+    </div>
+    <script>dragElement(document.getElementById("chor_header"));</script>
+
     <!--HEY WINDOW-->
     <div class="window" id="window_hi" style="user-select: none; position: absolute; top: 100px; width: 140px; height: 90px; display: none;">
       <div class="title-bar" id="window_hi_header">
-        <div class="title-bar-text" style="cursor:default;">
+        <div class="title-bar-text" style="cursor:default; display:flex; gap: 4px;">
+            <img src="new/files/info2.png" style="max-width: 16px;">
           hiiii
         </div>
 
@@ -169,11 +200,46 @@
     </div>
     <script>dragElement(document.getElementById("window_hi"));windows_array.push(document.getElementById("window_hi"))</script>
 
+    <!--FISH WINDOW-->
+    <div class="window" id="window_fish" style="user-select: none; position: absolute; top: 100px; width: 250px; height: 200px; display: none;">
+      <div class="title-bar" id="window_fish_header">
+        <div class="title-bar-text" style="cursor:default; display:flex; gap: 4px;">
+            <img src="new/files/info2.png" style="max-width: 16px;">
+          fish
+        </div>
+
+        <div class="title-bar-controls" id="window_fish_header_controls" onmousedown="event.stopPropagation()">
+          <button aria-label="Close" id="close_button" onclick="windowClose('window_fish')"></button>
+        </div>
+
+      </div>
+      <div class="window-body">
+        <div style="display: flex; justify-content: center; margin: 4px;">
+            <div>fish</div>
+            <img src="new/img/fische.png" style="max-width: 198px; position: relative; top:16px; right: 10px;">
+        </div>
+        <section class="field-row" style="justify-content: center; position: relative; top: 20px;">
+          <button onclick="fishClick(true)">i accept</button>
+          <button onclick="fishClick(false)">i dont accept</button>
+          <script>
+            function fishClick(accept){
+                if (accept) 
+                    windowClose('window_fish');
+                else
+                    alert("you cant");
+                
+            }
+          </script>
+        </section>
+      </div>
+    </div>
+    <script>dragElement(document.getElementById("window_fish"));windows_array.push(document.getElementById("window_fish"))</script>
 
     <!--INFO WINDOW-->
     <div class="window" id="window_pageinfo" style="user-select: none; position: absolute; top: 200px; width: 535px; height: 200px; display: none; background-color: white;">
       <div class="title-bar" id="window_pageinfo_header">
-        <div class="title-bar-text" style="cursor:default;">
+        <div class="title-bar-text" style="cursor:default; display:flex; gap: 4px;">
+            <img src="new/files/info.png" style="max-width: 16px;">
           Info
         </div>
 
@@ -207,10 +273,11 @@
     <script>dragElement(document.getElementById("window_pageinfo"));windows_array.push(document.getElementById("window_pageinfo"))</script>
 
     <!--PICS WINDOW-->
-    <div class="window" id="window_pics" style="user-select: none; position: absolute; top: 200px; width: 535px; height: 200px; display: none; background-color: white;">
+    <div class="window" id="window_pics" style="user-select: none; position: absolute; top: 200px; width: 750px; height: 500px; display: none; background-color: white;">
       <div class="title-bar" id="window_pics_header">
-        <div class="title-bar-text" style="cursor:default;">
-          Info
+        <div class="title-bar-text" style="cursor:default; display:flex; gap: 4px;">
+            <img src="new/files/picview.png" style="max-width: 16px;">
+            <div id="window_pics_name"></div>
         </div>
 
         <div class="title-bar-controls" id="window_pics_header_controls" onmousedown="event.stopPropagation()">
@@ -221,29 +288,101 @@
       <div class="window-body" style="background-color: white; margin-right: 30px;">
         <div class="plain" style="color: #000000; font-size: 12px; font-family: Lucida Console;">
 
+            <div style="position: relative; width: 605px; height: 424px; text-align: center; left: 65px; bottom: 8px;">
+                <img id="pics_image" src="img/additivecolor.png" style="max-width: 100%; height: 100%; border: 1px solid #000000;">
+            </div>
+
+            <!--CONTROLS-->
+            <div style="position: absolute; top:428px; display: flex; width: 732px; justify-content: center; ">
+                <img id="prev" src="new/window/prev.png">
+                <img id="next" src="new/window/next.png">
+            </div>
+            
+            <script>
+                var prev_button = document.getElementById("prev");
+                var next_button = document.getElementById("next");
+                var image = document.getElementById("pics_image");
+
+                var images_array = [];
+                var current_image = 0;
+
+                var image_list = [
+                    "miku.png",
+                    "drumnbass.jpg",
+                    "schody.jpg",
+                    "krzeslo.jpg",
+                    "ferdekdebois.jpg",
+                    "horse.jpg",
+                    "seler.jpg",
+                    "ket.jpg",
+                    "prawda.jpg",
+                    "siryessir.jpg",
+                    "study.jpg",
+                    "badapple.jpg",
+                    "man.jpg",
+                    "frank.jpg",
+                    "retard.jpg",
+                    "harry.png",
+                    "pickle.jpg",
+                    "love.jpg",
+                    "opos.jpg",
+                    "wtc.jpg",
+                    "theballs.gif",
+                    "rumia.jpg",
+                    "czilera.jpg",
+                    "breakingbabka.jpg"
+                ];
+
+                for (let i = 0; i <= image_list.length - 1; i++) {
+                    images_array.push("new/pics/" + image_list[i]);
+                }
+
+                cycle_images(0);
+                
+                if (prev_button) {
+                    prev_button.ondragstart = function(){return false;}
+                    prev_button.onmouseenter = function(){prev_button.src = "new/window/prev_hover.png";}
+                    prev_button.onmouseleave = function(){prev_button.src = "new/window/prev.png";}
+                    prev_button.onmouseup = function(){prev_button.src = "new/window/prev_hover.png";}
+                    prev_button.onmousedown = function(){prev_button.src = "new/window/prev_click.png";}
+                    prev_button.onclick = function(){cycle_images(-1);}
+                }
+
+                if (next_button) {
+                    next_button.ondragstart = function(){return false;}
+                    next_button.onmouseenter = function(){next_button.src = "new/window/next_hover.png";}
+                    next_button.onmouseleave = function(){next_button.src = "new/window/next.png";}
+                    next_button.onmouseup = function(){next_button.src = "new/window/next_hover.png";}
+                    next_button.onmousedown = function(){next_button.src = "new/window/next_click.png";}
+                    next_button.onclick = function(){cycle_images(1);}
+                }
+
+                function cycle_images(direction) {
+
+                    current_image += direction;
+
+                    if (current_image <= 0) current_image = 0;
+                    if (current_image >= images_array.length - 1) current_image = images_array.length - 1;
+
+                    image.src = images_array[current_image];
+                    document.getElementById("window_pics_name").innerHTML = image_list[current_image].substring(0, image_list[current_image].length - 4) + " - Picture Viewer";
+                    
+                    var _tab = document.getElementById("tab_pics_text");
+                    if (_tab)
+                        _tab.textContent = image_list[current_image].substring(0, image_list[current_image].length - 4) + " - Picture Viewer";
+
+                    console.log(_tab)
+
+                }
+
+
+
+            </script>
         </div>
       </div>
 
     </div>
     <script>dragElement(document.getElementById("window_pics"));windows_array.push(document.getElementById("window_pics"))</script>
-
-    <!--EINSTEIN SPEECH-->
-    <div id="einstein_header" style="user-select: none; position: absolute; bottom: 200px; right: 100px; z-index: 1;">
-            <img src="new/img/speech_info.png">
-    </div>
-    <script>dragElement(document.getElementById("einstein_header"));</script>
-
-    <!--ROVER SPEECH-->
-    <div id="rover_header" style="user-select: none; position: absolute; bottom: 32px; right: 347px; z-index: 1;">
-            <img src="new/img/speech_menu.png">
-    </div>
-    <script>dragElement(document.getElementById("rover_header"));</script>
-
-    <!--CHOR JANUSZY-->
-    <div id="chor_header" style="user-select: none; position: absolute; top: 300px; right: 357px; z-index: 1;">
-            <img src="new/img/speech_chor_januszy.png">
-    </div>
-    <script>dragElement(document.getElementById("chor_header"));</script>
 
     <!--CONSOLE WINDOW-->
     <div class="window" id="window_console" style="user-select: none; position: absolute; display: none;">
@@ -270,7 +409,11 @@
     <!--MAINSCR WINDOW-->
     <div class="window" id="window_mainscr" style="user-select: none; position: absolute; display: none; width: 898px; height: 640px;">
         <div class="title-bar" id="window_mainscr_header">
-            <div class="title-bar-text">welcome - Paint</div>
+            
+            <div class="title-bar-text" style="cursor:default; display:flex; gap: 4px;">
+            <img src="new/files/paint.png" style="max-width: 16px;">
+                welcome - Paint
+            </div>
             <div class="title-bar-controls" id="window_mainscr_header_controls" onmousedown="event.stopPropagation()">
                 <button aria-label="Close" id="close_button" onclick="windowClose('window_mainscr')"></button>
             </div>
@@ -589,8 +732,9 @@
     <!--MONERO WINDOW-->
     <div class="window" id="window_monero" style="user-select: none; position: absolute; top: 100px; width: 710px; height: 80px; display: none; background-color: black;">
       <div class="title-bar" id="window_monero_header">
-        <div class="title-bar-text" style="cursor:default;">
-          Wallet
+        <div class="title-bar-text" style="cursor:default; display:flex; gap: 4px;">
+            <img src="new/files/monero.png" style="max-width: 16px;">
+            Wallet
         </div>
 
         <div class="title-bar-controls" id="window_monero_header_controls" onmousedown="event.stopPropagation()">
@@ -812,9 +956,14 @@
                     window.location.href = "mailto:kittycritt3r@proton.me";
                 break;
                 case "file_pics":
-                    tabOpen("tab_pics", "Pictures", "new/files/pic2.png", "window_pics");
+                    tabOpen("tab_pics", "miku - Picture Viewer", "new/files/picview.png", "window_pics");
                     windowOpen("window_pics", null);
                     windowFocus(document.getElementById("window_pics"));
+                break;
+                case "file_fish":
+                    tabOpen("tab_fish", "fish", "new/files/script.png", "window_fish");
+                    windowOpen("window_fish", null);
+                    windowFocus(document.getElementById("window_fish"));
                 break;
             }
         }
@@ -871,6 +1020,10 @@
             tab_text.style.position = "absolute";
             tab_text.style.left = "32px";
             tab_text.style.bottom = "-6px";
+            tab_text.style.width = "110px";
+            tab_text.style.overflow = "hidden";
+            tab_text.style.textOverflow = "ellipsis";
+            tab_text.style.whiteSpace = "nowrap";
             tab_text.textContent = name;
 
             obj_taskbar.arr.push([tab, window_id, tab_sprite, 0]);
