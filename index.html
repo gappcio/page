@@ -4,439 +4,733 @@
         <meta charset="utf-8"/>
         <title>stupid</title>
         <link rel="stylesheet" href="style.css">
+        <script src="windows.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="https://unpkg.com/xp.css"/>
     </head>
-<body style="background-color:#080808;">
+<body style="background-image: url('new/window/bliss.png'); background-size: 100% 100%; background-attachment: fixed; background-repeat: no-repeat; overflow: hidden;" onload="startTime()">
+
     <header>
-    <div>
 
-        <div>
-            <a class="topbar">==============================================================================================================</a>
-            <pre class="colored-title">
-    &nbsp;&nbsp;88                                                                    88              88              
-    &nbsp;&nbsp;88                                                                    88              ""              
-    &nbsp;&nbsp;88                                                                    88                              
-    &nbsp;&nbsp;88  88       88  8b,dPPYba,   ,adPPYYba,   ,adPPYba,  8b       d8     88  ,adPPYYba,  88  8b,dPPYba,  
-    &nbsp;&nbsp;88  88       88  88P'   `"8a  ""     `Y8  a8"     ""  `8b     d8'     88  ""     `Y8  88  88P'   "Y8  
-    &nbsp;&nbsp;88  88       88  88       88  ,adPPPPP88  8b           `8b   d8'      88  ,adPPPPP88  88  88          
-    &nbsp;&nbsp;88  "8a,   ,a88  88       88  88,    ,88  "8a,   ,aa    `8b,d8'       88  88,    ,88  88  88          
-    &nbsp;&nbsp;88   `"YbbdP'Y8  88       88  `"8bbdP"Y8   `"Ybbd8"'      Y88'        88  `"8bbdP"Y8  88  88          
-    &nbsp;&nbsp;                                                          d8'                                         
-    &nbsp;&nbsp;                                                         d8'                                          
-            </pre>
-            <a class="topbar">==============================================================================================================</a>
-        </div>
-    
-        <div style="display: flex; align-items: center; justify-content: center;">
-            <a class="topbar" style="font-size: 32px">HOME</a> 
-            <a class="topbar" style="font-size: 32px">|</a> 
-            <a href="projects.html" class="pages" style="text-decoration:none">MY PROJECTS</a>
-            <a class="topbar" style="font-size: 32px">|</a> 
-            <a href="things.html" class="pages" style="text-decoration:none">BLOG</a>
-            <a class="topbar" style="font-size: 32px">|</a> 
-            <a href="links.html" class="pages" style="text-decoration:none">LINKS</a><br>
-        </div>
-
-        <a class="topbar">==============================================================================================================</a>
-    </div>
     </header>
 
+    <!--
+        my code is shit do u really wanna see it?
+    -->
+
     <main>
-    <div style=
-    "position: absolute;
-    top: 300px;
-    left: 300px;
-    width: 420px;"
+
+    <!--CREATE ARRAYS-->
+
+    <script>
+      var windows_array = [];
+      var file_array = [];
+      var tabs_array = [];
+    </script>
+
+
+    <!--CIRNO-->
+    <div id="window_cirno" style=
+    "user-select: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 0px;
+    display: none;"
     >
-        
-            <pre id="cirno" class="baka" style="background-color: #080808; font-weight: bold; padding: 4px 5px; --fs: 9px;">
-                <a href="secret_cirno.html" style="text-decoration:none"><b style="color:#080808">&nbsp;&nbsp;&nbsp;&nbsp;########</b><b style="color:#070707">#</b><b style="color:#090400">#</b><b style="color:#03393D">#</b><b style="color:#1565A6">#</b><b style="color:#2C9EEE">#</b><b style="color:#1875D5">#</b><b style="color:#08506C">#</b><b style="color:#120F13">#</b><b style="color:#090200">#</b><b style="color:#070605">#</b><b style="color:#070707">#</b><b style="color:#080808">##########################</b><b style="color:#080606">#</b><b style="color:#060503">#</b><b style="color:#0D0603">#</b><b style="color:#151E24">#</b><b style="color:#034C76">#</b><b style="color:#1B63A1">#</b><b style="color:#027C97">#</b><b style="color:#0D5580">#</b><b style="color:#192028">#</b><b style="color:#0C0502">#</b><b style="color:#070606">#</b><b style="color:#080808">####</b>
-                <b style="color:#080808">&nbsp;&nbsp;&nbsp;&nbsp;#######</b><b style="color:#070707">#</b><b style="color:#0C0804">#</b><b style="color:#083A61">#</b><b style="color:#0087E4">#</b><b style="color:#00A2D8">#</b><b style="color:#009DF6">#</b><b style="color:#009DFF">#</b><b style="color:#008FFF">#</b><b style="color:#1884C6">#</b><b style="color:#084E65">#</b><b style="color:#0B1213">#</b><b style="color:#0A0300">#</b><b style="color:#070605">#</b><b style="color:#070707">#</b><b style="color:#080808">######################</b><b style="color:#070707">#</b><b style="color:#060504">#</b><b style="color:#070B07">#</b><b style="color:#171E2B">#</b><b style="color:#145981">#</b><b style="color:#0482D4">#</b><b style="color:#008BE5">#</b><b style="color:#008AE1">#</b><b style="color:#008AC4">#</b><b style="color:#008AE1">#</b><b style="color:#0572B3">#</b><b style="color:#105370">#</b><b style="color:#0B1112">#</b><b style="color:#070707">#</b><b style="color:#080808">###</b>
-                <b style="color:#080808">&nbsp;&nbsp;&nbsp;&nbsp;#######</b><b style="color:#090504">#</b><b style="color:#144972">#</b><b style="color:#0089DD">#</b><b style="color:#0089C9">#</b><b style="color:#0088CF">#</b><b style="color:#029DD3">#</b><b style="color:#00A1FF">#</b><b style="color:#029ED6">#</b><b style="color:#00B5FF">#</b><b style="color:#00B0F6">#</b><b style="color:#0195D1">#</b><b style="color:#0C557B">#</b><b style="color:#0B1414">#</b><b style="color:#0A0500">#</b><b style="color:#080606">#</b><b style="color:#080808">###################</b><b style="color:#070707">#</b><b style="color:#060403">#</b><b style="color:#0C0703">#</b><b style="color:#182329">#</b><b style="color:#006D98">#</b><b style="color:#0779BB">#</b><b style="color:#008DEA">#</b><b style="color:#0290D3">#</b><b style="color:#028ED0">#</b><b style="color:#0087DA">#</b><b style="color:#028EC0">#</b><b style="color:#0390B6">#</b><b style="color:#0295D6">#</b><b style="color:#0194D7">#</b><b style="color:#015E96">#</b><b style="color:#110D0B">#</b><b style="color:#080808">###</b>
-                <b style="color:#080808">&nbsp;&nbsp;&nbsp;&nbsp;######</b><b style="color:#070707">#</b><b style="color:#083738">#</b><b style="color:#0087DB">#</b><b style="color:#0083D5">#</b><b style="color:#0073AD">#</b><b style="color:#0088D9">#</b><b style="color:#0292C8">#</b><b style="color:#0097F4">#</b><b style="color:#009DE4">#</b><b style="color:#009BF4">#</b><b style="color:#02A7D7">#</b><b style="color:#02A4D9">#</b><b style="color:#009DFF">#</b><b style="color:#0280C3">#</b><b style="color:#0C3E7E">#</b><b style="color:#071010">#</b><b style="color:#080200">#</b><b style="color:#080606">#</b><b style="color:#080808">###############</b><b style="color:#070707">#</b><b style="color:#070504">#</b><b style="color:#0C0703">#</b><b style="color:#182328">#</b><b style="color:#145A83">#</b><b style="color:#0483D0">#</b><b style="color:#0089FF">#</b><b style="color:#0293C9">#</b><b style="color:#028EC2">#</b><b style="color:#0086EF">#</b><b style="color:#0391B5">#</b><b style="color:#0087FB">#</b><b style="color:#0391C9">#</b><b style="color:#0291B9">#</b><b style="color:#009AF1">#</b><b style="color:#0086DE">#</b><b style="color:#0074D9">#</b><b style="color:#15475B">#</b><b style="color:#080808">###</b>
-                <b style="color:#080808">&nbsp;&nbsp;&nbsp;&nbsp;#######</b><b style="color:#00659A">#</b><b style="color:#0087D8">#</b><b style="color:#0071B2">#</b><b style="color:#005CAF">#</b><b style="color:#0077D4">#</b><b style="color:#008AE3">#</b><b style="color:#029FD1">#</b><b style="color:#009FF1">#</b><b style="color:#02A2D8">#</b><b style="color:#009EE7">#</b><b style="color:#009DF6">#</b><b style="color:#028BD5">#</b><b style="color:#03A3CE">#</b><b style="color:#0192DB">#</b><b style="color:#0180C1">#</b><b style="color:#043961">#</b><b style="color:#070F12">#</b><b style="color:#080300">#</b><b style="color:#080707">#</b><b style="color:#080808">############</b><b style="color:#070505">#</b><b style="color:#0A0400">#</b><b style="color:#10191E">#</b><b style="color:#145986">#</b><b style="color:#0487E3">#</b><b style="color:#008DE8">#</b><b style="color:#018FC5">#</b><b style="color:#0390B9">#</b><b style="color:#0089D5">#</b><b style="color:#0089D4">#</b><b style="color:#008AE0">#</b><b style="color:#0087D1">#</b><b style="color:#0085D5">#</b><b style="color:#0088CC">#</b><b style="color:#047FBA">#</b><b style="color:#0072C1">#</b><b style="color:#0061B1">#</b><b style="color:#0083C8">#</b><b style="color:#0061A0">#</b><b style="color:#080808">###</b>
-                <b style="color:#080808">&nbsp;&nbsp;&nbsp;&nbsp;######</b><b style="color:#121212">#</b><b style="color:#0084C5">#</b><b style="color:#0087D8">#</b><b style="color:#0077AD">#</b><b style="color:#006EB2">#</b><b style="color:#0071B5">#</b><b style="color:#0075C1">#</b><b style="color:#0086DA">#</b><b style="color:#028ED3">#</b><b style="color:#02A6D6">#</b><b style="color:#028ECE">#</b><b style="color:#009DED">#</b><b style="color:#019DEB">#</b><b style="color:#0292D9">#</b><b style="color:#01AFE9">#</b><b style="color:#0294DB">#</b><b style="color:#00AAFF">#</b><b style="color:#0289A4">#</b><b style="color:#033650">#</b><b style="color:#070B06">#</b><b style="color:#060403">#</b><b style="color:#070707">#</b><b style="color:#080808">########</b><b style="color:#080706">#</b><b style="color:#080301">#</b><b style="color:#14191C">#</b><b style="color:#0C4F7A">#</b><b style="color:#0281D0">#</b><b style="color:#009CFF">#</b><b style="color:#02A3BC">#</b><b style="color:#028ED8">#</b><b style="color:#0391C9">#</b><b style="color:#0293B9">#</b><b style="color:#0086EC">#</b><b style="color:#028CA7">#</b><b style="color:#0370A2">#</b><b style="color:#035F9A">#</b><b style="color:#055E90">#</b><b style="color:#125176">#</b><b style="color:#184A6C">#</b><b style="color:#005DB1">#</b><b style="color:#0063AF">#</b><b style="color:#0087C2">#</b><b style="color:#005FAD">#</b><b style="color:#080808">###</b>
-                <b style="color:#080808">&nbsp;&nbsp;&nbsp;&nbsp;######</b><b style="color:#252525">#</b><b style="color:#0087DC">#</b><b style="color:#0088D2">#</b><b style="color:#0088C1">#</b><b style="color:#0076D3">#</b><b style="color:#0082D6">#</b><b style="color:#0082BF">#</b><b style="color:#0075B6">#</b><b style="color:#0070C7">#</b><b style="color:#0071BB">#</b><b style="color:#0072C9">#</b><b style="color:#0082D3">#</b><b style="color:#0290BE">#</b><b style="color:#0088EE">#</b><b style="color:#028FD4">#</b><b style="color:#009AF1">#</b><b style="color:#009EF7">#</b><b style="color:#03A8D0">#</b><b style="color:#0089F3">#</b><b style="color:#006CA9">#</b><b style="color:#172330">#</b><b style="color:#0C0703">#</b><b style="color:#070505">#</b><b style="color:#070707">#</b><b style="color:#080808">####</b><b style="color:#080707">#</b><b style="color:#080302">#</b><b style="color:#070B0D">#</b><b style="color:#04344B">#</b><b style="color:#036FD3">#</b><b style="color:#0193CB">#</b><b style="color:#008AF5">#</b><b style="color:#0293D8">#</b><b style="color:#0290B6">#</b><b style="color:#008AF2">#</b><b style="color:#0088BF">#</b><b style="color:#036FBC">#</b><b style="color:#174C72">#</b><b style="color:#045A7D">#</b><b style="color:#292E2A">#</b><b style="color:#292E2A">#</b><b style="color:#144096">#</b><b style="color:#154078">#</b><b style="color:#174870">#</b><b style="color:#005EC7">#</b><b style="color:#0070AF">#</b><b style="color:#0087D1">#</b><b style="color:#005F9B">#</b><b style="color:#080808">###</b>
-                <b style="color:#080808">&nbsp;&nbsp;&nbsp;&nbsp;######</b><b style="color:#252525">#</b><b style="color:#0087FF">#</b><b style="color:#059AA7">#</b><b style="color:#0086EE">#</b><b style="color:#009EEF">#</b><b style="color:#0293C0">#</b><b style="color:#008BF1">#</b><b style="color:#0290BE">#</b><b style="color:#0074C4">#</b><b style="color:#0071A9">#</b><b style="color:#005FB2">#</b><b style="color:#005EAE">#</b><b style="color:#005EB3">#</b><b style="color:#00719C">#</b><b style="color:#005FC3">#</b><b style="color:#0071BC">#</b><b style="color:#028FBD">#</b><b style="color:#0096DF">#</b><b style="color:#02A2CF">#</b><b style="color:#009BFF">#</b><b style="color:#078ACC">#</b><b style="color:#145A87">#</b><b style="color:#101919">#</b><b style="color:#090300">#</b><b style="color:#070504">#</b><b style="color:#070604">##</b><b style="color:#060404">#</b><b style="color:#070D09">#</b><b style="color:#043635">#</b><b style="color:#016D9F">#</b><b style="color:#009EF0">#</b><b style="color:#0296DB">#</b><b style="color:#018BDC">#</b><b style="color:#0290C2">#</b><b style="color:#0086C7">#</b><b style="color:#0380DF">#</b><b style="color:#18596B">#</b><b style="color:#134E82">#</b><b style="color:#283748">#</b><b style="color:#292C38">#</b><b style="color:#104375">#</b><b style="color:#124694">#</b><b style="color:#164A84">#</b><b style="color:#003AD9">#</b><b style="color:#035C9E">#</b><b style="color:#124C8E">#</b><b style="color:#0062AC">#</b><b style="color:#005CAF">#</b><b style="color:#0089B2">#</b><b style="color:#00618F">#</b><b style="color:#080808">###</b>
-                <b style="color:#080808">&nbsp;&nbsp;&nbsp;&nbsp;######</b><b style="color:#0E0E0E">#</b><b style="color:#0089DA">#</b><b style="color:#009AE4">#</b><b style="color:#0099FF">#</b><b style="color:#02A4D8">#</b><b style="color:#009FF8">#</b><b style="color:#02A0D8">#</b><b style="color:#018BED">#</b><b style="color:#00ACFF">#</b><b style="color:#03A4C5">#</b><b style="color:#008AFF">#</b><b style="color:#0085DC">#</b><b style="color:#027FAF">#</b><b style="color:#0078C5">#</b><b style="color:#0073B6">#</b><b style="color:#00659F">#</b><b style="color:#0065AE">#</b><b style="color:#0062A6">#</b><b style="color:#0077B9">#</b><b style="color:#008BEB">#</b><b style="color:#0090C6">#</b><b style="color:#008AFF">#</b><b style="color:#007FBA">#</b><b style="color:#014976">#</b><b style="color:#0E1F25">#</b><b style="color:#05121C">##</b><b style="color:#112321">#</b><b style="color:#005987">#</b><b style="color:#0088D8">#</b><b style="color:#01A4CC">#</b><b style="color:#01A6DA">#</b><b style="color:#0097DD">#</b><b style="color:#028CB5">#</b><b style="color:#0071BF">#</b><b style="color:#00609A">#</b><b style="color:#283B52">#</b><b style="color:#15426D">#</b><b style="color:#055CCA">#</b><b style="color:#035EBC">#</b><b style="color:#026EDB">#</b><b style="color:#017CC2">#</b><b style="color:#0086CA">#</b><b style="color:#0086E1">#</b><b style="color:#0088C1">#</b><b style="color:#0085C0">#</b><b style="color:#0075CE">#</b><b style="color:#0084B9">#</b><b style="color:#0070AE">#</b><b style="color:#0075B5">#</b><b style="color:#15475C">#</b><b style="color:#080808">###</b>
-                <b style="color:#080808">&nbsp;&nbsp;&nbsp;&nbsp;######</b><b style="color:#070707">#</b><b style="color:#007397">#</b><b style="color:#0083D4">#</b><b style="color:#0089D8">#</b><b style="color:#0089DD">#</b><b style="color:#0099EC">#</b><b style="color:#0085DD">#</b><b style="color:#028CBF">#</b><b style="color:#0087E5">#</b><b style="color:#0091C5">#</b><b style="color:#0591CB">#</b><b style="color:#0586CD">#</b><b style="color:#0494D4">#</b><b style="color:#0083D5">#</b><b style="color:#007DD8">#</b><b style="color:#008ECE">#</b><b style="color:#0588C5">#</b><b style="color:#0789E4">#</b><b style="color:#0B99E8">#</b><b style="color:#368CD8">#</b><b style="color:#368EE4">#</b><b style="color:#3D97DA">#</b><b style="color:#3C98DA">#</b><b style="color:#45A3FF">#</b><b style="color:#45AAF2">#</b><b style="color:#4896F0">#</b><b style="color:#4496F0">#</b><b style="color:#4DA2C8">#</b><b style="color:#0C9CFF">#</b><b style="color:#078DF3">#</b><b style="color:#0A93C6">#</b><b style="color:#0575CC">#</b><b style="color:#035FB2">#</b><b style="color:#005D9F">#</b><b style="color:#006BA7">#</b><b style="color:#006DBD">#</b><b style="color:#006DB5">#</b><b style="color:#0086EA">#</b><b style="color:#008CBD">##</b><b style="color:#008EED">#</b><b style="color:#0394BA">#</b><b style="color:#0099EC">#</b><b style="color:#028FC3">#</b><b style="color:#0087C8">##</b><b style="color:#0084C4">#</b><b style="color:#0089C6">#</b><b style="color:#0064C5">#</b><b style="color:#14446F">#</b><b style="color:#110D0B">#</b><b style="color:#080808">###</b>
-                <b style="color:#080808">&nbsp;&nbsp;&nbsp;&nbsp;#######</b><b style="color:#005D85">#</b><b style="color:#0062B2">#</b><b style="color:#0061AE">#</b><b style="color:#0073B1">#</b><b style="color:#00719A">#</b><b style="color:#0061B1">#</b><b style="color:#0060A2">#</b><b style="color:#005F9E">#</b><b style="color:#134B81">#</b><b style="color:#114973">#</b><b style="color:#0D4A73">#</b><b style="color:#164C6C">#</b><b style="color:#3575C3">#</b><b style="color:#497AA4">#</b><b style="color:#6F9FD6">#</b><b style="color:#80AFE1">#</b><b style="color:#94D2FC">#</b><b style="color:#A4D7FF">#</b><b style="color:#9DD2FD">#</b><b style="color:#AAD2FF">#</b><b style="color:#B0D5FB">#</b><b style="color:#B0D5FC">#</b><b style="color:#B3D7FF">#</b><b style="color:#A1D6FF">#</b><b style="color:#B3D8FF">#</b><b style="color:#90D8FF">#</b><b style="color:#B2D7FF">#</b><b style="color:#92D7FF">#</b><b style="color:#92D2FB">#</b><b style="color:#80C0FF">#</b><b style="color:#8AB5E3">#</b><b style="color:#6FACE8">#</b><b style="color:#5389D8">#</b><b style="color:#3E87B7">#</b><b style="color:#0979A8">#</b><b style="color:#16556A">#</b><b style="color:#0A4A60">#</b><b style="color:#114360">#</b><b style="color:#174A65">#</b><b style="color:#145771">#</b><b style="color:#0078B2">#</b><b style="color:#0089CB">#</b><b style="color:#0086CF">#</b><b style="color:#0087D3">#</b><b style="color:#0086DB">#</b><b style="color:#0076AF">#</b><b style="color:#0076B1">#</b><b style="color:#055A85">#</b><b style="color:#0C0805">#</b><b style="color:#070707">#</b><b style="color:#080808">###</b>
-                <b style="color:#080808">&nbsp;&nbsp;&nbsp;&nbsp;#######</b><b style="color:#005F87">#</b><b style="color:#005EAF">#</b><b style="color:#005E8B">#</b><b style="color:#005BAE">#</b><b style="color:#005F98">#</b><b style="color:#005DAB">#</b><b style="color:#0061AD">#</b><b style="color:#006FB5">#</b><b style="color:#0073C9">#</b><b style="color:#0A8BDC">#</b><b style="color:#448BDC">#</b><b style="color:#80AEE8">#</b><b style="color:#AED4FF">#</b><b style="color:#ADD9FF">#</b><b style="color:#A4DCFF">#</b><b style="color:#B5DBFF">#</b><b style="color:#A3D8FF">#</b><b style="color:#B1D8FF">#</b><b style="color:#ACD8FF">#</b><b style="color:#9FD8FF">#</b><b style="color:#B0D8FF">###</b><b style="color:#B2D8FF">#</b><b style="color:#B0D8FF">#</b><b style="color:#A8D8FF">#</b><b style="color:#B0D8FF">#</b><b style="color:#ADD8FF">#</b><b style="color:#B3D8FF">#</b><b style="color:#B0DAFF">#</b><b style="color:#A2DBFF">#</b><b style="color:#B1DCFF">#</b><b style="color:#A6D8FF">#</b><b style="color:#A0D6FF">#</b><b style="color:#7CBDFB">#</b><b style="color:#87B9DC">#</b><b style="color:#4694C9">#</b><b style="color:#384665">#</b><b style="color:#194178">#</b><b style="color:#272E33">#</b><b style="color:#103A5A">#</b><b style="color:#055C8E">#</b><b style="color:#0063A0">#</b><b style="color:#0085D8">#</b><b style="color:#0291C0">#</b><b style="color:#008AE7">#</b><b style="color:#0083C3">#</b><b style="color:#144B60">#</b><b style="color:#060606">#</b><b style="color:#080808">####</b>
-                <b style="color:#080808">&nbsp;&nbsp;&nbsp;&nbsp;#######</b><b style="color:#005F87">#</b><b style="color:#0062AD">##</b><b style="color:#0072B4">#</b><b style="color:#0087BF">#</b><b style="color:#0072DB">#</b><b style="color:#0087D3">#</b><b style="color:#0DAEFA">#</b><b style="color:#41D0FF">#</b><b style="color:#A4D8FF">#</b><b style="color:#B3D8FF">#</b><b style="color:#A4DCFF">#</b><b style="color:#B0D8FF">#</b><b style="color:#B1D8FF">#</b><b style="color:#ABD7FF">##</b><b style="color:#9AD7FF">#</b><b style="color:#AFD7FF">#</b><b style="color:#B1D7FF">###</b><b style="color:#B0D7FF">#</b><b style="color:#AFD7FF">#</b><b style="color:#ABD7FF">#</b><b style="color:#B1D7FF">#</b><b style="color:#9AD7FF">#</b><b style="color:#B1D7FF">#</b><b style="color:#ACD7FF">#</b><b style="color:#B0D7FF">#</b><b style="color:#A0D7FF">#</b><b style="color:#ACD7FF">#</b><b style="color:#9FD7FF">#</b><b style="color:#B1D8FF">#</b><b style="color:#A7D8FF">#</b><b style="color:#9ECAFF">#</b><b style="color:#A3DBFF">#</b><b style="color:#9CD8FF">#</b><b style="color:#98B0FF">#</b><b style="color:#6F99F4">#</b><b style="color:#3477BE">#</b><b style="color:#1C4A7E">#</b><b style="color:#124975">#</b><b style="color:#10446E">#</b><b style="color:#055C91">#</b><b style="color:#0570AD">#</b><b style="color:#0074D1">#</b><b style="color:#0085D7">#</b><b style="color:#0072AE">#</b><b style="color:#0F0E0E">#</b><b style="color:#080808">####</b>
-                <b style="color:#080808">&nbsp;&nbsp;&nbsp;&nbsp;#######</b><b style="color:#00628C">#</b><b style="color:#0086C6">#</b><b style="color:#0085E9">#</b><b style="color:#0292B8">#</b><b style="color:#018BBC">#</b><b style="color:#008BDC">#</b><b style="color:#48B1EC">#</b><b style="color:#8EBAFF">#</b><b style="color:#A3C7FF">#</b><b style="color:#ADD8FF">#</b><b style="color:#B0D8FF">#</b><b style="color:#9BD7FF">#</b><b style="color:#AFD7FF">#</b><b style="color:#ABD7FF">#</b><b style="color:#B0D7FF">#</b><b style="color:#9ED7FF">#</b><b style="color:#A7D7FF">#</b><b style="color:#B0D7FF">#</b><b style="color:#9ED7FF">#</b><b style="color:#B1D7FF">#</b><b style="color:#9ED7FF">#</b><b style="color:#ABD7FF">#</b><b style="color:#B1D7FF">#</b><b style="color:#9AD7FF">#</b><b style="color:#A0D7FF">#</b><b style="color:#9BD7FF">#</b><b style="color:#A0D7FF">#</b><b style="color:#9BD7FF">#</b><b style="color:#ABD7FF">#</b><b style="color:#9BD7FF">#</b><b style="color:#9FD7FF">#</b><b style="color:#A8D7FF">#</b><b style="color:#B0D7FF">#</b><b style="color:#9BD7FF">#</b><b style="color:#A0C7FF">#</b><b style="color:#A7D7FF">#</b><b style="color:#A0D8FF">#</b><b style="color:#9DD6FF">#</b><b style="color:#9EC6FF">#</b><b style="color:#9AC4FF">#</b><b style="color:#60A3DE">#</b><b style="color:#0479BB">#</b><b style="color:#046AB3">#</b><b style="color:#14508C">#</b><b style="color:#134F90">#</b><b style="color:#144D88">#</b><b style="color:#0060B0">#</b><b style="color:#0063C0">#</b><b style="color:#29353C">#</b><b style="color:#080808">####</b>
-                <b style="color:#080808">&nbsp;&nbsp;&nbsp;&nbsp;#######</b><b style="color:#0C3B4E">#</b><b style="color:#0073C2">#</b><b style="color:#0086C5">#</b><b style="color:#0076AB">#</b><b style="color:#0466A8">#</b><b style="color:#48AFE5">#</b><b style="color:#9DC5FF">#</b><b style="color:#9DC3FF">#</b><b style="color:#9BDAFF">#</b><b style="color:#9ED7FF">#</b><b style="color:#AFD3FF">#</b><b style="color:#9BD8FF">#</b><b style="color:#B0D7FF">#</b><b style="color:#99D7FF">#</b><b style="color:#B0D8FF">#</b><b style="color:#ACD7FF">#</b><b style="color:#A0D7FF">#</b><b style="color:#ABD7FF">#</b><b style="color:#ACD7FF">#</b><b style="color:#9AD7FF">#</b><b style="color:#ACD7FF">#</b><b style="color:#99D7FF">#</b><b style="color:#A0D7FF">#</b><b style="color:#9BD7FF">#</b><b style="color:#97D7FF">#</b><b style="color:#9BD7FF">#</b><b style="color:#97D7FF">#</b><b style="color:#90D7FF">#</b><b style="color:#9AD7FF">#</b><b style="color:#9CD7FF">#</b><b style="color:#A7D7FF">#</b><b style="color:#89D7FF">#</b><b style="color:#ADD7FF">#</b><b style="color:#8ED7FF">#</b><b style="color:#A7D3FF">#</b><b style="color:#8FD7FF">#</b><b style="color:#B2D7FF">#</b><b style="color:#96D9FF">#</b><b style="color:#ADD5FF">#</b><b style="color:#8BC3FF">#</b><b style="color:#99C2FC">#</b><b style="color:#5B9DEA">#</b><b style="color:#00619D">#</b><b style="color:#0073C9">#</b><b style="color:#0072C8">#</b><b style="color:#037DB2">#</b><b style="color:#0070C8">#</b><b style="color:#0064C7">#</b><b style="color:#075B6D">#</b><b style="color:#080808">####</b>
-                <b style="color:#080808">&nbsp;&nbsp;&nbsp;&nbsp;#####</b><b style="color:#070707">#</b><b style="color:#070605">#</b><b style="color:#0E100E">#</b><b style="color:#005F90">#</b><b style="color:#025E92">#</b><b style="color:#104868">#</b><b style="color:#6BA9F5">#</b><b style="color:#9FD5FF">#</b><b style="color:#9BC3FF">#</b><b style="color:#9DCFFF">#</b><b style="color:#9AC6FF">#</b><b style="color:#ADD9FF">#</b><b style="color:#B0C6FF">#</b><b style="color:#9BD3FF">#</b><b style="color:#ABD7FF">#</b><b style="color:#A1D8FF">#</b><b style="color:#ABD3FF">#</b><b style="color:#9FD7FF">#</b><b style="color:#9BD8FF">#</b><b style="color:#9ED7FF">#</b><b style="color:#A0D9FF">#</b><b style="color:#95D7FF">#</b><b style="color:#A0D8FF">#</b><b style="color:#A0D7FF">#</b><b style="color:#97D8FF">#</b><b style="color:#9BD7FF">#</b><b style="color:#86D9FF">#</b><b style="color:#9BD7FF">#</b><b style="color:#86D7FF">#</b><b style="color:#97D9FF">#</b><b style="color:#9DD7FF">#</b><b style="color:#97D7FF">#</b><b style="color:#8FD9FF">#</b><b style="color:#98D8FF">#</b><b style="color:#88D9FF">#</b><b style="color:#A9D7FF">#</b><b style="color:#8FD8FF">#</b><b style="color:#98D9FF">#</b><b style="color:#A0D8FF">#</b><b style="color:#96C7FF">#</b><b style="color:#A0C6FF">#</b><b style="color:#97D1FF">#</b><b style="color:#8CD9FF">#</b><b style="color:#8AABF3">#</b><b style="color:#3A80AC">#</b><b style="color:#134E6C">#</b><b style="color:#035B83">#</b><b style="color:#1665B2">#</b><b style="color:#055FA6">#</b><b style="color:#026CAA">#</b><b style="color:#202A29">#</b><b style="color:#080808">####</b>
-                <b style="color:#080808">&nbsp;&nbsp;&nbsp;&nbsp;#####</b><b style="color:#070605">#</b><b style="color:#0F171D">#</b><b style="color:#005AA0">#</b><b style="color:#16476C">#</b><b style="color:#232930">#</b><b style="color:#2A73AB">#</b><b style="color:#A0B0FF">#</b><b style="color:#86D9FF">#</b><b style="color:#A2C3FF">#</b><b style="color:#85C7FF">#</b><b style="color:#ADCEFF">#</b><b style="color:#8EC7FF">#</b><b style="color:#ADD9FF">#</b><b style="color:#9BC2FF">#</b><b style="color:#9AD7FF">#</b><b style="color:#A1D3FF">#</b><b style="color:#9AC6FF">#</b><b style="color:#A1D9FF">#</b><b style="color:#95D3FF">#</b><b style="color:#ADD7FF">#</b><b style="color:#9BC7FF">#</b><b style="color:#9DD8FF">#</b><b style="color:#9AD3FF">#</b><b style="color:#AED9FF">#</b><b style="color:#86D3FF">#</b><b style="color:#9DD9FF">#</b><b style="color:#86C6FF">#</b><b style="color:#9DD8FF">#</b><b style="color:#87D9FF">#</b><b style="color:#8AC6FF">#</b><b style="color:#8BD7FF">#</b><b style="color:#8AD9FF">#</b><b style="color:#98C7FF">#</b><b style="color:#8CD3FF">#</b><b style="color:#98C7FF">#</b><b style="color:#8AD7FF">#</b><b style="color:#98D9FF">#</b><b style="color:#84C7FF">#</b><b style="color:#97D3FF">#</b><b style="color:#9DC3FF">#</b><b style="color:#97D9FF">#</b><b style="color:#90B2FF">#</b><b style="color:#87D8FF">#</b><b style="color:#9AB1E0">#</b><b style="color:#8AB1FF">#</b><b style="color:#0D7BBC">#</b><b style="color:#2A3539">#</b><b style="color:#0461A1">#</b><b style="color:#134C71">#</b><b style="color:#131416">#</b><b style="color:#080707">#</b><b style="color:#080808">####</b>
-                <b style="color:#080808">&nbsp;&nbsp;&nbsp;&nbsp;#####</b><b style="color:#1C292E">#</b><b style="color:#06599E">#</b><b style="color:#035EAF">#</b><b style="color:#28313D">#</b><b style="color:#282721">#</b><b style="color:#369AE9">#</b><b style="color:#9DAEFF">#</b><b style="color:#87C7FF">#</b><b style="color:#97C4FF">#</b><b style="color:#8BD4FF">#</b><b style="color:#9BC7FF">#</b><b style="color:#9DC3FF">#</b><b style="color:#89D7FF">#</b><b style="color:#9CC4FF">#</b><b style="color:#9DD8FF">#</b><b style="color:#95C1FF">#</b><b style="color:#9CDAFF">#</b><b style="color:#97C4FF">#</b><b style="color:#9BC8FF">#</b><b style="color:#9AD7FF">#</b><b style="color:#96C3FF">#</b><b style="color:#90D3FF">#</b><b style="color:#A8C7FF">#</b><b style="color:#8AC6FF">#</b><b style="color:#86C1FF">#</b><b style="color:#8BC7FF">#</b><b style="color:#97D3FF">#</b><b style="color:#8BD3FB">#</b><b style="color:#8CC6FF">#</b><b style="color:#98D3FF">#</b><b style="color:#85D9FF">#</b><b style="color:#9DC6FF">#</b><b style="color:#83CFFE">#</b><b style="color:#88C5FF">#</b><b style="color:#8AC3F1">#</b><b style="color:#8BD9FF">#</b><b style="color:#86C1FB">#</b><b style="color:#9AC5DE">#</b><b style="color:#86C3FF">#</b><b style="color:#8BBEFF">#</b><b style="color:#86D5FF">#</b><b style="color:#98AFFF">#</b><b style="color:#87D3FF">#</b><b style="color:#86AFEC">#</b><b style="color:#9AAFFF">#</b><b style="color:#245882">#</b><b style="color:#282827">#</b><b style="color:#114F78">#</b><b style="color:#035C98">#</b><b style="color:#103F6A">#</b><b style="color:#0C0806">#</b><b style="color:#070707">#</b><b style="color:#080808">###</b>
-                <b style="color:#080808">&nbsp;&nbsp;&nbsp;&nbsp;#####</b><b style="color:#052F8C">#</b><b style="color:#273446">#</b><b style="color:#242D43">#</b><b style="color:#143E72">#</b><b style="color:#13134E">#</b><b style="color:#435778">#</b><b style="color:#85BFFF">#</b><b style="color:#87C3FF">#</b><b style="color:#86BEFF">#</b><b style="color:#9DC7FF">#</b><b style="color:#8AD4FF">#</b><b style="color:#97C3FF">#</b><b style="color:#8BD8FF">#</b><b style="color:#97B7FF">#</b><b style="color:#8AD3FF">#</b><b style="color:#96CAFF">#</b><b style="color:#8AD1E5">#</b><b style="color:#7BA4E3">#</b><b style="color:#A0C6EA">#</b><b style="color:#9CD8FF">#</b><b style="color:#96C3FF">#</b><b style="color:#98C1FF">#</b><b style="color:#8EC8FF">#</b><b style="color:#85CEFF">#</b><b style="color:#98C9FF">#</b><b style="color:#8BC2FF">#</b><b style="color:#9DD3FF">#</b><b style="color:#8BC7EE">#</b><b style="color:#97CEFF">#</b><b style="color:#86D8FF">#</b><b style="color:#97C7FF">#</b><b style="color:#9BD3FF">#</b><b style="color:#7EA9C0">#</b><b style="color:#729DB0">#</b><b style="color:#99C3DB">#</b><b style="color:#99C4FF">#</b><b style="color:#87C3EE">#</b><b style="color:#8CC0F7">#</b><b style="color:#87B3FB">#</b><b style="color:#87BFEE">#</b><b style="color:#87B2FF">#</b><b style="color:#86AFFB">#</b><b style="color:#87C3FF">#</b><b style="color:#87AFEA">#</b><b style="color:#7BB0FF">#</b><b style="color:#28363F">#</b><b style="color:#2A2D2E">#</b><b style="color:#163C45">#</b><b style="color:#19485D">#</b><b style="color:#0064D2">#</b><b style="color:#144760">#</b><b style="color:#090909">#</b><b style="color:#080808">###</b>
-                <b style="color:#080808">&nbsp;&nbsp;&nbsp;&nbsp;#####</b><b style="color:#060310">#</b><b style="color:#07062F">#</b><b style="color:#06052D">#</b><b style="color:#0B0703">#</b><b style="color:#050515">#</b><b style="color:#43403C">#</b><b style="color:#86C5F1">#</b><b style="color:#87C3FF">#</b><b style="color:#87BEFF">#</b><b style="color:#96C9FF">#</b><b style="color:#98C6FF">#</b><b style="color:#8AC3FF">#</b><b style="color:#97D3FF">#</b><b style="color:#8AC5FF">#</b><b style="color:#97C4FF">#</b><b style="color:#90B7C9">#</b><b style="color:#959D9C">#</b><b style="color:#B8A7A9">#</b><b style="color:#C2BABD">#</b><b style="color:#8ED5F9">#</b><b style="color:#9DC3FF">#</b><b style="color:#84C7FF">#</b><b style="color:#9CCEFF">#</b><b style="color:#98C6FF">#</b><b style="color:#8AC7FF">#</b><b style="color:#9DCFFF">#</b><b style="color:#8BC6FF">#</b><b style="color:#9DC7FF">#</b><b style="color:#96C8FF">#</b><b style="color:#87D7FF">#</b><b style="color:#9EC3DE">#</b><b style="color:#9BD7FF">#</b><b style="color:#999C99">#</b><b style="color:#917D7D">#</b><b style="color:#8C96A6">#</b><b style="color:#84A9E5">#</b><b style="color:#87C5FF">#</b><b style="color:#87AEFF">#</b><b style="color:#87AFEA">#</b><b style="color:#87B4FB">#</b><b style="color:#87AFEF">#</b><b style="color:#87AFEA">#</b><b style="color:#87B3FB">#</b><b style="color:#87AFFF">#</b><b style="color:#77A7E7">#</b><b style="color:#24232D">#</b><b style="color:#2A2F31">#</b><b style="color:#171662">#</b><b style="color:#124881">#</b><b style="color:#14467F">#</b><b style="color:#005B9E">#</b><b style="color:#0C0C0C">#</b><b style="color:#080808">###</b>
-                <b style="color:#080808">&nbsp;&nbsp;&nbsp;&nbsp;#####</b><b style="color:#080806">#</b><b style="color:#070704">##</b><b style="color:#070707">#</b><b style="color:#080806">#</b><b style="color:#505061">#</b><b style="color:#9AB9D9">#</b><b style="color:#87C3FF">##</b><b style="color:#96C3FF">#</b><b style="color:#8CD4FF">#</b><b style="color:#9DC2FF">#</b><b style="color:#97C3FF">#</b><b style="color:#9AC1EE">#</b><b style="color:#99ACBF">#</b><b style="color:#A79592">#</b><b style="color:#BBAA9A">#</b><b style="color:#CA9FA0">#</b><b style="color:#AFA09F">#</b><b style="color:#AEB4C8">#</b><b style="color:#8EC4FF">#</b><b style="color:#96D9FF">#</b><b style="color:#9CC8FF">#</b><b style="color:#8AD9FF">#</b><b style="color:#97D3FF">#</b><b style="color:#96C6FF">#</b><b style="color:#8BD4FF">#</b><b style="color:#96D3FF">#</b><b style="color:#9DC7FF">#</b><b style="color:#86D8FF">#</b><b style="color:#90D2F7">#</b><b style="color:#9CA4B8">#</b><b style="color:#8B8789">#</b><b style="color:#9E8979">#</b><b style="color:#A08983">#</b><b style="color:#85898A">#</b><b style="color:#89ACE8">#</b><b style="color:#87AFF0">##</b><b style="color:#87AFFD">#</b><b style="color:#87AFEA">#</b><b style="color:#87AFEB">#</b><b style="color:#88AFEF">#</b><b style="color:#87AFEB">#</b><b style="color:#709ECD">#</b><b style="color:#06062F">#</b><b style="color:#0A0B0B">#</b><b style="color:#050519">#</b><b style="color:#050F1C">#</b><b style="color:#0C0803">#</b><b style="color:#040A34">#</b><b style="color:#070707">#</b><b style="color:#080808">###</b>
-                <b style="color:#080808">&nbsp;&nbsp;&nbsp;&nbsp;#########</b><b style="color:#060606">#</b><b style="color:#6E727A">#</b><b style="color:#8CBFF7">#</b><b style="color:#87C4FF">#</b><b style="color:#87C9FF">#</b><b style="color:#9CBEFF">#</b><b style="color:#87C6FF">#</b><b style="color:#96D5FF">#</b><b style="color:#8CB5FE">#</b><b style="color:#749BC2">#</b><b style="color:#A19D9A">#</b><b style="color:#D5B6B7">#</b><b style="color:#CDB59E">#</b><b style="color:#D7AB98">#</b><b style="color:#BEA8A7">#</b><b style="color:#B3ACAD">#</b><b style="color:#AEC1EB">#</b><b style="color:#AAD2EB">#</b><b style="color:#95C9FF">#</b><b style="color:#9BD7FF">#</b><b style="color:#8FD8FF">#</b><b style="color:#97D9FF">#</b><b style="color:#9BC6FF">#</b><b style="color:#97D8FF">#</b><b style="color:#90D6FF">#</b><b style="color:#9AD8FF">#</b><b style="color:#A1A7BB">#</b><b style="color:#9A8984">#</b><b style="color:#AA8773">#</b><b style="color:#BBAB90">#</b><b style="color:#BCAC94">#</b><b style="color:#BFA8A1">#</b><b style="color:#8F9191">#</b><b style="color:#88B0E3">#</b><b style="color:#87AFFD">#</b><b style="color:#87AFDE">#</b><b style="color:#87AFFC">#</b><b style="color:#87AFED">#</b><b style="color:#76AFEF">#</b><b style="color:#89AFD5">#</b><b style="color:#7CA7D3">#</b><b style="color:#242521">#</b><b style="color:#070707">#</b><b style="color:#080806">#</b><b style="color:#080705">#</b><b style="color:#070707">#</b><b style="color:#080703">#</b><b style="color:#080808">####</b>
-                <b style="color:#080808">&nbsp;&nbsp;&nbsp;&nbsp;#########</b><b style="color:#171716">#</b><b style="color:#7B8FA2">#</b><b style="color:#87BFFF">##</b><b style="color:#87C7FF">#</b><b style="color:#9CBEFF">#</b><b style="color:#87DAFF">#</b><b style="color:#95C7FF">#</b><b style="color:#839BD1">#</b><b style="color:#686B7F">#</b><b style="color:#788897">#</b><b style="color:#5A6AA5">#</b><b style="color:#5B6162">#</b><b style="color:#6F676C">#</b><b style="color:#76676D">#</b><b style="color:#807892">#</b><b style="color:#7C7A79">#</b><b style="color:#ACBACE">#</b><b style="color:#9BC0FD">#</b><b style="color:#ACD9FD">#</b><b style="color:#A6D8FF">#</b><b style="color:#8ED9FF">#</b><b style="color:#ABDBFF">#</b><b style="color:#8ED5FA">#</b><b style="color:#95BEF9">#</b><b style="color:#7C93A7">#</b><b style="color:#64696A">#</b><b style="color:#735D7A">#</b><b style="color:#58555A">#</b><b style="color:#564E83">#</b><b style="color:#4D4E8C">#</b><b style="color:#5D518F">#</b><b style="color:#454652">#</b><b style="color:#7AA6C5">#</b><b style="color:#87AFEA">#</b><b style="color:#88AFED">#</b><b style="color:#87AFFD">#</b><b style="color:#87AFDA">#</b><b style="color:#83AFFD">#</b><b style="color:#73AFD7">#</b><b style="color:#88B0D9">#</b><b style="color:#596A7A">#</b><b style="color:#070707">#</b><b style="color:#080808">########</b>
-                <b style="color:#080808">&nbsp;&nbsp;&nbsp;&nbsp;#########</b><b style="color:#514F5E">#</b><b style="color:#8AAED6">#</b><b style="color:#87B4EA">#</b><b style="color:#87AEFF">#</b><b style="color:#86D3FF">#</b><b style="color:#90C4FF">#</b><b style="color:#87C7FF">#</b><b style="color:#A3C8E2">#</b><b style="color:#6585B4">#</b><b style="color:#646470">#</b><b style="color:#5E89CF">#</b><b style="color:#000FB8">#</b><b style="color:#004DDF">#</b><b style="color:#002FD9">#</b><b style="color:#0051D9">#</b><b style="color:#0137EC">#</b><b style="color:#484468">#</b><b style="color:#A7A8BA">#</b><b style="color:#B9B3A9">#</b><b style="color:#9CC4D9">#</b><b style="color:#ACCDE2">#</b><b style="color:#AFC8DD">#</b><b style="color:#AFC0D6">#</b><b style="color:#9B9FA8">#</b><b style="color:#62647A">#</b><b style="color:#718280">#</b><b style="color:#879BB0">#</b><b style="color:#070D7F">#</b><b style="color:#0000BC">#</b><b style="color:#0020DD">#</b><b style="color:#0000E2">#</b><b style="color:#002CE4">#</b><b style="color:#161942">#</b><b style="color:#6C81AD">#</b><b style="color:#87AFF1">#</b><b style="color:#77AFE7">#</b><b style="color:#87AFDE">#</b><b style="color:#87AFE6">#</b><b style="color:#83AFEC">#</b><b style="color:#5FAED7">#</b><b style="color:#87AFC6">#</b><b style="color:#8CA5B8">#</b><b style="color:#1A1A1A">#</b><b style="color:#080808">########</b>
-                <b style="color:#080808">&nbsp;&nbsp;&nbsp;&nbsp;########</b><b style="color:#050505">#</b><b style="color:#627790">#</b><b style="color:#87AFEE">#</b><b style="color:#84AFE5">#</b><b style="color:#89B0EC">#</b><b style="color:#99DAFF">#</b><b style="color:#98C3FF">#</b><b style="color:#8BC3FF">#</b><b style="color:#8BD2F8">#</b><b style="color:#80849D">#</b><b style="color:#716EA2">#</b><b style="color:#0C4298">#</b><b style="color:#0022E2">#</b><b style="color:#0038F8">#</b><b style="color:#004CEC">#</b><b style="color:#000CF1">#</b><b style="color:#0024B7">#</b><b style="color:#7F71A8">#</b><b style="color:#C0AC95">#</b><b style="color:#D4AFAB">#</b><b style="color:#C6AFA2">#</b><b style="color:#C9B1AB">#</b><b style="color:#C2ACA6">#</b><b style="color:#D4AD9B">#</b><b style="color:#C19A96">#</b><b style="color:#7D7E9F">#</b><b style="color:#353238">#</b><b style="color:#0B0AA7">#</b><b style="color:#0031DB">#</b><b style="color:#0027FF">#</b><b style="color:#0013F0">#</b><b style="color:#0024EE">#</b><b style="color:#0029D9">#</b><b style="color:#6C6D7B">#</b><b style="color:#81818D">#</b><b style="color:#88AFED">#</b><b style="color:#71AFD6">#</b><b style="color:#87AFEC">#</b><b style="color:#87AFF0">#</b><b style="color:#77B0D6">#</b><b style="color:#69A6D3">#</b><b style="color:#87AFD3">#</b><b style="color:#7CA8C6">#</b><b style="color:#0E0E0E">#</b><b style="color:#080808">########</b>
-                <b style="color:#080808">&nbsp;&nbsp;&nbsp;&nbsp;########</b><b style="color:#1D2021">#</b><b style="color:#7DA9DB">#</b><b style="color:#88B5ED">#</b><b style="color:#64B2F0">#</b><b style="color:#77ADD3">#</b><b style="color:#8CC6FF">#</b><b style="color:#86C8FF">#</b><b style="color:#9DC3FF">#</b><b style="color:#98B0FF">#</b><b style="color:#80807D">#</b><b style="color:#D0B1AE">#</b><b style="color:#7A81B6">#</b><b style="color:#3534C4">#</b><b style="color:#093EB6">#</b><b style="color:#0913BB">#</b><b style="color:#375DC7">#</b><b style="color:#706A73">#</b><b style="color:#C2AFCF">#</b><b style="color:#DAB095">#</b><b style="color:#D8AFA0">#</b><b style="color:#D9AFA6">#</b><b style="color:#D3AF9E">#</b><b style="color:#D9AF9B">#</b><b style="color:#D8AF99">#</b><b style="color:#DAB195">#</b><b style="color:#BFABB4">#</b><b style="color:#8F7C90">#</b><b style="color:#27299C">#</b><b style="color:#052DC0">#</b><b style="color:#0511B5">#</b><b style="color:#052FD6">#</b><b style="color:#2B389E">#</b><b style="color:#6C81AE">#</b><b style="color:#9D9A9E">#</b><b style="color:#7B6575">#</b><b style="color:#74AFD6">#</b><b style="color:#83AFD7">#</b><b style="color:#89B0EB">#</b><b style="color:#85B2FF">#</b><b style="color:#7FA7D2">#</b><b style="color:#67ABD6">#</b><b style="color:#84B0D8">#</b><b style="color:#79A5C2">#</b><b style="color:#111111">#</b><b style="color:#080808">########</b>
-                <b style="color:#080808">&nbsp;&nbsp;&nbsp;&nbsp;########</b><b style="color:#606061">#</b><b style="color:#7BA3DD">#</b><b style="color:#7BB8E2">#</b><b style="color:#448CC4">#</b><b style="color:#3187B1">#</b><b style="color:#488CBD">#</b><b style="color:#88D5FC">#</b><b style="color:#99C5FF">#</b><b style="color:#8BC3EA">#</b><b style="color:#838281">#</b><b style="color:#C69C89">#</b><b style="color:#DBB5AB">#</b><b style="color:#CDB8C5">#</b><b style="color:#B89FA4">#</b><b style="color:#B8A2B6">#</b><b style="color:#D4ABAF">#</b><b style="color:#D9B39C">#</b><b style="color:#DAB09D">#</b><b style="color:#D8B09C">#</b><b style="color:#D8AF9B">#</b><b style="color:#D7AF9A">#</b><b style="color:#D8AFB2">#</b><b style="color:#D7AF8A">#</b><b style="color:#D8AFAD">#</b><b style="color:#D8B09C">#</b><b style="color:#DAB0AF">#</b><b style="color:#D9B4A2">#</b><b style="color:#B9A597">#</b><b style="color:#A79094">#</b><b style="color:#A691A4">#</b><b style="color:#A79192">#</b><b style="color:#C2ACA0">#</b><b style="color:#C19893">#</b><b style="color:#AA8491">#</b><b style="color:#846E72">#</b><b style="color:#96B1CC">#</b><b style="color:#8AB1DD">#</b><b style="color:#77AEF8">#</b><b style="color:#5B98D5">#</b><b style="color:#4476A8">#</b><b style="color:#5E99C4">#</b><b style="color:#65ADD5">#</b><b style="color:#7FAAD2">#</b><b style="color:#2C2F30">#</b><b style="color:#080808">########</b>
-                <b style="color:#080808">&nbsp;&nbsp;&nbsp;&nbsp;########</b><b style="color:#151515">#</b><b style="color:#1E2427">#</b><b style="color:#6186AC">#</b><b style="color:#0A86A0">#</b><b style="color:#266BA7">#</b><b style="color:#006D96">#</b><b style="color:#3779A2">#</b><b style="color:#71B3E1">#</b><b style="color:#99DAE9">#</b><b style="color:#767F83">#</b><b style="color:#A58A93">#</b><b style="color:#D8A19B">#</b><b style="color:#DAB09B">#</b><b style="color:#DEB299">#</b><b style="color:#DCB198">#</b><b style="color:#D9B09B">#</b><b style="color:#D8B09B">#</b><b style="color:#D1AD9F">#</b><b style="color:#D3AB9B">#</b><b style="color:#D5B096">#</b><b style="color:#D9B19B">#</b><b style="color:#D9B19A">#</b><b style="color:#D9B198">#</b><b style="color:#D5B09B">#</b><b style="color:#D3AB9D">#</b><b style="color:#D3AFAD">#</b><b style="color:#DAAFAC">#</b><b style="color:#DBB19D">#</b><b style="color:#DEB397">#</b><b style="color:#DFB59C">#</b><b style="color:#DFAF97">#</b><b style="color:#C7AE84">#</b><b style="color:#AE9090">#</b><b style="color:#8B8677">#</b><b style="color:#9D9E9E">#</b><b style="color:#8EAFE4">#</b><b style="color:#75A3E0">#</b><b style="color:#2D76A1">#</b><b style="color:#025F84">#</b><b style="color:#176095">#</b><b style="color:#1A6798">#</b><b style="color:#3288B2">#</b><b style="color:#6B93BC">#</b><b style="color:#1B1E1F">#</b><b style="color:#080808">########</b>
-                <b style="color:#080808">&nbsp;&nbsp;&nbsp;&nbsp;########</b><b style="color:#060606">#</b><b style="color:#050404">#</b><b style="color:#2B2E30">#</b><b style="color:#3C5A6A">#</b><b style="color:#1E6FA0">#</b><b style="color:#14629B">#</b><b style="color:#175FA7">#</b><b style="color:#226499">#</b><b style="color:#3F8DC8">#</b><b style="color:#164B64">#</b><b style="color:#42507A">#</b><b style="color:#786F6D">#</b><b style="color:#849FB1">#</b><b style="color:#BCACAC">#</b><b style="color:#D2AD9C">#</b><b style="color:#D3AE87">#</b><b style="color:#D5AC9C">#</b><b style="color:#BCA98F">#</b><b style="color:#C89F9B">#</b><b style="color:#AFA990">#</b><b style="color:#C79C98">#</b><b style="color:#C79C93">#</b><b style="color:#C8A08A">#</b><b style="color:#B1AA8F">#</b><b style="color:#C89F8B">#</b><b style="color:#C3B18A">#</b><b style="color:#C3AF9E">#</b><b style="color:#D4AC8A">#</b><b style="color:#C3AC84">#</b><b style="color:#C39B8A">#</b><b style="color:#BD938F">#</b><b style="color:#A88796">#</b><b style="color:#A68487">#</b><b style="color:#7D91A6">#</b><b style="color:#767D7C">#</b><b style="color:#31759D">#</b><b style="color:#046289">#</b><b style="color:#005C86">#</b><b style="color:#1C6498">#</b><b style="color:#035F89">#</b><b style="color:#1973A6">#</b><b style="color:#2E659E">#</b><b style="color:#2A2D2F">#</b><b style="color:#060505">#</b><b style="color:#080808">########</b>
-                <b style="color:#080808">&nbsp;&nbsp;&nbsp;&nbsp;##########</b><b style="color:#040303">#</b><b style="color:#090605">#</b><b style="color:#1B1B20">#</b><b style="color:#134058">#</b><b style="color:#166186">#</b><b style="color:#1D6297">#</b><b style="color:#3E70A8">#</b><b style="color:#3977B2">#</b><b style="color:#185C9C">#</b><b style="color:#16466C">#</b><b style="color:#3163A1">#</b><b style="color:#6B94BE">#</b><b style="color:#AAA7BB">#</b><b style="color:#A29F9C">#</b><b style="color:#A5908B">#</b><b style="color:#B49D86">#</b><b style="color:#C69E9E">#</b><b style="color:#BF9A8A">#</b><b style="color:#BF939A">#</b><b style="color:#C0978B">#</b><b style="color:#BF9496">#</b><b style="color:#A99787">#</b><b style="color:#C69E87">#</b><b style="color:#B49D87">#</b><b style="color:#8F918C">#</b><b style="color:#B18696">#</b><b style="color:#AD8A9A">#</b><b style="color:#AD8599">#</b><b style="color:#9F8F90">#</b><b style="color:#757277">#</b><b style="color:#6E7FA8">#</b><b style="color:#4876AB">#</b><b style="color:#01596C">#</b><b style="color:#005C85">#</b><b style="color:#166194">#</b><b style="color:#4474A7">#</b><b style="color:#5E859D">#</b><b style="color:#176294">#</b><b style="color:#1E6197">#</b><b style="color:#272A2F">#</b><b style="color:#050504">#</b></pre>
+
+        <div>
+            <img id="cirno_gif" src="img/fumoanim.gif" style="pointer-events:none; width: 128px;" >
+        </div>
+
+    </div>
+    <script>windows_array.push(document.getElementById("window_cirno"))</script>
+
+    <!--DESKTOP FILES-->
+
+    <!--HI-->
+    <div id="file_hi" style="position: absolute; top: 32px; left: 32px;">
+      <img id="file_hi_img" src="new/files/script.png" class="file" style="display: block; margin: auto;">
+      <div id="file_hi_name" class="file-name" style="top: -4px;">
+        <p style="font-family: Tahoma; font-size: 12px; color: white; text-shadow: 1px 1px 2px #0a0a0a; text-align: center;">
+          hi
+        </p>
+      </div>
+    </div>
+    <script>file_array.push([document.getElementById("file_hi"), document.getElementById("file_hi_name"), document.getElementById("file_hi_img"), 0]);</script>
+
+    <!--FISH-->
+    <div id="file_fish" style="position: absolute; top: 32px; left: 96px;">
+      <img id="file_fish_img" src="new/files/script.png" class="file" style="display: block; margin: auto;">
+      <div id="file_fish_name" class="file-name" style="top: -4px;">
+        <p style="font-family: Tahoma; font-size: 12px; color: white; text-shadow: 1px 1px 2px #0a0a0a; text-align: center;">
+          fish
+        </p>
+      </div>
+    </div>
+    <script>file_array.push([document.getElementById("file_fish"), document.getElementById("file_fish_name"), document.getElementById("file_fish_img"), 0]);</script>
+
+    <!--INFO-->
+    <div id="file_pageinfo" style="position: absolute; top: 112px; left: 32px;">
+      <img id="file_pageinfo_img" src="new/files/notepad.png" class="file" style="display: block; margin: auto;">
+      <div id="file_pageinfo_name" class="file-name" style="top: -4px;">
+        <p style="font-family: Tahoma; font-size: 12px; color: white; text-shadow: 1px 1px 2px #0a0a0a; text-align: center;">
+          Info
+        </p>
+      </div>
+    </div>
+    <script>file_array.push([document.getElementById("file_pageinfo"), document.getElementById("file_pageinfo_name"), document.getElementById("file_pageinfo_img"), 0]);</script>
+
+    <!--MAINSCR-->
+    <div id="file_mainscr" style="position: absolute; top: 192px; left: 28px;">
+      <img id="file_mainscr_img" src="new/files/pic.png" class="file" style="display: block; margin: auto;">
+      <div id="file_mainscr_name" class="file-name" style="top: -4px;">
+        <p style="font-family: Tahoma; font-size: 12px; color: white; text-shadow: 1px 1px 2px #0a0a0a; text-align: center;">
+          welcome
+        </p>
+      </div>
+    </div>
+    <script>file_array.push([document.getElementById("file_mainscr"), document.getElementById("file_mainscr_name"), document.getElementById("file_mainscr_img"), 0]);</script>
+
+    <!--CIRNO-->
+    <div id="file_cirno" style="position: absolute; top: 275px; left: 32px;">
+      <img id="file_cirno_img" src="new/files/cirno.png" class="file" style="display: block; margin: auto;">
+      <div id="file_cirno_name" class="file-name" style="top: -12px;">
+        <p style="font-family: Tahoma; font-size: 12px; color: white; text-shadow: 1px 1px 2px #0a0a0a; text-align: center;">
+          cirno
+        </p>
+      </div>
+    </div>
+    <script>file_array.push([document.getElementById("file_cirno"), document.getElementById("file_cirno_name"), document.getElementById("file_cirno_img"), 0]);</script>
+
+    <!--PICS-->
+    <div id="file_pics" style="position: absolute; top: 350px; left: 30px;">
+      <img id="file_pics_img" src="new/files/pic2.png" class="file" style="display: block; margin: auto;">
+      <div id="file_pics_name" class="file-name" style="top: -12px;">
+        <p style="font-family: Tahoma; font-size: 12px; color: white; text-shadow: 1px 1px 2px #0a0a0a; text-align: center;">
+          Pics
+        </p>
+      </div>
+    </div>
+    <script>file_array.push([document.getElementById("file_pics"), document.getElementById("file_pics_name"), document.getElementById("file_pics_img"), 0]);</script>
+
+    <!--MAIL-->
+    <div id="file_mail" style="position: absolute; top: 426px; left: 30px;">
+      <img id="file_mail_img" src="new/files/mail.png" class="file" style="display: block; margin: auto;">
+      <div id="file_mail_name" class="file-name" style="top: -12px;">
+        <p style="font-family: Tahoma; font-size: 12px; color: white; text-shadow: 1px 1px 2px #0a0a0a; text-align: center;">
+          Mail
+        </p>
+      </div>
+    </div>
+    <script>file_array.push([document.getElementById("file_mail"), document.getElementById("file_mail_name"), document.getElementById("file_mail_img"), 0]);</script>
+
+    <!--DISCORD-->
+    <div id="file_discord" style="position: absolute; top: 502px; left: 28px;">
+      <img id="file_discord_img" src="new/files/discord.png" class="file" style="display: block; margin: auto;">
+      <div id="file_discord_name" class="file-name" style="top: -12px;">
+        <p style="font-family: Tahoma; font-size: 12px; color: white; text-shadow: 1px 1px 2px #0a0a0a; text-align: center;">
+          Discord
+        </p>
+      </div>
+    </div>
+    <script>file_array.push([document.getElementById("file_discord"), document.getElementById("file_discord_name"), document.getElementById("file_discord_img"), 0]);</script>
+
+    <!--MONERO-->
+    <div id="file_monero" style="position: absolute; top: 730px; left: 26px;">
+      <img id="file_monero_img" src="new/files/monero.png" class="file" style="display: block; margin: auto;">
+      <div id="file_monero_name" class="file-name" style="top: -12px;">
+        <p style="font-family: Tahoma; font-size: 12px; color: white; text-shadow: 1px 1px 2px #0a0a0a; text-align: center;">
+          monero
+        </p>
+      </div>
+    </div>
+    <script>file_array.push([document.getElementById("file_monero"), document.getElementById("file_monero_name"), document.getElementById("file_monero_img"), 0]);</script>
+
+    <!--KOFI-->
+    <div id="file_kofi" style="position: absolute; top: 800px; left: 30px;">
+      <img id="file_kofi_img" src="new/files/kofi.png" class="file" style="display: block; margin: auto;">
+      <div id="file_kofi_name" class="file-name" style="top: -12px;">
+        <p style="font-family: Tahoma; font-size: 12px; color: white; text-shadow: 1px 1px 2px #0a0a0a; text-align: center;">
+          ko-fi
+        </p>
+      </div>
+    </div>
+    <script>file_array.push([document.getElementById("file_kofi"), document.getElementById("file_kofi_name"), document.getElementById("file_kofi_img"), 0]);</script>
+
+    <!--WINDOWS-->
+
+    <!--EINSTEIN SPEECH-->
+    <div id="einstein_header" style="user-select: none; position: absolute; bottom: 200px; right: 100px; z-index: 1;">
+            <img src="new/img/speech_info.png">
+    </div>
+    <script>dragElement(document.getElementById("einstein_header"));</script>
+
+    <!--ROVER SPEECH-->
+    <div id="rover_header" style="user-select: none; position: absolute; bottom: 32px; right: 347px; z-index: 1;">
+            <img src="new/img/speech_menu.png">
+    </div>
+    <script>dragElement(document.getElementById("rover_header"));</script>
+
+    <!--CHOR JANUSZY-->
+    <div id="chor_header" style="user-select: none; position: absolute; top: 300px; right: 357px; z-index: 1;">
+            <img src="new/img/speech_chor_januszy.png">
+    </div>
+    <script>dragElement(document.getElementById("chor_header"));</script>
+
+    <!--HEY WINDOW-->
+    <div class="window" id="window_hi" style="user-select: none; position: absolute; top: 100px; width: 140px; height: 90px; display: none;">
+      <div class="title-bar" id="window_hi_header">
+        <div class="title-bar-text" style="cursor:default; display:flex; gap: 4px;">
+            <img src="new/files/info2.png" style="max-width: 16px;">
+          hiiii
+        </div>
+
+        <div class="title-bar-controls" id="window_hi_header_controls" onmousedown="event.stopPropagation()">
+          <button aria-label="Close" id="close_button" onclick="windowClose('window_hi')"></button>
+        </div>
+
+      </div>
+      <div class="window-body">
+        <p>hey hey hey hiiiii hi :33</p>
+        <section class="field-row" style="justify-content: center">
+          <button onclick="windowClose('window_hi')">OK</button>
+        </section>
+      </div>
+    </div>
+    <script>dragElement(document.getElementById("window_hi"));windows_array.push(document.getElementById("window_hi"))</script>
+
+    <!--FISH WINDOW-->
+    <div class="window" id="window_fish" style="user-select: none; position: absolute; top: 100px; width: 250px; height: 200px; display: none;">
+      <div class="title-bar" id="window_fish_header">
+        <div class="title-bar-text" style="cursor:default; display:flex; gap: 4px;">
+            <img src="new/files/info2.png" style="max-width: 16px;">
+          fish
+        </div>
+
+        <div class="title-bar-controls" id="window_fish_header_controls" onmousedown="event.stopPropagation()">
+          <button aria-label="Close" id="close_button" onclick="windowClose('window_fish')"></button>
+        </div>
+
+      </div>
+      <div class="window-body">
+        <div style="display: flex; justify-content: center; margin: 4px;">
+            <div>fish</div>
+            <img src="new/img/fische.png" style="max-width: 198px; position: relative; top:16px; right: 10px;">
+        </div>
+        <section class="field-row" style="justify-content: center; position: relative; top: 20px;">
+          <button onclick="fishClick(true)">i accept</button>
+          <button onclick="fishClick(false)">i dont accept</button>
+          <script>
+            function fishClick(accept){
+                if (accept) 
+                    windowClose('window_fish');
+                else
+                    alert("you cant");
+                
+            }
+          </script>
+        </section>
+      </div>
+    </div>
+    <script>dragElement(document.getElementById("window_fish"));windows_array.push(document.getElementById("window_fish"))</script>
+
+    <!--INFO WINDOW-->
+    <div class="window" id="window_pageinfo" style="user-select: none; position: absolute; top: 200px; width: 535px; height: 200px; display: none; background-color: white;">
+      <div class="title-bar" id="window_pageinfo_header">
+        <div class="title-bar-text" style="cursor:default; display:flex; gap: 4px;">
+            <img src="new/files/info.png" style="max-width: 16px;">
+          Info
+        </div>
+
+        <div class="title-bar-controls" id="window_pageinfo_header_controls" onmousedown="event.stopPropagation()">
+          <button aria-label="Close" id="close_button" onclick="windowClose('window_pageinfo')"></button>
+        </div>
+
+      </div>
+      <div class="window-body" style="background-color: white; margin-right: 30px;">
+        <div class="plain" style="color: #000000; font-size: 12px; font-family: Lucida Console;">
+            <div><span class="jitter" style="font-family: Lucida Console; color:#000000; font-size: 12px;"><span>w</span><span>a</span><span>r</span><span>n</span><span>i</span><span>n</span><span>g</span><span>:</span></span></div>
+            this website contains
+            <span class="swear" style="font-size: 12px; font-family: Lucida Console; color:#000000"><span data-letter="s"> </span><span data-letter="w"> </span><span data-letter="e"> </span><span data-letter="a"> </span><span data-letter="r"> </span><span data-letter="i"> </span><span data-letter="n"> </span><span data-letter="g"> </span></span>
+            and talking about everything including <span class="big" style="font-family: Lucida Console; color:#000000">sex</span>, <span class="drunk" style="font-family: Lucida Console;"><span>a</span><span>l</span><span>c</span><span>o</span><span>h</span><span>o</span><span>l</span></span>, <span class="trip" style="font-family: Lucida Console;">drugs</span> and other stuff, just so u know<br><br>
+
+            <span style="font-size: 12px;">also, this site was only tested on <span style="color:#ff6600">Firefox</span> on 1920x1080 resolution and won't look good on mobile</span><br><br>
+
+            <span style="font-size: 12px;">you should also enable autoplay for this site :3</span><br><br>
+
+            <span style="font-size: 12px;">and remember you can use shift+scroll to scroll horizontally</span>
+            <br><br><br>
+        </div>
+      </div>
+      <img src="new/window/scroll_bg_hor.png" style="user-select: false; position: absolute; top: 183px; left: 3px; width: 517px; height: 17px;">
+      <img src="new/window/scroll_bg_ver.png" style="user-select: false; position: absolute; top: 28px; left: 515px; width: 17px; height: 170px;">
+
+      <img src="new/window/scroll_left_disabled.png" style="user-select: false; position: absolute; top: 183px; left: 3px;">
+      <img src="new/window/scroll_right_disabled.png" style="user-select: false; position: absolute; top: 183px; left: 498px;">
+
+      <img src="new/window/scroll_up_disabled.png" style="user-select: false; position: absolute; top: 28px; left: 516px;">
+      <img src="new/window/scroll_down_disabled.png" style="user-select: false; position: absolute; top: 167px; left: 516px;">
+    </div>
+    <script>dragElement(document.getElementById("window_pageinfo"));windows_array.push(document.getElementById("window_pageinfo"))</script>
+
+    <!--PICS WINDOW-->
+    <div class="window" id="window_pics" style="user-select: none; position: absolute; top: 200px; width: 750px; height: 664px; display: none; background-color: #eeeeff;">
+      <div class="title-bar" id="window_pics_header">
+        <div class="title-bar-text" style="cursor:default; display:flex; gap: 4px;">
+            <img src="new/files/picview.png" style="max-width: 16px;">
+            <div id="window_pics_name"></div>
+        </div>
+
+        <div class="title-bar-controls" id="window_pics_header_controls" onmousedown="event.stopPropagation()">
+          <button aria-label="Close" id="close_button" onclick="windowClose('window_pics')"></button>
+        </div>
+
+      </div>
+      <div class="window-body" style="background-color: #eeeeff; margin-right: 30px;">
+        <div class="plain" style="color: #000000; font-size: 12px; font-family: Lucida Console;">
+
+            <div style="position: relative; width: 605px; height: 424px; text-align: center; left: 65px; bottom: 8px;">
+                <img id="pics_image" src="img/additivecolor.png" style="max-width: 100%; height: 100%; border: 1px solid #000000;">
+            </div>
+
+            <!--CONTROLS-->
+            <div style="position: absolute; top:428px; display: flex; width: 732px; justify-content: center; ">
+                <img id="prev" src="new/window/prev.png">
+                <img id="next" src="new/window/next.png">
+            </div>
             
 
+
+            <script>
+                var scroll_images_array = [];
+                var scroll_text_array = [];
+            </script>
+
+            <!--PICTURE SELECT-->
+            <div>
+                <div style="position:absolute; top: 458px; left: -5px; width:744px; height:170px; background-color: #ffffff"></div>
+                <div style="height: 200px; overflow: hidden; width: 725px;">
+                    <div id="image_select" style="display: flex; gap: 16px; position: relative; top: 40px; left: 0px; margin-left: 8px; align-items: center; overflow-x: scroll; scrollbar-gutter: auto; width: 717px;">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
     </div>
+    <script>dragElement(document.getElementById("window_pics"));windows_array.push(document.getElementById("window_pics"))</script>
 
-    
-    <div style=
-    "position: absolute;
-    top: 294px;
-    left: 745px;
-    width: 12px;
-    height: 360px;">
-        <a class="topbar">|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|</a> 
+    <!--CONSOLE WINDOW-->
+    <div class="window" id="window_console" style="user-select: none; position: absolute; display: none;">
+        <div class="title-bar" id="window_console_header">
+            <div class="title-bar-text">Command Prompt</div>
+            <div class="title-bar-controls" id="window_console_header_controls" onmousedown="event.stopPropagation()">
+            <button aria-label="Close" id="close_button" onclick="windowClose('window_console')"></button>
+            </div>
+        </div>
+        <div class="window-body">
+            <pre>Microsoft&#10094;R&#10095; Windows DOS 
+                &#10094;C&#10095; Copyright Microsoft Corp 1990-2001.
+            <br>C:&#92;WINDOWS&#92;SYSTEM32> You can build a command line easily with a window and pre tag
+            
+            </pre>
+        </div>
     </div>
+    <script>dragElement(document.getElementById("window_console"));windows_array.push(document.getElementById("window_console"))</script>
 
-    <div style=
-    "position: absolute;
-    top: 294px;
-    left: 1400px;
-    width: 12px;
-    height: 360px;">
-        <a class="topbar">|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|</a> 
+    <!--
+        this is also kinda shit but dont scroll down further
+    -->
+
+    <!--MAINSCR WINDOW-->
+    <div class="window" id="window_mainscr" style="user-select: none; position: absolute; display: none; width: 898px; height: 640px;">
+        <div class="title-bar" id="window_mainscr_header">
+            
+            <div class="title-bar-text" style="cursor:default; display:flex; gap: 4px;">
+            <img src="new/files/paint.png" style="max-width: 16px;">
+                welcome - Paint
+            </div>
+            <div class="title-bar-controls" id="window_mainscr_header_controls" onmousedown="event.stopPropagation()">
+                <button aria-label="Close" id="close_button" onclick="windowClose('window_mainscr')"></button>
+            </div>
+        </div>
+        <div class="window-body" style="background-color: white; height: 600px; position: relative; overflow: hidden; ">
+            <img src="new/window/paint_window.png" style="display: block; position: relative; z-index: 1;">
+            <div style="position: absolute; top: 27px; left: 53px; width: 825px; height: 521px; overflow: auto; scrollbar-width: none; z-index: 2; overflow-x: hidden; ">
+                <img src="new/window/paint_canvas.png" style="display: block;">
+                <div>
+                    
+                    <img src="new/img/3.gif" style="position:absolute; top: -50px; left: 200px;">
+                    <img src="new/img/cirno.png" style="position:absolute; top: 120px; left: 700px; transform: rotate(-30deg);">
+
+                    <div style="position: absolute; top: 0px; left: 50px">
+
+                        <div class="plain" style="position: absolute; top: 100px; left: 90px; width: 600px; color: black; font-size: 16px;">
+                            <span style="font-size: 32px;">hi i'm <span style="color:#1271ff">gappy</span>, welcome to my site!!!</span><br>
+                        </div>
+                        <div class="plain" style="position: absolute; top: 180px; left: 190px; width: 500px; color: black; font-size: 16px;">
+                            <br>
+                            on the internet, away from the internet<br>
+                        </div>
+                        <div class="plain" style="position: absolute; top: 140px; left: 180px; width: 500px; color: black; font-size: 10px;">
+                            i also go by <span style="color:#1271ff">kittycritter</span>
+                        </div>
+                        
+                        <div class="plain" style="position: absolute; top: 230px; left: 100px; width: 500px; color: black; font-size: 16px;">
+                            <br>
+                            i try to make games and other forms of art in spite of my adhd worm infested brain<br><br>
+
+                            this site is a project born mostly from boredom but also hatred for modern social media and companies that creeped their way into the internet
+                            and centralized it for their profit and our doom<br><br>
+                        </div>
+
+                        <div class="plain" style="position: absolute; top: 370px; left: 210px; width: 300px; color: gray; font-size: 12px; transform: rotate(-3deg);">
+                            the mask fell off but people still chanted
+                        </div>
+
+                    </div>
+
+
+                    <marquee direction="right" style="position: absolute; top: 410px; left: 0px; width: 825px;">
+                        <img src="new/blinkies/stardew.gif">
+                        <img src="new/blinkies/bass.gif">
+                        <img src="new/blinkies/strawberry.gif">
+                        <img src="new/blinkies/gun.gif">
+                        <img src="new/blinkies/clickhere.gif" class="disappear">
+                        <img src="new/blinkies/borntodie.gif">
+                        <img src="new/blinkies/brba.gif">
+                        <img src="new/blinkies/summer.gif">
+                        <img src="new/blinkies/trans.gif">
+                        <img src="new/blinkies/tf2.gif">
+                        <img src="new/blinkies/charlie.gif">
+                        <img src="new/blinkies/glep.gif">
+                        <img src="new/blinkies/smilingfriends.gif">
+                        <img src="new/blinkies/swag.gif">
+                        <img src="new/blinkies/hell.gif">
+                        <a href="new/text.txt" target="_blank"><img src="new/blinkies/download.gif"></a>
+                    </marquee>
+
+                    <!--KAKTUS-->
+                    <div style="position:absolute; top: 400px; left: 600px">
+                        <img src="new/img/ejkaktus.png" style="position:absolute; top: 50px; left: 50px; width: 100px; border: inset;">
+                        <img src="new/img/cactus.gif" style="position:absolute; top: 0px; left: 110px;">
+                        
+                        <div class="plain" style="position: absolute; top: 154px; left: 29px; color: white; font-size: 12px;">
+                            ej kaktus
+                        </div>
+
+                        <div class="plain" style="position: absolute; top: 130px; left: 140px; width: 80px; color: white; font-size: 12px;">
+                            ^ this cactus should be spinning, if it isn't the world is coming to an end
+                        </div>
+                    </div>
+
+                    <!--BUTTONS-->
+                    <div style="display: flex; position:absolute; top: 598px; left: 48px; gap: 4px;">
+                        <img src="new/buttons/lain.gif">
+                        <img src="new/buttons/aseprite.gif">
+                        <img src="new/buttons/conputer.jpg">
+                        <img src="new/buttons/repair.gif">
+                        <img src="new/buttons/desktop.gif">
+                        <img src="new/buttons/queer.jpg">
+                        <img src="new/buttons/wip.png">
+                    </div>
+
+                    <!--BUTTONS-->
+                    <div style="display: flex; position:absolute; top: 932px; right: 10px; gap: 4px;">
+                        <img src="new/buttons/estro.gif">
+                        <img src="new/buttons/bookmark.gif">
+                        <img src="new/buttons/webdesign.gif">
+                        <img src="new/buttons/fckgoogle.gif">
+                        <img src="new/buttons/noclick.gif" onclick="doNotClick()">
+                        <img src="new/buttons/sucks.gif">
+                    </div>
+
+                    <script>
+                        function doNotClick() {
+                            alert("yuor conputer will expolde in 5 seconds...");
+                            setTimeout(function expolde(){alert("boom");}, 5000);
+                        }
+                        
+                        
+                    </script>
+
+                    <!--PJOTER-->
+                    <div style="position: absolute; top: 668px; left: 318px; width: 223px; height: 214px;">
+                        <div id="pjoter" class="pjoter"></div>
+                        <div class="plain" style="color: white; font-size: 16px; position: absolute; top: 210px; left: 64px;">help him spin</div>
+                        <div class="plain" style="color: #222222; font-size: 12px; position: absolute; top: 230px; left: 44px; transform:rotate(3deg)">watch out for volume</div>
+                    </div>
+
+                    <!--ABOUT ME-->
+                    <div style=
+                    "position: absolute;
+                    top: 480px;
+                    left: 70px;
+                    border: 2px dotted #666666;
+                    padding: 4px;
+                    ">
+                        <div class="plain" style="color: white; font-size: 32px;">
+                            <div style="text-align: center" class="topbar">-----about-me-----</div>
+                            <div style="font-size: 16px;">AGE.............<span style="float:right">24</span></div>
+                            <div style="font-size: 16px;">BIRTHDAY.....<span style="float:right">MAY 1</span></div>
+                            <div style="font-size: 16px;">COUNTRY.....<span style="float:right" class="polska-gurom">POLAND</span></div>
+                            <div style="font-size: 16px;">LANGUAGES...<span style="float:right">POLISH</span></div>
+                            <div style="font-size: 16px;">...........<span style="float:right">ENGLISH</span></div>
+                        </div>
+                    </div>
+
+                    <!--SPECS-->
+                    <div style=
+                    "position: absolute;
+                    top: 464px;
+                    left: 380px;
+                    border: 2px dotted #666666;
+                    padding: 4px;
+                    ">
+                        <div class="plain" style="color: white; font-size: 32px;">
+                            <div style="text-align: center" class="topbar">---------specs---------</div>
+                            <div style="font-size: 16px;">CPU........<span style="float:right">Ryzen 5 4500</span></div>
+                            <div style="font-size: 16px;">GPU.........<span style="float:right">RTX 3060 Ti</span></div>
+                            <div style="font-size: 16px;">Memory.............<span style="float:right">32GB</span></div>
+                            <div style="font-size: 16px;">Monitors..............<span style="float:right">2</span></div>
+                            <div style="font-size: 16px;">OS................<span style="float:right">Win10</span></div>
+                            <div style="font-size: 16px;">...........<span style="float:right">(linux soon)</span></div>
+                        </div>
+                    </div>
+
+                    <!--GAMES-->
+                    <div style=
+                    "position: absolute;
+                    top: 980px;
+                    right: 16px;
+                    border: 2px dotted #666666;
+                    padding: 4px;
+                    ">
+                        <div class="plain" style="color: white;">
+                            <div style="text-align: center" class="topbar">--------♥ games ♥--------</div>
+                            <div style="font-size: 16px;">ULTRAKILL................</div>
+                            <div style="font-size: 16px;">Team Fortress 2..........</div>
+                            <div style="font-size: 16px;">Stardew Valley...........</div>
+                            <div style="font-size: 16px;">Disco Elysium............</div>
+                            <div style="font-size: 16px;">Red Dead Redemption 2....</div>
+                            <div style="font-size: 16px;">Far Cry 2/3/4/5...(6sux).</div>
+                            <div style="font-size: 16px;">Minecraft................</div>
+                            <div style="font-size: 16px;">Celeste..................</div>
+                            <div style="font-size: 16px;">CoD 1/2/4/Waw/BO1/BO2/MW2</div>
+                            <div style="font-size: 16px;">.....MW3/BOCW/MW2019/MWII</div>
+                            <div style="font-size: 16px;">Counter Strike 1.6/GO....</div>
+                            <div style="font-size: 16px;">Undertale................</div>
+                            <div style="font-size: 16px;">Terraria.................</div>
+                            <div style="font-size: 16px;">Sally Face...............</div>
+                            <div style="font-size: 16px;">Life is Strange..........</div>
+                            <div style="font-size: 16px;">The Witcher 3............</div>
+                            <div style="font-size: 16px;">Half-Life 1/2............</div>
+                            <div style="font-size: 16px;">LISA.....................</div>
+                        </div>
+                    </div>
+
+                    <!--TOOLS-->
+                    <div style=
+                    "position: absolute;
+                    top: 670px;
+                    right: 16px;
+                    border: 2px dotted #666666;
+                    padding: 4px;
+                    ">
+                        <div class="plain" style="color: white; font-size: 32px;">
+                            <div style="text-align: center" class="topbar">---------tools----------</div>
+                            <div style="font-size: 16px;">Game Engine........<span style="float:right">Godot</span></div>
+                            <div style="font-size: 16px;">GFX.............<span style="float:right">Aseprite</span></div>
+                            <div style="font-size: 16px;">....................<span style="float:right">GIMP</span></div>
+                            <div style="font-size: 16px;">...................<span style="float:right">Krita</span></div>
+                            <div style="font-size: 16px;">.................<span style="float:right">Blender</span></div>
+                            <div style="font-size: 16px;">Music/SFX......<span style="float:right">FL Studio</span></div>
+                            <div style="font-size: 16px;">................<span style="float:right">Audacity</span></div>
+                            <div style="font-size: 16px;">Browser..........<span style="float:right">Firefox</span></div>
+                            <div style="font-size: 16px;">Music Player......<span style="float:right">Winamp</span></div>
+                            <div style="font-size: 16px;">Video Player.........<span style="float:right">VLC</span></div>
+                            <div style="font-size: 16px;">MISC............<span style="float:right">........</span></div>
+                            <div style="font-size: 16px;">.............<span style="float:right">qBitTorrent</span></div>
+                            <div style="font-size: 16px;">..............<span style="float:right">OBS Studio</span></div>
+                            <div style="font-size: 16px;">.................<span style="float:right">VS Code</span></div>
+
+
+                        </div>
+                    </div>
+
+                    <!--MUSIC-->
+                    <div style=
+                    "position: absolute;
+                    top: 640px;
+                    left: 32px;
+                    border: 2px dotted #666666;
+                    padding: 4px;
+                    ">
+                        <div class="plain" style="color: white; ">
+                            <div class="topbar" style="text-align: center; font-size: 16px;">--------♥ music ♥--------</div>
+
+                            <div style="
+                            display: flex;
+                            align-content: space-between;
+                            gap: 16px 16px;
+                            width: 208px;
+                            flex-wrap: wrap;
+                            ">
+                                <div style="width: 96px;">
+                                    <img src="img/jimi.png" style="width: 96px"><br>
+                                    <div style="text-align: center; font-size: 16px;">Jimi Hendrix</div>
+                                </div>
+
+                                <div style="width: 96px;">
+                                    <img src="img/kgtlw.png" style="width: 96px"><br>
+                                    <div style="text-align: center; font-size: 16px;">King Gizzard & The Lizard Wizard</div>
+                                </div>
+
+                                <div style="width: 96px;">
+                                    <img src="img/greenday.png" style="width: 96px"><br>
+                                    <div style="text-align: center; font-size: 16px;">Green Day</div>
+                                </div>
+
+                                <div style="width: 96px;">
+                                    <img src="img/prince.png" style="width: 96px"><br>
+                                    <div style="text-align: center; font-size: 16px;">Prince</div>
+                                </div>
+
+                                <div style="width: 96px;">
+                                    <img src="img/FEMTANYL.png" style="width: 96px"><br>
+                                    <div style="text-align: center; font-size: 16px;">femtanyl</div>
+                                </div>
+
+                                <div style="width: 96px;">
+                                    <img src="img/machineGIRL.png" style="width: 96px"><br>
+                                    <div style="text-align: center; font-size: 16px;">Machine Girl</div>
+                                </div>
+
+                                <div style="width: 96px;">
+                                    <img src="img/grabaz.png" style="width: 96px"><br>
+                                    <div style="text-align: center; font-size: 16px;">Pidżama Porno</div>
+                                </div>
+                                
+                                <div style="width: 96px;">
+                                    <img src="img/defektmuzgo.png" style="width: 96px"><br>
+                                    <div style="text-align: center; font-size: 16px;">Defekt Muzgó</div>
+                                </div>                                
+
+                            </div>
+
+                            <br>
+                            <div style="font-size: 16px;">-ok thats too many images-</div>
+                            <div style="font-size: 16px;">ACDC......................</div>
+                            <div style="font-size: 16px;">CCR.......................</div>
+                            <div style="font-size: 16px;">KoЯn......................</div>
+                            <div style="font-size: 16px;">metro.....................</div>
+                            <div style="font-size: 16px;">Kult......................</div>
+                            <div style="font-size: 16px;">100 gecs..................</div>
+                            <div style="font-size: 16px;">System Of A Down..........</div>
+                            <div style="font-size: 16px;">Rage Against The Machine..</div>
+                            <div style="font-size: 16px;">milkypossum...............</div>
+                            <div style="font-size: 16px;">Metallica.................</div>
+                            <div style="font-size: 16px;">Amyl and The Sniffers.....</div>
+                            <div style="font-size: 16px;">Muse......................</div>
+                            <div style="font-size: 16px;">Dead Kennedys.............</div>
+                            <div style="font-size: 16px;">Myslovitz.................</div>
+                            <div style="font-size: 16px;">Krzysztof Krawczyk........</div>
+                            <div style="font-size: 16px;">Jack Off Jill.............</div>
+                            <div style="font-size: 16px;">Whiteweek.................</div>
+                            <div style="font-size: 16px;">Lady Pank.................</div>
+                            <div style="font-size: 16px;">Strachy Na Lachy..........</div>
+                            <div style="font-size: 16px;">Big Cyc...................</div>
+                            <div style="font-size: 16px;">Wilki.....................</div>
+                            <div style="font-size: 16px;">---------and more---------</div>
+
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
     </div>
+    <script>dragElement(document.getElementById("window_mainscr"));windows_array.push(document.getElementById("window_mainscr"))</script>
+    <!--
+    https://ps1.tumblr.com/smolpxl/
+    https://odditycommoddity.neocities.org/
+    https://feelingmachine.moe/
+    https://olliveen.neocities.org/
+    https://www.3dgifmaker.com/
+    https://brisray.com/web/webring-list.htm
+    https://cyber.dabamos.de/88x31/
+    -->
 
-    <div style=
-    "position: absolute;
-    top: 650px;
-    left: 663px;
-    width: 12px;
-    height: 360px;">
-        <a class="topbar">|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|</a> 
+    <!--
+    https://docs.google.com/spreadsheets/d/18rtqh8EG2q1xBo2cLNyhIDuK9jrPGwYr9DI2UncoqJQ/edit?gid=930747607#gid=930747607
+    -->
+
+    <!--MONERO WINDOW-->
+    <div class="window" id="window_monero" style="user-select: none; position: absolute; top: 100px; width: 710px; height: 80px; display: none; background-color: black;">
+      <div class="title-bar" id="window_monero_header">
+        <div class="title-bar-text" style="cursor:default; display:flex; gap: 4px;">
+            <img src="new/files/monero.png" style="max-width: 16px;">
+            Wallet
+        </div>
+
+        <div class="title-bar-controls" id="window_monero_header_controls" onmousedown="event.stopPropagation()">
+          <button aria-label="Close" id="close_button" onclick="windowClose('window_monero')"></button>
+        </div>
+
+      </div>
+      <div class="window-body" style="background-color: black; margin-right: 30px;">
+        <div class="plain" style="user-select: text; color: #ffffff; font-size: 12px; font-family: Lucida Console;">
+            47dbpEKHDYogtvhcukFKGkMSAPSLVrRWXSKvSXay8VLQjD5F5eMrpigbzJFskvZVkDWouSY2yfCxuKVAt1peS6GHUmGW4CC
+        </div>
+      </div>
     </div>
-
-    <div style=
-    "position: absolute;
-    top: 650px;
-    left: 985px;
-    width: 12px;
-    height: 360px;">
-        <a class="topbar">|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|</a> 
-    </div>
-
-    <div style=
-    "position: absolute;
-    top: 628px;
-    left: 282px;">
-        <a class="topbar">=========================================================</a> 
-    </div>
+    <script>dragElement(document.getElementById("window_monero"));windows_array.push(document.getElementById("window_monero"))</script>
 
 
-    <div style=
-    "position: absolute;
-    top: 300px;
-    left: 780px;
-    width: 600px;
-    height: 100px;"
-    >
-        <a class="plain" style="color: white;">
-            hi i'm <span style="color:#1271ff">gappy</span>, welcome to my site!<br> i started making this page because i don't like modern social media and also to practice my web development skills,
-            here you will find some of <span style="color:#ff87d7">my projects</span> i want to show and my <span style="color:#ff87d7">blog</span> where i will post something from time to time
-        </a>
-    </div>
-
-    <div style=
-    "position: absolute;
-    top: 570px;
-    left: 764px;">
-        <a class="topbar">==============================================================================</a> 
-    </div>
-
-    <div style=
-    "position: absolute;
-    top: 597px;
-    left: 764px;">
-        <a class="plain" style="display: inline-block; width: 626px; color: white; text-align: center; font-size: 32px;">about me</a>
-    </div>
-
-    <div style=
-    "position: absolute;
-    top: 628px;
-    left: 764px;">
-        <a class="topbar">==============================================================================</a> 
-    </div>
-
-    <div style=
-    "position: absolute;
-    top: 660px;
-    left: 690px;
-    width: 280px;
-    height: 100px;">
-        <a class="plain" style="color: white; font-size: 32px;">
-            - age: 23<br>
-            - birthday: may 1<br>
-            - country: <span class="polska-gurom">poland</span><br>
-        </a>
-    </div>
-
-    <div style=
-    "position: absolute;
-    top: 770px;
-    left: 700px;">
-        <a class="topbar">================================</a> 
-    </div>
-
-    <div style=
-    "position: absolute;
-    top: 840px;
-    left: 700px;">
-        <a class="topbar">================================</a> 
-    </div>
-
-    <div style=
-    "position: absolute;
-    top: 708px;
-    left: 1024px;">
-        <a class="topbar">================================</a> 
-    </div>
-
-    <div style=
-    "position: absolute;
-    top: 800px;
-    left: 690px;
-    width: 280px;
-    height: 100px;">
-    <a class="plain" style="color: white; font-size: 32px; ">
-        <div style="text-align: center;">♥ games ♥</div><br><br>
-        - <span id="ultrakill_text" class="kill" style="font-size: 32px;">ULTRAKILL</span><br>
-        - <span style="font-family: mc; font-size: 24px; position: absolute; top: 166px; left: 33px;">Minecraft</span><br>
-        - <span id="DE_text" style="font-family: 'commie', monospace; font-size: 32px;">Disco Elysium</span><br>
-        - <span id="tf2_text" style="font-family: 'tf2', monospace; font-size: 24px;">Team Fortress 2</span><br>
-        - <span style="font-family: 'sv', monospace; font-size: 32px;">Stardew Valley</span><br>
-    </a>
-    </div>
-
-    <div style=
-    "position: absolute;
-    top: 663px;
-    left: 1013px;
-    width: 280px;
-    height: 100px;">
-    <a class="plain" style="color: white; font-size: 32px; ">
-        <div style="text-align: center;">♥ music ♥</div><br><br>
-        <span id="hover_element_jimi" style="font-size: 32px;"><img src="img/jimi.png" style="width: 128px"></span>
-        <span id="hover_element_kg" style="font-size: 32px;"><img src="img/kgtlw.png" style="width: 128px"></span><br>
-        <span id="hover_element_gd" style="font-size: 32px;"><img src="img/greenday.png" style="width: 128px"></span>
-        <span id="hover_element_pr" style="font-size: 32px;"><img src="img/prince.png" style="width: 128px"></span><br>
-        <span id="hover_element_fem" style="font-size: 32px;"><img src="img/FEMTANYL.png" style="width: 128px"></span>
-        <span id="hover_element_mg" style="font-size: 32px;"><img src="img/machineGIRL.png" style="width: 128px"></span><br>
-        <span id="hover_element_pp" style="font-size: 32px;"><img src="img/grabaz.png" style="width: 128px"></span>
-        <span id="hover_element_dm" style="font-size: 32px;"><img src="img/defektmuzgo.png" style="width: 128px"></span><br>
-        <script>//jimi hendrix, prince, green day, king gizzard, machine girl, femtanyl, pidzama porno</script>
-    </a>
-    </div>
-
-    <div style=
-    "position: absolute;
-    top: 654px;
-    left: 181px;
-    width: 460px;
-    height: 100px;"
-    >
-        <a class="plain" style="color: white; font-size: 16px;">
-            <div style="text-align: center;"><span class="jitter"><span>w</span><span>a</span><span>r</span><span>n</span><span>i</span><span>n</span><span>g</span><span>:</span></span></div>
-            this website contains 
-            <span class="swear"  style="font-size: 16px;"><span data-letter="s"> </span><span data-letter="w"> </span><span data-letter="e"> </span><span data-letter="a"> </span><span data-letter="r"> </span><span data-letter="i"> </span><span data-letter="n"> </span><span data-letter="g"> </span></span>
-            and talking about everything including <span class="big">sex</span>, <span class="drunk"><span>a</span><span>l</span><span>c</span><span>o</span><span>h</span><span>o</span><span>l</span></span>, <span class="trip">drugs</span> and other shit some may find sensitive, if this offends you go somewhere else idk<br><br>
-
-            <span style="font-size: 12px;">by the way, this site was only tested on <span style="color:#ff6600">Firefox</span> on 1920x1080 resolution and won't look good on mobile</span>
-        </a>
-    </div>
+    <!--
+        at this point you are probably starting to see it down there
+    -->
 
 
-    <div style=
-    "position: absolute;
-    top: 60px;
-    left: 30px;
-    width: 220px;
-    height: 170px;"
-    >
-        <a class="plain" style="color: white; font-size: 14px;">
-            todo:<br>
-            - blog<br>
-            - rewrite my projects<br>
-            - rewrite links<br>
-            - blinkies<br>
-        </a>
-    </div>
-
-    <div style=
-    "position: absolute;
-    top: 60px;
-    left: 30px;
-    width: 220px;
-    height: 170px;"
-    >
-
+    <!--TASKBAR-->
     <div>
-        <img id="cirno_gif" src="img/fumoanim.gif" style="pointer-events:none; width: 128px; z-index: 1000;" >
+        <img id="taskbar" src="new/window/taskbar.png" style="user-select: none; position:fixed; width: 100%; height: 28px; left: 0px; bottom: 0;">
+        <script>document.getElementById("taskbar").ondragstart = function(){return false;}</script>
+        <!--CLOCK-->
+        <p style="user-select: none; font-family: Tahoma; color: white; position:fixed; width: 100%; height: 28px; right: 20px; bottom: -19px; text-align: right; text-shadow: 1px 1px 2px #0a0a0a;" id="clock"></p>
+        <!--START BUTTON-->
+        <img src="new/window/startbutton_default.png" id="startbutton" style="user-select: none; position:fixed; height: 28px; left: 0px; bottom: 0;">
     </div>
 
+    <!--CONTEXT MENU-->
+    <div class="context-menu-xp" id="context_menu" style="display: none; position: absolute; bottom: 20px; left: 64px; height: 28px; z-index: 10000; box-shadow: 3px 3px 2px #000000aa;">
+        <ol style="height: 3px;">
+            <dt>
+                <div class="context-menu-xp-item" style="position: inherit; margin-bottom: -8px; margin-left: -39px; z-index: 10001;">
+                    <p style="user-select: none; font-family: Tahoma; font-size: 12; margin-left: 4px;">Close</p>
+                </div>
+            </dt>
+        </ol>
     </div>
-
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     </main>
 
-    <footer>
-    <a class="topbar">==============================================================================================================</a>
+    <!--
+        ok here it goes
+    -->
 
-    <div>
-        <a class="moneh" href="https://ko-fi.com/gappcio" style="color: #00afff; display: flex; align-items:center; text-decoration:none"><img src="img/kofi.png">&nbsp;Support Me on Ko-fi!</a>
-    </div>
-
-    <br>
-
-    <div>
-        <a class="moneh" style="color: #ff5f00; display: flex; align-items:center;"><img src="img/xmr.png">&nbsp;47dbpEKHDYogtvhcukFKGkMSAPSLVrRWXSKvSXay8VLQjD5F5eMrpigbzJFskvZVkDWouSY2yfCxuKVAt1peS6GHUmGW4CC</a>
-    </div>
-    </footer>
-
+    <!--MAIN SCRIPTS-->
     <script>
+        
+        // Tabs controller
+        const obj_taskbar = {
+            arr: []
+        };
 
         var cirno_anim = document.getElementById('cirno_gif'); 
         var cirno_size = cirno_anim.style.width;
-
-        var fr = 0;
-        var imagesArray = [];
-
-        function imageShow(img, x, y) {
-            
-            let image = document.createElement("img");
-
-            image.style.position = "absolute";
-            image.style.left = x + "px";
-            image.style.top = y + "px";
-            image.style.width = "20px";
-            image.style.height = "20px";
-            image.style.opacity = 1;
-            image.src = img;
-            image.style.pointerEvents = "none";
-            image.style.zIndex = 1000;
-
-            document.body.appendChild(image);
-
-            const randomFloat = (min, max) => Math.random() * (max - min) + min;
-
-            const image_obj = {
-                image: image,
-                x:image.style.left,
-                y:image.style.top,
-                hsp: randomFloat(-3, 3),
-                vsp: randomFloat(-4, 0.5),
-                scale: 1,
-                alpha:image.style.opacity
-            };
-
-            imagesArray.push(image_obj);
-
-        }
-
-        function animate(obj) {
-
-            if (obj == null) return;
-
-            obj.scale += 0.0005;
-            obj.x = parseFloat(obj.x) + obj.hsp + "px";
-            obj.y = parseFloat(obj.y) + obj.vsp + "px";
-            obj.image.style.width = (parseFloat(obj.image.style.width) * obj.scale) + "px";
-            obj.image.style.height = (parseFloat(obj.image.style.height) * obj.scale) + "px";
-
-            obj.image.style.transformOrigin = "center";
-            obj.image.style.left = obj.x;
-            obj.image.style.top = obj.y;
-
-            console.log(obj.scale)
-
-            if (obj.scale > 1.06) {
-                obj.image.style.opacity -= 0.1;
-            }
-
-        }
-
-
-        const obj_textbox = {
-            element: null,
-            text: "",
-            x: 0,
-            y: 0,
-            width: 0,
-            height: 0,
-            bg: null
-        };
-
-        function textBox(text, x, y, width, height) {
-            
-            let box = document.createElement("div");
-
-            let bg = document.createElement("div");
-
-            bg.style.position = "absolute";
-            bg.style.left = x + "px";
-            bg.style.top = y + "px";
-            bg.style.width = width + "px";
-            bg.style.height = height + "px";
-            bg.style.pointerEvents = "none";
-            //bg.style.backgroundColor = "#080808";
-            bg.style.backgroundColor = "#080808";
-
-            box.style.position = "absolute";
-            box.style.left = x + "px";
-            box.style.top = y + "px";
-            box.style.width = width + "px";
-            box.style.height = height + "px";
-            box.style.pointerEvents = "none";
-            box.className = "topbar";
-            box.textContent = text;
-
-            obj_textbox.element = box;
-            obj_textbox.text = text;
-            obj_textbox.x = x;
-            obj_textbox.y = y;
-            obj_textbox.width = width;
-            obj_textbox.height = height;
-            obj_textbox.bg = bg;
-
-            document.body.appendChild(bg);
-            document.body.appendChild(box);
-            
-
-        }
-
-        function textBoxDelete() {
-            obj_textbox.text = "";
-            if (obj_textbox.element) {
-
-                obj_textbox.element.remove();
-                obj_textbox.element = null;
-                obj_textbox.bg.remove();
-                obj_textbox.bg = null;
-
-            }
-        }
-
-        function textBoxMove(event) {
-
-            var mouseX = event.pageX + 1;
-            var mouseY = event.pageY + 1;
-
-            if (obj_textbox.element) {
-                obj_textbox.element.style.left = mouseX - 32 + "px";
-                obj_textbox.element.style.top = mouseY - 8 + "px";
-            }
-            if (obj_textbox.bg) {
-                obj_textbox.bg.style.left = mouseX + 64 - 32 + "px";
-                obj_textbox.bg.style.top = mouseY + 16 - 8 + "px";
-            }
-
-        }
 
         const cirno = {
             x: 0,
@@ -444,6 +738,424 @@
             hsp: 10,
             vsp: 10
         }
+
+        // Pjoter
+        var pjoter = document.getElementById("pjoter");
+        var audio = new Audio("audio/hazel.mp3");
+        audio.volume = 0.1;
+        audio.loop = true;
+        pjoter.classList.add("pause");
+        pjoter.onmouseenter = function(){pjoter.classList.remove("pause");audio.play();}
+        pjoter.onmouseleave = function(){pjoter.classList.add("pause");audio.pause();}
+
+
+
+
+        // Z index ordering _ready
+        for(var i = 0; i <= windows_array.length - 1; i++) {
+            setIndex(windows_array[i], windows_array.length - i);
+        }
+
+        // Start button
+        var start_button = document.getElementById("startbutton");
+        
+        if (start_button) {
+            start_button.ondragstart = function(){return false;}
+            start_button.onmouseenter = function(){start_button.src = "new/window/startbutton_hover.png";}
+            start_button.onmouseleave = function(){start_button.src = "new/window/startbutton_default.png";}
+            start_button.onmouseup = function(){start_button.src = "new/window/startbutton_hover.png";}
+            start_button.onmousedown = function(){start_button.src = "new/window/startbutton_click.png";}
+        }
+
+        
+        // Open window
+        function windowOpen(window_id, position) {
+            var _window = document.getElementById(window_id);
+
+            if (_window.style.display == "")
+                return;
+
+            _window.style.display = "";
+
+            var pageWidth = window.screen.width;
+            var pageHeight = document.documentElement.scrollHeight;
+
+            var windowWidth = parseFloat(_window.style.width);
+            var windowHeight = parseFloat(_window.style.height);
+
+            var nextpos = 0;
+
+            for (var i = 0; i < obj_taskbar.arr.length; i++) {
+                //nextpos = i;
+            }
+
+            if (!position) {
+
+                _window.style.left = (pageWidth / 2) - (windowWidth / 2) + (nextpos * 64) + "px";
+                _window.style.top = (pageHeight / 2) - (windowHeight / 2) + (nextpos * 64) + "px";
+
+            } else {
+
+                _window.style.left = position[0] + "px";
+                _window.style.top = position[1] + "px";
+
+            }
+        }
+
+        // Close window
+        function windowClose(window_id) {
+            var _window = document.getElementById(window_id);
+            _window.style.display = "none";
+            tabClose(window_id);
+        }
+
+        // Set window z index
+        function setIndex(item, index) {
+            item.style.zIndex = index;
+        }
+
+        // Window focus
+        function windowFocus(window) {
+
+            var index = windows_array.indexOf(window);
+            if (index > -1) {
+                windows_array.splice(index, 1);
+                windows_array.unshift(window);
+            }
+
+
+            for(let i = 0 ; i <= windows_array.length - 1; i++) {
+
+                windows_array[i].style.zIndex = windows_array.length - i;
+
+            }
+            
+
+            for(let i = 0; i <= obj_taskbar.arr.length - 1; i++) {
+
+                if (obj_taskbar.arr[i][1] == window.id) {
+
+                    for (let j = 0; j <= obj_taskbar.arr.length - 1; j++) {
+
+                        obj_taskbar.arr[j][3] = 0;
+
+                    }
+
+                    obj_taskbar.arr[i][3] = 2;
+
+                }
+
+            }
+            
+        }
+
+        // Select file
+        function fileFocus(file, img) {
+
+            for(var i = 0; i <= file_array.length - 1; i++) {
+                file_array[i][1].style.backgroundColor = "#00000000";
+                file_array[i][2].style.opacity = "100%";
+                file_array[i][3] = 0;
+
+            }
+            if (file){
+                file.style.backgroundColor = "#0004ff";
+                img.style.opacity = "70%";
+            }
+        }
+
+        // Select image in pic viewer
+        function imageFocus(img) {
+
+            for(var i = 0; i <= scroll_images_array.length - 1; i++) {
+                scroll_images_array[i].style.backgroundColor = "#00000000";
+                scroll_images_array[i].style.opacity = "100%";
+                scroll_images_array[i].style.border = "2px solid #808080";
+
+            }
+
+            if (img) {
+                img.style.opacity = "70%";
+                img.style.border = "3px solid #0050ee";
+            }
+        }
+
+
+        var prev_button = document.getElementById("prev");
+        var next_button = document.getElementById("next");
+        var image = document.getElementById("pics_image");
+        var images_select = document.getElementById("image_select");
+
+        var images_array = [];
+        var current_image = 0;
+
+        var image_list = [
+            "badapple.jpg",
+            "breakingbabka.jpg",
+            "cock.jpg",
+            "czilera.jpg",
+            "drumnbass.jpg",
+            "ferdekdebois.jpg",
+            "frank.jpg",
+            "gun.png",
+            "harry.png",
+            "horse.jpg",
+            "jajabolo.jpg",
+            "ket.jpg",
+            "krzeslo.jpg",
+            "love.jpg",
+            "man.jpg",
+            "me.jpg",
+            "miku.png",
+            "opos.jpg",
+            "pickle.jpg",
+            "prawda.jpg",
+            "retard.jpg",
+            "rumia.jpg",
+            "rurki.gif",
+            "schody.jpg",
+            "seler.jpg",
+            "silly.png",
+            "siryessir.jpg",
+            "slay.jpg",
+            "study.jpg",
+            "theballs.gif",
+            "tymbark.jpg",
+            "wtc.jpg"
+        ];
+
+        for (let i = 0; i <= image_list.length - 1; i++) {
+            images_array.push("new/pics/" + image_list[i]);
+        }
+
+        cycle_images(0);
+        
+        if (prev_button) {
+            prev_button.ondragstart = function(){return false;}
+            prev_button.onmouseenter = function(){prev_button.src = "new/window/prev_hover.png";}
+            prev_button.onmouseleave = function(){prev_button.src = "new/window/prev.png";}
+            prev_button.onmouseup = function(){prev_button.src = "new/window/prev_hover.png";}
+            prev_button.onmousedown = function(){prev_button.src = "new/window/prev_click.png";}
+            prev_button.onclick = function(){cycle_images(-1, 0);}
+        }
+
+        if (next_button) {
+            next_button.ondragstart = function(){return false;}
+            next_button.onmouseenter = function(){next_button.src = "new/window/next_hover.png";}
+            next_button.onmouseleave = function(){next_button.src = "new/window/next.png";}
+            next_button.onmouseup = function(){next_button.src = "new/window/next_hover.png";}
+            next_button.onmousedown = function(){next_button.src = "new/window/next_click.png";}
+            next_button.onclick = function(){cycle_images(1, 0);}
+        }
+
+        function cycle_images(direction, ind) {
+
+            if (!ind)
+                current_image += direction;
+            else
+                current_image = ind;
+
+            if (current_image <= 0) current_image = 0;
+            if (current_image >= images_array.length - 1) current_image = images_array.length - 1;
+
+            image.src = images_array[current_image];
+            document.getElementById("window_pics_name").innerHTML = image_list[current_image].substring(0, image_list[current_image].length - 4) + " - Picture Viewer";
+            
+            var _tab = document.getElementById("tab_pics_text");
+            if (_tab)
+                _tab.textContent = image_list[current_image].substring(0, image_list[current_image].length - 4) + " - Picture Viewer";
+
+            console.log(current_image)
+            imageFocus(scroll_images_array[current_image]);
+
+            // shitty af but good enough for now
+            var _scale = parseFloat(images_select.scrollWidth) / parseFloat(images_array.length);
+            images_select.scrollLeft = (current_image * _scale) - 300;
+
+        }
+
+
+        
+
+        for (let i = 0; i <= image_list.length - 1; i++) {
+
+            var _div = images_select.appendChild(document.createElement("div"));
+
+            scroll_images_array[i] = document.createElement("img");
+            scroll_images_array[i].id = i;
+            scroll_images_array[i].src = ("new/pics/" + image_list[i]);
+            scroll_images_array[i].className = "pic-view-select";
+            _div.appendChild(scroll_images_array[i]);
+
+            scroll_text_array[i] = document.createElement("p");
+            scroll_text_array[i].id = i + "_text";
+            scroll_text_array[i].style.userSelect = "none";
+            scroll_text_array[i].style.fontFamily = "Tahoma";
+            scroll_text_array[i].style.color = "black";
+            scroll_text_array[i].style.textShadow = "1px 1px 1px #0a0a0a11";
+            scroll_text_array[i].style.position = "relative";
+            scroll_text_array[i].style.display = "block";
+            scroll_text_array[i].style.textAlign = "center";
+            scroll_text_array[i].style.width = "100%";
+            scroll_text_array[i].style.height = "24px";
+            scroll_text_array[i].style.top = "-8px";
+            scroll_text_array[i].style.overflow = "hidden";
+            scroll_text_array[i].style.textOverflow = "ellipsis";
+            scroll_text_array[i].style.whiteSpace = "nowrap";
+            scroll_text_array[i].textContent = image_list[i];
+
+            _div.appendChild(scroll_text_array[i]);
+
+        }
+
+
+        // Click file
+        function fileClick(file) {
+
+            switch(file.id) {
+                case "file_hi":
+                    tabOpen("tab_hi", "hi", "new/files/pc.png", "window_hi");
+                    windowOpen("window_hi", null);
+                    windowFocus(document.getElementById("window_hi"));
+                break;
+                case "file_pageinfo":
+                    tabOpen("tab_pageinfo", "Info", "new/files/notepad.png", "window_pageinfo");
+                    windowOpen("window_pageinfo", null);
+                    windowFocus(document.getElementById("window_pageinfo"));
+                break;
+                case "file_mainscr":
+                    tabOpen("tab_mainscr", "Welcome", "new/files/paint.png", "window_mainscr");
+                    windowOpen("window_mainscr", null);
+                    windowFocus(document.getElementById("window_mainscr"));
+                break;
+                case "file_cirno":
+                    tabOpen("tab_cirno", "cirno", "new/files/cirno.png", "window_cirno");
+                    windowOpen("window_cirno", [32, 64]);
+                    windowFocus(document.getElementById("window_cirno"));
+                break;
+                case "file_monero":
+                    tabOpen("tab_monero", "monero", "new/files/monero.png", "window_monero");
+                    windowOpen("window_monero", null);
+                    windowFocus(document.getElementById("window_monero"));
+                break;
+                case "file_kofi":
+                    window.open("https://ko-fi.com/gappcio").focus();
+                break;
+                case "file_discord":
+                    window.open("https://discordapp.com/users/459393671767392256").focus();
+                break;
+                case "file_mail":
+                    window.location.href = "mailto:kittycritt3r@proton.me";
+                break;
+                case "file_pics":
+                    tabOpen("tab_pics", "Picture Viewer", "new/files/picview.png", "window_pics");
+                    windowOpen("window_pics", null);
+                    windowFocus(document.getElementById("window_pics"));
+                    cycle_images(0);
+                break;
+                case "file_fish":
+                    tabOpen("tab_fish", "fish", "new/files/script.png", "window_fish");
+                    windowOpen("window_fish", null);
+                    windowFocus(document.getElementById("window_fish"));
+                    
+                break;
+            }
+        }
+          
+        // Unclick
+        window.onclick = function(){fileFocus(null);}
+        
+
+        // Open tab
+        function tabOpen(id, name, sprite, window_id) {
+
+            var _window;
+
+            if (window_id) {
+                _window = document.getElementById(window_id);
+
+                if (_window.style.display == "")
+                    return;
+            }
+
+            let tab = document.createElement("div");
+            let tab_sprite = document.createElement("img");
+            let tab_icon = document.createElement("img");
+            let tab_text = document.createElement("p");
+
+
+            tab.id = id;
+            tab.style.userSelect = "none";
+            tab.style.position = "fixed";
+            tab.style.left = "96px";
+            tab.style.bottom = "1px";
+
+            tab_sprite.id = id + "_sprite";
+            tab_sprite.src = "new/window/tab_default.png";
+            tab_sprite.style.userSelect = "none";
+            tab_sprite.style.position = "absolute";
+            tab_sprite.style.left = "0px";
+            tab_sprite.style.bottom = "0px";
+
+            tab_icon.id = id + "_icon";
+            tab_icon.src = sprite;
+            tab_icon.style.userSelect = "none";
+            tab_icon.style.position = "absolute";
+            tab_icon.style.left = "8px";
+            tab_icon.style.bottom = "4px";
+            tab_icon.style.width = "16px";
+            tab_icon.style.height = "16px";
+
+            tab_text.id = id + "_text";
+            tab_text.style.userSelect = "none";
+            tab_text.style.fontFamily = "Tahoma";
+            tab_text.style.color = "white";
+            tab_text.style.textShadow = "1px 1px 1px #0a0a0aaa";
+            tab_text.style.position = "absolute";
+            tab_text.style.left = "32px";
+            tab_text.style.bottom = "-6px";
+            tab_text.style.width = "110px";
+            tab_text.style.overflow = "hidden";
+            tab_text.style.textOverflow = "ellipsis";
+            tab_text.style.whiteSpace = "nowrap";
+            tab_text.textContent = name;
+
+            obj_taskbar.arr.push([tab, window_id, tab_sprite, 0]);
+            document.body.appendChild(tab).appendChild(tab_sprite);
+            tab.appendChild(tab_icon);
+            tab.appendChild(tab_text);
+
+            tab.addEventListener("contextmenu", function(event) {
+
+                event.preventDefault();
+                windowClose(window_id);
+
+            });
+
+        }
+
+        // Close tab
+        function tabClose(window_id) {
+
+            for (let i = 0; i < obj_taskbar.arr.length; i++) {
+
+                if (obj_taskbar.arr[i][1] == window_id) {
+
+                    let tab = obj_taskbar.arr[i][0];
+                    if (tab) {
+                        document.body.removeChild(tab);
+                    }
+                    obj_taskbar.arr.splice(i, 1);
+                    break;
+
+                }
+
+            }
+            
+        }
+
+
+        // Cirno
 
         function cirnoAnimate(size) {
 
@@ -455,7 +1167,7 @@
             cirno_anim.style.top = cirno.y + "px";
 
 
-            if ((cirno.x < 0) || (cirno.x > windowWidth - parseInt(size) - 64)) {
+            if ((cirno.x < 0) || (cirno.x > windowWidth - parseInt(size) - 128)) {
                 cirno.hsp = -cirno.hsp;
             }
             if ((cirno.y < 0) || (cirno.y > windowHeight - parseInt(size) - 128)) {
@@ -467,217 +1179,165 @@
 
         }
 
+        // Create start windows and tabs
+
+        tabOpen("tab_hi", "hi", "new/files/script.png", "window_hi");
+        windowOpen("window_hi", [200, 80]);
+
+        tabOpen("tab_pageinfo", "Info", "new/files/notepad.png", "window_pageinfo");
+        windowOpen("window_pageinfo", [1164, 60]);
+
+        //tabOpen("tab_welcome", "Terminal", "new/files/terminal.png", "window_console");
+        //windowOpen("window_console", null);
+
+        tabOpen("tab_mainscr", "Paint", "new/files/paint.png", "window_mainscr");
+        windowOpen("window_mainscr", [240, 200]);
+
+        // Main loop
         var loop = function() {
 
-            if (imagesArray.length > 0) {
+            if (document.getElementById("window_cirno").style.display == "")
+                cirnoAnimate(cirno_size);
 
-                for (var i = 0; i < imagesArray.length; ++i) {
+            // Z index ordering _loop
+            for(let i = 0; i <= windows_array.length - 1; i++) {
+                if (windows_array[i]) {
+                    
+                    windows_array[i].onmousedown = function() {
+                        windowFocus(windows_array[i]);
+                    }
 
-                    animate(imagesArray[i], 0);
+                }
+            }
 
-                    if (imagesArray[i].image.style.opacity <= 0) {
+            // File select behavior
+            for (let i = 0; i <= file_array.length - 1; i++) {
+                if (file_array[i]) {
+                    file_array[i][0].onclick = function() {
+                        event.stopPropagation();
 
-                        imagesArray[i].image.remove();
-                        delete imagesArray[i];
-                        imagesArray[i] = null;
-                        imagesArray.splice(i, 1); 
+                        if (file_array[i][3] == 0) {
+                          fileFocus(file_array[i][1], file_array[i][2]);
+                          file_array[i][3] = 1;
+                        } else {
+                          // File click behavior
+                          fileClick(file_array[i][0]);
+                        }
 
                     }
+                }
+            }
+
+            // Pic viewer image select behavior
+            for (let i = 0; i <= scroll_images_array.length - 1; i++) {
+                if (scroll_images_array[i]) {
+                    scroll_images_array[i].onclick = function() {
+                        event.stopPropagation();
+
+                        if (scroll_images_array[i].style.opacity == 0.7) {
+                            cycle_images(0, parseInt(scroll_images_array[i].id));
+                        } else {
+                            imageFocus(scroll_images_array[i]);
+                        }
+
+                    }
+                }
+            }
+
+          // Taskbar tabs
+          for(var i = 0; i <= obj_taskbar.arr.length - 1; i++) {
+
+              if (obj_taskbar.arr[i][0]) {
+                  obj_taskbar.arr[i][0].style.left = 96 + (150 * i) + "px";
+              }
+
+          }
+
+          for(let i = 0; i <= obj_taskbar.arr.length - 1; i++) {
+
+            if (obj_taskbar.arr[i]) {
+
+            
+                
+                obj_taskbar.arr[i][0].onclick = function() {
+
+                    windowFocus(document.getElementById(obj_taskbar.arr[i][1]));
+
+                    for(let j = 0; j <= obj_taskbar.arr.length - 1; j++) {
+
+                        obj_taskbar.arr[j][3] = 0;
+
+                    }
+                    obj_taskbar.arr[i][3] = 3;
+                }
+
+                
+
+                obj_taskbar.arr[i][0].onmouseenter = function() {
+
+                    if (obj_taskbar.arr[i][3] == 0) obj_taskbar.arr[i][3] = 1;
+                    if (obj_taskbar.arr[i][3] == 2) obj_taskbar.arr[i][3] = 3;
+
+                }
+
+                obj_taskbar.arr[i][0].onmouseleave = function() {
+
+                    if (obj_taskbar.arr[i][3] == 1) obj_taskbar.arr[i][3] = 0;
+                    if (obj_taskbar.arr[i][3] == 3) obj_taskbar.arr[i][3] = 2;
+
+                }
+                
+                switch(obj_taskbar.arr[i][3]) {
+
+                    case 0:
+                        obj_taskbar.arr[i][2].src = "new/window/tab_default.png";
+                    break;
+                    case 1:
+                        obj_taskbar.arr[i][2].src = "new/window/tab_hover.png";
+                    break;
+                    case 2:
+                        obj_taskbar.arr[i][2].src = "new/window/tab_click.png";
+                    break;
+                    case 3:
+                        obj_taskbar.arr[i][2].src = "new/window/tab_click_hover.png";
+                    break;
 
                 }
 
             }
 
-            if (obj_textbox.text != "") {
+          }
 
-                textBoxMove(obj_textbox, obj_textbox.event);
-
-            }
-
-            //cirno anim
-            cirnoAnimate(cirno_size);
+ 
 
             window.requestAnimationFrame(loop);
 
         }
 
-        setInterval(loop(), 16);
-
-        var ultrakillText = document.getElementById('ultrakill_text'); 
-        ultrakillText.addEventListener('click', () => {
-            imageShow("img/parry.png", 800, 910)
-        }, false);
-
-        var tfText = document.getElementById('tf2_text'); 
-        tfText.addEventListener('click', () => {
-            imageShow("img/buff.png", 800, 1010)
-        }, false);
-
-        var DEText = document.getElementById('DE_text'); 
-        DEText.addEventListener('click', () => {
-            imageShow("img/disco.png", 800, 970)
-        }, false);
-
-
-        var textboxText = [];
-        textboxText[0] = 
-        `
-        ================
-        | JIMI HENDRIX |
-        ================
-        `;
-        textboxText[1] = 
-        `
-        ====================================
-        | KING GIZZARD & THE LIZARD WIZARD |
-        ====================================
-        `;
-        textboxText[2] = 
-        `
-        =============
-        | GREEN DAY |
-        =============
-        `;
-        textboxText[3] = 
-        `
-        ==========
-        | PRINCE |
-        ==========
-        `;
-        textboxText[4] = 
-        `
-        ============
-        | FEMTANYL |
-        ============
-        `;
-        textboxText[5] = 
-        `
-        ================
-        | MACHINE GIRL |
-        ================
-        `;
-        textboxText[6] = 
-        `
-        =================
-        | PIDŻAMA PORNO |
-        =================
-        `;
-        textboxText[7] = 
-        `
-        ================
-        | DEFEKT MUZGÓ |
-        ================
-        `;
-
-        var hoverElement = [];
-
-        //idk why loop here doesnt work
-
-        //jimi
-        hoverElement[0] = document.getElementById('hover_element_jimi'); 
-
-        hoverElement[0].addEventListener('mouseover', event => {
-            textBox(textboxText[0], event.pageX - 16, event.pageY, 128, 48);
-            hoverElement[0].addEventListener('mousemove', textBoxMove);
-        });
-        hoverElement[0].addEventListener('mouseout', () => {
-            textBoxDelete();
-            hoverElement[0].removeEventListener('mousemove', textBoxMove);
-        });
-
-        //king gizzard
-        hoverElement[1] = document.getElementById('hover_element_kg'); 
-
-        hoverElement[1].addEventListener('mouseover', event => {
-            textBox(textboxText[1], event.pageX - 16, event.pageY, 288, 48);
-            hoverElement[1].addEventListener('mousemove', textBoxMove);
-        });
-        hoverElement[1].addEventListener('mouseout', () => {
-            textBoxDelete();
-            hoverElement[1].removeEventListener('mousemove', textBoxMove);
-        });
-
-        //greenday
-        hoverElement[2] = document.getElementById('hover_element_gd'); 
-
-        hoverElement[2].addEventListener('mouseover', event => {
-            textBox(textboxText[2], event.pageX - 16, event.pageY, 104, 48);
-            hoverElement[2].addEventListener('mousemove', textBoxMove);
-        });
-        hoverElement[2].addEventListener('mouseout', () => {
-            textBoxDelete();
-            hoverElement[2].removeEventListener('mousemove', textBoxMove);
-        });
-
-        //prince
-        hoverElement[3] = document.getElementById('hover_element_pr'); 
-
-        hoverElement[3].addEventListener('mouseover', event => {
-            textBox(textboxText[3], event.pageX - 16, event.pageY, 80, 48);
-            hoverElement[3].addEventListener('mousemove', textBoxMove);
-        });
-        hoverElement[3].addEventListener('mouseout', () => {
-            textBoxDelete();
-            hoverElement[3].removeEventListener('mousemove', textBoxMove);
-        });
-
-        //femtanyl
-        hoverElement[4] = document.getElementById('hover_element_fem'); 
-
-        hoverElement[4].addEventListener('mouseover', event => {
-            textBox(textboxText[4], event.pageX - 16, event.pageY, 96, 48);
-            hoverElement[4].addEventListener('mousemove', textBoxMove);
-        });
-        hoverElement[4].addEventListener('mouseout', () => {
-            textBoxDelete();
-            hoverElement[4].removeEventListener('mousemove', textBoxMove);
-        });
-
-        //machine girl
-        hoverElement[5] = document.getElementById('hover_element_mg'); 
-
-        hoverElement[5].addEventListener('mouseover', event => {
-            textBox(textboxText[5], event.pageX - 16, event.pageY, 128, 48);
-            hoverElement[5].addEventListener('mousemove', textBoxMove);
-        });
-        hoverElement[5].addEventListener('mouseout', () => {
-            textBoxDelete();
-            hoverElement[5].removeEventListener('mousemove', textBoxMove);
-        });
-
-        //pidzama
-        hoverElement[6] = document.getElementById('hover_element_pp'); 
-
-        hoverElement[6].addEventListener('mouseover', event => {
-            textBox(textboxText[6], event.pageX - 16, event.pageY, 136, 48);
-            hoverElement[6].addEventListener('mousemove', textBoxMove);
-        });
-        hoverElement[6].addEventListener('mouseout', () => {
-            textBoxDelete();
-            hoverElement[6].removeEventListener('mousemove', textBoxMove);
-        });
-
-        //defektmuzgo
-        hoverElement[7] = document.getElementById('hover_element_dm'); 
-
-        hoverElement[7].addEventListener('mouseover', event => {
-            textBox(textboxText[7], event.pageX - 16, event.pageY, 128, 48);
-            hoverElement[7].addEventListener('mousemove', textBoxMove);
-        });
-        hoverElement[7].addEventListener('mouseout', () => {
-            textBoxDelete();
-            hoverElement[7].removeEventListener('mousemove', textBoxMove);
-        });
-
-        
+        loop();
 
     </script>
 
+    <!--
+        if ur not dead yet then congrats
+    -->
 
+    <!--CLOCK BEHAVIOR-->
     <script>
+        function startTime() {
+                const today = new Date();
+                let h = today.getHours();
+                let m = today.getMinutes();
+                h = checkTime(h);
+                m = checkTime(m);
+                document.getElementById('clock').innerHTML =  h + ":" + m;
+                setTimeout(startTime, 1000);
+            }
 
-        //document.body.style.cursor = 'url("img/cursor_default.png") 0 0, auto';
-
+            function checkTime(i) {
+                if (i < 10) {i = "0" + i};
+                    return i;
+            }
     </script>
 
 </body>
