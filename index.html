@@ -259,7 +259,6 @@
 
             <span style="font-size: 12px;">you should also enable autoplay for this site :3</span><br><br>
 
-            <span style="font-size: 12px;">and remember you can use shift+scroll to scroll horizontally</span>
             <br><br><br>
         </div>
       </div>
@@ -316,6 +315,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
       </div>
 
@@ -885,6 +885,14 @@
         var next_button = document.getElementById("next");
         var image = document.getElementById("pics_image");
         var images_select = document.getElementById("image_select");
+
+        images_select.addEventListener("wheel", (e) => {
+
+            e.preventDefault();
+
+            images_select.scrollLeft += e.deltaY;
+
+        });
 
         var images_array = [];
         var current_image = 0;
