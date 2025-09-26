@@ -19,6 +19,7 @@ function dragElement(elmnt)
         document.onmouseup = closeDragElement;
         // call a function whenever the cursor moves:
         document.onmousemove = elementDrag;
+        
     }
 
     function elementDrag(e) 
@@ -33,9 +34,10 @@ function dragElement(elmnt)
         // set the element's new position:
         elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
         elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        elmnt.style.right = null;
 
     }
-
+    
     function closeDragElement() 
     {
         /* stop moving when mouse button is released:*/

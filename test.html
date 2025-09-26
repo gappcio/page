@@ -7,7 +7,7 @@
         <script src="windows.js" type="text/javascript"></script>
         <link rel="stylesheet" href="https://unpkg.com/xp.css"/>
     </head>
-<body style="background-image: url('new/window/bliss.png'); background-size: 100% 100%; background-attachment: fixed; background-repeat: no-repeat;" onload="startTime()">
+<body style="background-image: url('new/window/bliss.png'); background-size: 100% 100%; background-attachment: fixed; background-repeat: no-repeat; overflow: hidden;" onload="startTime()">
 
     <header>
 
@@ -257,8 +257,10 @@
 
             <span style="font-size: 12px;">also, this site was only tested on <span style="color:#ff6600">Firefox</span> on 1920x1080 resolution and won't look good on mobile</span><br><br>
 
-            <span style="font-size: 12px;">you should also enable autoplay for this site :3</span>
-            <br><br><br><br><br>
+            <span style="font-size: 12px;">you should also enable autoplay for this site :3</span><br><br>
+
+            <span style="font-size: 12px;">and remember you can use shift+scroll to scroll horizontally</span>
+            <br><br><br>
         </div>
       </div>
       <img src="new/window/scroll_bg_hor.png" style="user-select: false; position: absolute; top: 183px; left: 3px; width: 517px; height: 17px;">
@@ -273,7 +275,7 @@
     <script>dragElement(document.getElementById("window_pageinfo"));windows_array.push(document.getElementById("window_pageinfo"))</script>
 
     <!--PICS WINDOW-->
-    <div class="window" id="window_pics" style="user-select: none; position: absolute; top: 200px; width: 750px; height: 500px; display: none; background-color: white;">
+    <div class="window" id="window_pics" style="user-select: none; position: absolute; top: 200px; width: 750px; height: 664px; display: none; background-color: #eeeeff;">
       <div class="title-bar" id="window_pics_header">
         <div class="title-bar-text" style="cursor:default; display:flex; gap: 4px;">
             <img src="new/files/picview.png" style="max-width: 16px;">
@@ -285,7 +287,7 @@
         </div>
 
       </div>
-      <div class="window-body" style="background-color: white; margin-right: 30px;">
+      <div class="window-body" style="background-color: #eeeeff; margin-right: 30px;">
         <div class="plain" style="color: #000000; font-size: 12px; font-family: Lucida Console;">
 
             <div style="position: relative; width: 605px; height: 424px; text-align: center; left: 65px; bottom: 8px;">
@@ -298,91 +300,22 @@
                 <img id="next" src="new/window/next.png">
             </div>
             
+
+
             <script>
-                var prev_button = document.getElementById("prev");
-                var next_button = document.getElementById("next");
-                var image = document.getElementById("pics_image");
-
-                var images_array = [];
-                var current_image = 0;
-
-                var image_list = [
-                    "badapple.jpg",
-                    "breakingbabka.jpg",
-                    "cock.jpg",
-                    "czilera.jpg",
-                    "drumnbass.jpg",
-                    "ferdekdebois.jpg",
-                    "frank.jpg",
-                    "gun.png",
-                    "harry.png",
-                    "horse.jpg",
-                    "jajabolo.jpg",
-                    "ket.jpg",
-                    "krzeslo.jpg",
-                    "love.jpg",
-                    "man.jpg",
-                    "me.jpg",
-                    "miku.png",
-                    "opos.jpg",
-                    "pickle.jpg",
-                    "prawda.jpg",
-                    "retard.jpg",
-                    "rumia.jpg",
-                    "rurki.gif",
-                    "schody.jpg",
-                    "seler.jpg",
-                    "silly.png",
-                    "siryessir.jpg",
-                    "slay.jpg",
-                    "study.jpg",
-                    "theballs.gif",
-                    "wtc.jpg"
-                ];
-
-                for (let i = 0; i <= image_list.length - 1; i++) {
-                    images_array.push("new/pics/" + image_list[i]);
-                }
-
-                cycle_images(0);
-                
-                if (prev_button) {
-                    prev_button.ondragstart = function(){return false;}
-                    prev_button.onmouseenter = function(){prev_button.src = "new/window/prev_hover.png";}
-                    prev_button.onmouseleave = function(){prev_button.src = "new/window/prev.png";}
-                    prev_button.onmouseup = function(){prev_button.src = "new/window/prev_hover.png";}
-                    prev_button.onmousedown = function(){prev_button.src = "new/window/prev_click.png";}
-                    prev_button.onclick = function(){cycle_images(-1);}
-                }
-
-                if (next_button) {
-                    next_button.ondragstart = function(){return false;}
-                    next_button.onmouseenter = function(){next_button.src = "new/window/next_hover.png";}
-                    next_button.onmouseleave = function(){next_button.src = "new/window/next.png";}
-                    next_button.onmouseup = function(){next_button.src = "new/window/next_hover.png";}
-                    next_button.onmousedown = function(){next_button.src = "new/window/next_click.png";}
-                    next_button.onclick = function(){cycle_images(1);}
-                }
-
-                function cycle_images(direction) {
-
-                    current_image += direction;
-
-                    if (current_image <= 0) current_image = 0;
-                    if (current_image >= images_array.length - 1) current_image = images_array.length - 1;
-
-                    image.src = images_array[current_image];
-                    document.getElementById("window_pics_name").innerHTML = image_list[current_image].substring(0, image_list[current_image].length - 4) + " - Picture Viewer";
-                    
-                    var _tab = document.getElementById("tab_pics_text");
-                    if (_tab)
-                        _tab.textContent = image_list[current_image].substring(0, image_list[current_image].length - 4) + " - Picture Viewer";
-
-                }
-
-
-
+                var scroll_images_array = [];
+                var scroll_text_array = [];
             </script>
+
+            <!--PICTURE SELECT-->
+            <div>
+                <div style="position:absolute; top: 458px; left: -5px; width:744px; height:170px; background-color: #ffffff"></div>
+                <div style="height: 200px; overflow: hidden; width: 725px;">
+                    <div id="image_select" style="display: flex; gap: 16px; position: relative; top: 40px; left: 0px; margin-left: 8px; align-items: center; overflow-x: scroll; scrollbar-gutter: auto; width: 717px;">
+
+                    </div>
+                </div>
+            </div>
         </div>
       </div>
 
@@ -820,7 +753,7 @@
 
         // Z index ordering _ready
         for(var i = 0; i <= windows_array.length - 1; i++) {
-            setIndex(windows_array[i], 0);
+            setIndex(windows_array[i], windows_array.length - i);
         }
 
         // Start button
@@ -884,10 +817,19 @@
         // Window focus
         function windowFocus(window) {
 
-            for(var i = 0; i <= windows_array.length - 1; i++) {
-                windows_array[i].style.zIndex = 0;
+            var index = windows_array.indexOf(window);
+            if (index > -1) {
+                windows_array.splice(index, 1);
+                windows_array.unshift(window);
             }
-            if (window) window.style.zIndex += 1;
+
+
+            for(let i = 0 ; i <= windows_array.length - 1; i++) {
+
+                windows_array[i].style.zIndex = windows_array.length - i;
+
+            }
+            
 
             for(let i = 0; i <= obj_taskbar.arr.length - 1; i++) {
 
@@ -904,7 +846,7 @@
                 }
 
             }
-
+            
         }
 
         // Select file
@@ -921,6 +863,151 @@
                 img.style.opacity = "70%";
             }
         }
+
+        // Select image in pic viewer
+        function imageFocus(img) {
+
+            for(var i = 0; i <= scroll_images_array.length - 1; i++) {
+                scroll_images_array[i].style.backgroundColor = "#00000000";
+                scroll_images_array[i].style.opacity = "100%";
+                scroll_images_array[i].style.border = "2px solid #808080";
+
+            }
+
+            if (img) {
+                img.style.opacity = "70%";
+                img.style.border = "3px solid #0050ee";
+            }
+        }
+
+
+        var prev_button = document.getElementById("prev");
+        var next_button = document.getElementById("next");
+        var image = document.getElementById("pics_image");
+        var images_select = document.getElementById("image_select");
+
+        var images_array = [];
+        var current_image = 0;
+
+        var image_list = [
+            "badapple.jpg",
+            "breakingbabka.jpg",
+            "cock.jpg",
+            "czilera.jpg",
+            "drumnbass.jpg",
+            "ferdekdebois.jpg",
+            "frank.jpg",
+            "gun.png",
+            "harry.png",
+            "horse.jpg",
+            "jajabolo.jpg",
+            "ket.jpg",
+            "krzeslo.jpg",
+            "love.jpg",
+            "man.jpg",
+            "me.jpg",
+            "miku.png",
+            "opos.jpg",
+            "pickle.jpg",
+            "prawda.jpg",
+            "retard.jpg",
+            "rumia.jpg",
+            "rurki.gif",
+            "schody.jpg",
+            "seler.jpg",
+            "silly.png",
+            "siryessir.jpg",
+            "slay.jpg",
+            "study.jpg",
+            "theballs.gif",
+            "tymbark.jpg",
+            "wtc.jpg"
+        ];
+
+        for (let i = 0; i <= image_list.length - 1; i++) {
+            images_array.push("new/pics/" + image_list[i]);
+        }
+
+        cycle_images(0);
+        
+        if (prev_button) {
+            prev_button.ondragstart = function(){return false;}
+            prev_button.onmouseenter = function(){prev_button.src = "new/window/prev_hover.png";}
+            prev_button.onmouseleave = function(){prev_button.src = "new/window/prev.png";}
+            prev_button.onmouseup = function(){prev_button.src = "new/window/prev_hover.png";}
+            prev_button.onmousedown = function(){prev_button.src = "new/window/prev_click.png";}
+            prev_button.onclick = function(){cycle_images(-1, 0);}
+        }
+
+        if (next_button) {
+            next_button.ondragstart = function(){return false;}
+            next_button.onmouseenter = function(){next_button.src = "new/window/next_hover.png";}
+            next_button.onmouseleave = function(){next_button.src = "new/window/next.png";}
+            next_button.onmouseup = function(){next_button.src = "new/window/next_hover.png";}
+            next_button.onmousedown = function(){next_button.src = "new/window/next_click.png";}
+            next_button.onclick = function(){cycle_images(1, 0);}
+        }
+
+        function cycle_images(direction, ind) {
+
+            if (!ind)
+                current_image += direction;
+            else
+                current_image = ind;
+
+            if (current_image <= 0) current_image = 0;
+            if (current_image >= images_array.length - 1) current_image = images_array.length - 1;
+
+            image.src = images_array[current_image];
+            document.getElementById("window_pics_name").innerHTML = image_list[current_image].substring(0, image_list[current_image].length - 4) + " - Picture Viewer";
+            
+            var _tab = document.getElementById("tab_pics_text");
+            if (_tab)
+                _tab.textContent = image_list[current_image].substring(0, image_list[current_image].length - 4) + " - Picture Viewer";
+
+            console.log(current_image)
+            imageFocus(scroll_images_array[current_image]);
+
+            // shitty af but good enough for now
+            var _scale = parseFloat(images_select.scrollWidth) / parseFloat(images_array.length);
+            images_select.scrollLeft = (current_image * _scale) - 300;
+
+        }
+
+
+        
+
+        for (let i = 0; i <= image_list.length - 1; i++) {
+
+            var _div = images_select.appendChild(document.createElement("div"));
+
+            scroll_images_array[i] = document.createElement("img");
+            scroll_images_array[i].id = i;
+            scroll_images_array[i].src = ("new/pics/" + image_list[i]);
+            scroll_images_array[i].className = "pic-view-select";
+            _div.appendChild(scroll_images_array[i]);
+
+            scroll_text_array[i] = document.createElement("p");
+            scroll_text_array[i].id = i + "_text";
+            scroll_text_array[i].style.userSelect = "none";
+            scroll_text_array[i].style.fontFamily = "Tahoma";
+            scroll_text_array[i].style.color = "black";
+            scroll_text_array[i].style.textShadow = "1px 1px 1px #0a0a0a11";
+            scroll_text_array[i].style.position = "relative";
+            scroll_text_array[i].style.display = "block";
+            scroll_text_array[i].style.textAlign = "center";
+            scroll_text_array[i].style.width = "100%";
+            scroll_text_array[i].style.height = "24px";
+            scroll_text_array[i].style.top = "-8px";
+            scroll_text_array[i].style.overflow = "hidden";
+            scroll_text_array[i].style.textOverflow = "ellipsis";
+            scroll_text_array[i].style.whiteSpace = "nowrap";
+            scroll_text_array[i].textContent = image_list[i];
+
+            _div.appendChild(scroll_text_array[i]);
+
+        }
+
 
         // Click file
         function fileClick(file) {
@@ -1141,6 +1228,22 @@
                 }
             }
 
+            // Pic viewer image select behavior
+            for (let i = 0; i <= scroll_images_array.length - 1; i++) {
+                if (scroll_images_array[i]) {
+                    scroll_images_array[i].onclick = function() {
+                        event.stopPropagation();
+
+                        if (scroll_images_array[i].style.opacity == 0.7) {
+                            cycle_images(0, parseInt(scroll_images_array[i].id));
+                        } else {
+                            imageFocus(scroll_images_array[i]);
+                        }
+
+                    }
+                }
+            }
+
           // Taskbar tabs
           for(var i = 0; i <= obj_taskbar.arr.length - 1; i++) {
 
@@ -1151,17 +1254,6 @@
           }
 
           for(let i = 0; i <= obj_taskbar.arr.length - 1; i++) {
-
-            /*
-              if (obj_taskbar.arr[i][0]) {
-                  obj_taskbar.arr[i][0].ondragstart = function(){return false;}
-                  obj_taskbar.arr[i][0].onmouseenter = function(){obj_taskbar.arr[i][2].src = "new/window/tab_hover.png"; console.log("a")}
-                  obj_taskbar.arr[i][0].onmouseleave = function(){obj_taskbar.arr[i][2].src = "new/window/tab_default.png";}
-                  obj_taskbar.arr[i][0].onmouseup = function(){obj_taskbar.arr[i][2].src = "new/window/tab_hover.png";}
-                  obj_taskbar.arr[i][0].onmousedown = function(){obj_taskbar.arr[i][2].src = "new/window/tab_click.png";}
-                  obj_taskbar.arr[i][0].onclick = function(){obj_taskbar.arr[i][2].src = "new/window/tab_click.png";windowFocus(document.getElementById(obj_taskbar.arr[i][1]));}
-              }
-            */
 
             if (obj_taskbar.arr[i]) {
 

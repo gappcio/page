@@ -721,6 +721,13 @@ anim::before {
     animation-play-state: paused;
 }
 
+.pic-view-select {
+    max-width: 128px;
+    border: 2px solid #808080;
+    height: 120px;
+    object-fit: cover;
+}
+
 /* -~=what even is this=~- */
 .jitter span:nth-child(1) { --i: 1; animation-delay: calc(0s * var(--i)); }
 .jitter span:nth-child(2) { --i: 2; animation-delay: calc(0.02s * var(--i)); }
