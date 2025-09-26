@@ -944,7 +944,7 @@
             prev_button.onmouseleave = function(){prev_button.src = "new/window/prev.png";}
             prev_button.onmouseup = function(){prev_button.src = "new/window/prev_hover.png";}
             prev_button.onmousedown = function(){prev_button.src = "new/window/prev_click.png";}
-            prev_button.onclick = function(){cycle_images(-1, 0);}
+            prev_button.onclick = function(){cycle_images(-1, -1);}
         }
 
         if (next_button) {
@@ -953,15 +953,15 @@
             next_button.onmouseleave = function(){next_button.src = "new/window/next.png";}
             next_button.onmouseup = function(){next_button.src = "new/window/next_hover.png";}
             next_button.onmousedown = function(){next_button.src = "new/window/next_click.png";}
-            next_button.onclick = function(){cycle_images(1, 0);}
+            next_button.onclick = function(){cycle_images(1, -1);}
         }
 
         function cycle_images(direction, ind) {
 
-            if (!ind)
-                current_image += direction;
-            else
+            if (ind >= 0)
                 current_image = ind;
+            else
+                current_image += direction;
 
             if (current_image <= 0) current_image = 0;
             if (current_image >= images_array.length - 1) current_image = images_array.length - 1;
@@ -1173,7 +1173,6 @@
             cirno_anim.style.position = "absolute";
             cirno_anim.style.left = cirno.x + "px";
             cirno_anim.style.top = cirno.y + "px";
-
 
             if ((cirno.x < 0) || (cirno.x > windowWidth - parseInt(size) - 128)) {
                 cirno.hsp = -cirno.hsp;
