@@ -1,0 +1,32 @@
+
+:root {
+    --white: #ffffff;
+    --bg: #080808;
+    --font: "Helvetica";
+    --font_size: 16px;
+}
+
+#blogheader {
+    text-align: center;
+    border-bottom: 1px solid var(--white);
+}
+
+.text{
+    font-family: var(--font);
+    font-size: var(--font_size);
+    color: var(--white);
+}
+
+.textdate {
+    font-family: var(--font);
+    font-size: 0.75em;
+    color: var(--white);
+}
+
+#blogcontent {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+a{color:inherit;}

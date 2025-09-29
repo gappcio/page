@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="style.css">
         <script src="windows.js" type="text/javascript"></script>
         <link rel="stylesheet" href="https://unpkg.com/xp.css"/>
+        <link rel="icon" href="new/files/cirno.png">
     </head>
 <body style="background-image: url('new/window/bliss.png'); background-size: 100% 100%; background-attachment: fixed; background-repeat: no-repeat; overflow: hidden;" onload="startTime()">
 
@@ -80,6 +81,17 @@
       </div>
     </div>
     <script>file_array.push([document.getElementById("file_pageinfo"), document.getElementById("file_pageinfo_name"), document.getElementById("file_pageinfo_img"), 0]);</script>
+
+    <!--BLOG-->
+    <div id="file_blog" style="position: absolute; top: 112px; left: 94px;">
+      <img id="file_blog_img" src="new/files/page.png" class="file" style="display: block; margin: auto;">
+      <div id="file_blog_name" class="file-name" style="top: -4px;">
+        <p style="font-family: Tahoma; font-size: 12px; color: white; text-shadow: 1px 1px 2px #0a0a0a; text-align: center;">
+          Blog
+        </p>
+      </div>
+    </div>
+    <script>file_array.push([document.getElementById("file_blog"), document.getElementById("file_blog_name"), document.getElementById("file_blog_img"), 0]);</script>
 
     <!--MAINSCR-->
     <div id="file_mainscr" style="position: absolute; top: 192px; left: 28px;">
@@ -1065,7 +1077,9 @@
                     tabOpen("tab_fish", "fish", "new/files/script.png", "window_fish");
                     windowOpen("window_fish", null);
                     windowFocus(document.getElementById("window_fish"));
-                    
+                break;
+                case "file_blog":
+                    window.location.href = "blog.html";
                 break;
             }
         }
