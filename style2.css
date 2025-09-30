@@ -1,14 +1,22 @@
+/* thats a bit better */
+
 
 :root {
-    --white: #ffffff;
+    --white: #ebebeb;
     --bg: #080808;
     --font: "Helvetica";
     --font_size: 16px;
 }
 
+html {
+    color: var(--white);
+    font-family: var(--font);
+}
+
 #blogheader {
     text-align: center;
     border-bottom: 1px solid var(--white);
+    padding-bottom: 1em;
 }
 
 .text{
@@ -21,12 +29,20 @@
     font-family: var(--font);
     font-size: 0.75em;
     color: var(--white);
+    margin-bottom: 0.75em;
+}
+
+.list-border {
+    border-bottom: 1px solid var(--white);
+    padding-bottom: 1em;
+    padding-left: 0px;
 }
 
 #blogcontent {
     display: flex;
     justify-content: center;
     list-style-type: none;
+    gap: 10px 10px;
 }
 
 a{color:inherit;}
