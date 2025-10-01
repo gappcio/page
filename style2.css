@@ -43,6 +43,15 @@ html {
     justify-content: center;
     list-style-type: none;
     gap: 10px 10px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
 }
 
 a{color:inherit;}
+
+::selection{
+    color: var(--bg);
+    background-color: var(--white);
+}

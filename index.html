@@ -286,7 +286,7 @@
     <script>dragElement(document.getElementById("window_pageinfo"));windows_array.push(document.getElementById("window_pageinfo"))</script>
 
     <!--PICS WINDOW-->
-    <div class="window" id="window_pics" style="user-select: none; position: absolute; top: 200px; width: 750px; height: 664px; display: none; background-color: #eeeeff;">
+    <div class="window" id="window_pics" style="user-select: none; position: absolute; top: 200px; width: 750px; height: 681px; display: none; background-color: #eeeeff;">
       <div class="title-bar" id="window_pics_header">
         <div class="title-bar-text" style="cursor:default; display:flex; gap: 4px;">
             <img src="new/files/picview.png" style="max-width: 16px;">
@@ -310,8 +310,7 @@
                 <img id="prev" src="new/window/prev.png">
                 <img id="next" src="new/window/next.png">
             </div>
-            
-
+        
 
             <script>
                 var scroll_images_array = [];
@@ -320,7 +319,7 @@
 
             <!--PICTURE SELECT-->
             <div>
-                <div style="position:absolute; top: 458px; left: -5px; width:744px; height:170px; background-color: #ffffff"></div>
+                <div style="position:absolute; top: 458px; left: -5px; width:744px; height:186px; background-color: #ffffff"></div>
                 <div style="height: 200px; overflow: hidden; width: 725px;">
                     <div id="image_select" style="display: flex; gap: 16px; position: relative; top: 40px; left: 0px; margin-left: 8px; align-items: center; overflow-x: scroll; scrollbar-gutter: auto; width: 717px;">
 
@@ -328,6 +327,20 @@
                 </div>
             </div>
 
+            <!--
+            
+            <div style="position: absolute; top: 628px; left: -5px;">
+                <img id="pic_scroll_left" src="new/window/scroll_left.png">
+                <img id="pic_scroll_right" src="new/window/scroll_right.png" style="position: absolute; left: 727px;">
+                <img id="pic_scroll_bar" src="new/window/scroll_bar.png" style="position: absolute; left: 17px; top: 0px;"> 
+            </div>
+
+            <script>
+                const pic_scrollbar = document.getElementById("pic_scroll_bar");
+                dragElement(pic_scrollbar);
+            </script>
+            -->
+            
         </div>
       </div>
 
@@ -985,12 +998,13 @@
             if (_tab)
                 _tab.textContent = image_list[current_image].substring(0, image_list[current_image].length - 4) + " - Picture Viewer";
 
-            console.log(current_image)
+            
             imageFocus(scroll_images_array[current_image]);
 
             // shitty af but good enough for now
             var _scale = parseFloat(images_select.scrollWidth) / parseFloat(images_array.length);
             images_select.scrollLeft = (current_image * _scale) - 300;
+            
 
         }
 
@@ -1265,71 +1279,78 @@
                 }
             }
 
-          // Taskbar tabs
-          for(var i = 0; i <= obj_taskbar.arr.length - 1; i++) {
+            // Pic viewer scroll bar
+            /*
+            pic_scrollbar.style.top = "0px";
+            if (parseInt(pic_scrollbar.style.left) < 16) pic_scrollbar.style.left = "16px";
+            if (parseInt(pic_scrollbar.style.left) > 680) pic_scrollbar.style.left = "680px";
+            var _shift = 684 / parseFloat(images_array.length);
+            pic_scrollbar.style.left = (current_image * (_shift)) + 16 + "px";
+            */
 
-              if (obj_taskbar.arr[i][0]) {
-                  obj_taskbar.arr[i][0].style.left = 96 + (150 * i) + "px";
-              }
+            // Taskbar tabs
+            for(var i = 0; i <= obj_taskbar.arr.length - 1; i++) {
 
-          }
-
-          for(let i = 0; i <= obj_taskbar.arr.length - 1; i++) {
-
-            if (obj_taskbar.arr[i]) {
-
-            
-                
-                obj_taskbar.arr[i][0].onclick = function() {
-
-                    windowFocus(document.getElementById(obj_taskbar.arr[i][1]));
-
-                    for(let j = 0; j <= obj_taskbar.arr.length - 1; j++) {
-
-                        obj_taskbar.arr[j][3] = 0;
-
-                    }
-                    obj_taskbar.arr[i][3] = 3;
-                }
-
-                
-
-                obj_taskbar.arr[i][0].onmouseenter = function() {
-
-                    if (obj_taskbar.arr[i][3] == 0) obj_taskbar.arr[i][3] = 1;
-                    if (obj_taskbar.arr[i][3] == 2) obj_taskbar.arr[i][3] = 3;
-
-                }
-
-                obj_taskbar.arr[i][0].onmouseleave = function() {
-
-                    if (obj_taskbar.arr[i][3] == 1) obj_taskbar.arr[i][3] = 0;
-                    if (obj_taskbar.arr[i][3] == 3) obj_taskbar.arr[i][3] = 2;
-
-                }
-                
-                switch(obj_taskbar.arr[i][3]) {
-
-                    case 0:
-                        obj_taskbar.arr[i][2].src = "new/window/tab_default.png";
-                    break;
-                    case 1:
-                        obj_taskbar.arr[i][2].src = "new/window/tab_hover.png";
-                    break;
-                    case 2:
-                        obj_taskbar.arr[i][2].src = "new/window/tab_click.png";
-                    break;
-                    case 3:
-                        obj_taskbar.arr[i][2].src = "new/window/tab_click_hover.png";
-                    break;
-
+                if (obj_taskbar.arr[i][0]) {
+                    obj_taskbar.arr[i][0].style.left = 96 + (150 * i) + "px";
                 }
 
             }
 
-          }
+            for(let i = 0; i <= obj_taskbar.arr.length - 1; i++) {
 
- 
+                if (obj_taskbar.arr[i]) {
+
+                
+                    
+                    obj_taskbar.arr[i][0].onclick = function() {
+
+                        windowFocus(document.getElementById(obj_taskbar.arr[i][1]));
+
+                        for(let j = 0; j <= obj_taskbar.arr.length - 1; j++) {
+
+                            obj_taskbar.arr[j][3] = 0;
+
+                        }
+                        obj_taskbar.arr[i][3] = 3;
+                    }
+
+                    
+
+                    obj_taskbar.arr[i][0].onmouseenter = function() {
+
+                        if (obj_taskbar.arr[i][3] == 0) obj_taskbar.arr[i][3] = 1;
+                        if (obj_taskbar.arr[i][3] == 2) obj_taskbar.arr[i][3] = 3;
+
+                    }
+
+                    obj_taskbar.arr[i][0].onmouseleave = function() {
+
+                        if (obj_taskbar.arr[i][3] == 1) obj_taskbar.arr[i][3] = 0;
+                        if (obj_taskbar.arr[i][3] == 3) obj_taskbar.arr[i][3] = 2;
+
+                    }
+                    
+                    switch(obj_taskbar.arr[i][3]) {
+
+                        case 0:
+                            obj_taskbar.arr[i][2].src = "new/window/tab_default.png";
+                        break;
+                        case 1:
+                            obj_taskbar.arr[i][2].src = "new/window/tab_hover.png";
+                        break;
+                        case 2:
+                            obj_taskbar.arr[i][2].src = "new/window/tab_click.png";
+                        break;
+                        case 3:
+                            obj_taskbar.arr[i][2].src = "new/window/tab_click_hover.png";
+                        break;
+
+                    }
+
+                }
+
+            }
 
             window.requestAnimationFrame(loop);
 
