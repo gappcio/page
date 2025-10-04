@@ -55,3 +55,5 @@ a{color:inherit;}
     color: var(--bg);
     background-color: var(--white);
 }
+
+li{border-bottom: 1px solid var(--white);}
