@@ -57,7 +57,18 @@ body {
     font-family: "commie";
     src: url("fonts/Dobra-BlackItalic.ttf") format("woff");
 }
-
+@font-face {
+    font-family: "winarial";
+    src: url("fonts/winarial.ttf") format("woff");
+}
+@font-face {
+    font-family: "wintahoma";
+    src: url("fonts/wintahoma.ttf") format("woff");
+}
+@font-face {
+    font-family: "lucida";
+    src: url("fonts/lucida.ttf") format("woff");
+}
 
 .file {
     width: 32px;
@@ -92,14 +103,14 @@ body {
 }
 
 .context-menu-xp-item {
-    font-family: Tahoma;
+    font-family: "tahoma";
     font-size: 12;
     margin-left: -24px;
     background-color:white;
 }
 
 .context-menu-xp-item:hover {
-    font-family: Tahoma;
+    font-family: "tahoma";
     font-size: 12;
     margin-left: -24px;
     color: white;
